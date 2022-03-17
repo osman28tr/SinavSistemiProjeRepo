@@ -61,7 +61,7 @@ namespace SinavSistemiProje
                 SubjectId = (int)cmbSubject.SelectedValue,
             });
             //questionDetailManager.Add(new QuestionDetail { QuestionId = questionManager.GetAll().Count });
-            MessageBox.Show("Hazırladığınız soru başarılı bir şekilde havuza eklendi!");
+            MessageBox.Show("Hazırladığınız soru admine başarıyla gönderildi!");
         }
         private void CheckedState()
         {

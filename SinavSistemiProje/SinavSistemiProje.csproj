@@ -68,6 +68,12 @@
     <Compile Include="FrmAdmin.Designer.cs">
       <DependentUpon>FrmAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmAdminConfirmQuestion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAdminConfirmQuestion.Designer.cs">
+      <DependentUpon>FrmAdminConfirmQuestion.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmAdminKayit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,6 +147,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAdmin.resx">
       <DependentUpon>FrmAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAdminConfirmQuestion.resx">
+      <DependentUpon>FrmAdminConfirmQuestion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAdminKayit.resx">
       <DependentUpon>FrmAdminKayit.cs</DependentUpon>
