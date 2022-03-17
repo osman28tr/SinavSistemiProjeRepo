@@ -33,14 +33,14 @@ namespace SinavSistemiProje
             StartTimer();
             dataGridView1.DataSource = questionManager.GetQuestionsByNotAnswered(); //deneme için
             GenerateQuestions();
-            FillTheElements();
+            FillTheElements(); //soruüret=1
         }
         private void btnİlerle_Click(object sender, EventArgs e)
         {
             soru++;
-            lblSoru.Text = soru.ToString();
-            QuestionUpdate(); //soruyu çözme durumu güncellensin.
+            lblSoru.Text = soru.ToString();           
             QuestionDetailInsert();//öğrenci id sini alsın.
+            QuestionDetailUpdate(); //soruyu çözme durumu güncellensin.
             if (soru == 10)
             {
                 if (durum == false)
@@ -57,24 +57,18 @@ namespace SinavSistemiProje
                 return true;
             return false;
         }
-        private void QuestionUpdate() //ve her soruda ilgili güncellemeyi yapıyor.
+        private void QuestionDetailUpdate() //ve her soruda ilgili güncellemeyi yapıyor.
         {
             bool sorudurum = IsTheQuestionAnsweredCorrectly();
 
-            questionManager.Update(new Question
+            questionDetailManager.Update(new QuestionDetail
             {
+                QuestionDetailId = questionDetailManager.GetQuestionDetailId(sorulistesi[soruüret - 1].QuestionId, id),
                 QuestionId = sorulistesi[soruüret - 1].QuestionId,
-                AnsweredDate = DateTime.Now,
+                StudentId = id,
                 QuestionState = sorudurum,
-                QuestionName = rctxQuestionName.Text,
-                QuestionCorrectAnswer = txtSecenekA.Text,
-                QuestionWrongAnswer1 = txtSecenekB.Text,
-                QuestionWrongAnswer2 = txtSecenekC.Text,
-                QuestionWrongAnswer3 = txtSecenekD.Text,
-                PicturePath = pictureBox1.ImageLocation,
-                SubjectId = sorulistesi[soruüret - 1].SubjectId,
+                AnsweredDate = DateTime.Now
             });
-
         }
         private void QuestionDetailInsert()//ve her soruda ilgili detail ekliyor yapıyor.
         {
@@ -104,8 +98,8 @@ namespace SinavSistemiProje
             DialogResult result1 = MessageBox.Show("Emin Misiniz?", " ", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result1 == DialogResult.Yes)
             {
-                QuestionUpdate();
                 QuestionDetailInsert();
+                QuestionDetailUpdate();               
                 MessageBox.Show("Cevaplarınız Gönderildi! Geçmiş Olsun :)...");
                 FrmÖgrenci frmÖgrenci = new FrmÖgrenci();
                 frmÖgrenci.Show();

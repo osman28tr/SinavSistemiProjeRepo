@@ -12,5 +12,7 @@ namespace Entities.Concrete
         public int QuestionDetailId { get; set; }
         public int QuestionId { get; set; }
         public int StudentId { get; set; }
+        public bool QuestionState { get; set; }
+        public DateTime AnsweredDate { get; set; }
     }
 }

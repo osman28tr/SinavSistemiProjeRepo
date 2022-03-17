@@ -13,12 +13,10 @@ namespace Entities.Concrete
         public int SubjectId { get; set; }
         public string QuestionName { get; set; }
         public string PicturePath { get; set; }
-        public bool QuestionState { get; set; }
         public string QuestionCorrectAnswer { get; set; }
         public string QuestionWrongAnswer1 { get; set; }
         public string QuestionWrongAnswer2 { get; set; }
         public string QuestionWrongAnswer3 { get; set; }
-        public DateTime AnsweredDate { get; set; }
-
+       
     }
 }

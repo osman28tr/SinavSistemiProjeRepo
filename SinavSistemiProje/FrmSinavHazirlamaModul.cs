@@ -59,7 +59,6 @@ namespace SinavSistemiProje
                 QuestionWrongAnswer2 = WrongAnswer[1],
                 QuestionWrongAnswer3 = WrongAnswer[2],
                 SubjectId = (int)cmbSubject.SelectedValue,
-                AnsweredDate = DateTime.Now
             });
             //questionDetailManager.Add(new QuestionDetail { QuestionId = questionManager.GetAll().Count });
             MessageBox.Show("Hazırladığınız soru başarılı bir şekilde havuza eklendi!");
