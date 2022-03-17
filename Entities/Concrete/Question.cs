@@ -17,6 +17,7 @@ namespace Entities.Concrete
         public string QuestionWrongAnswer1 { get; set; }
         public string QuestionWrongAnswer2 { get; set; }
         public string QuestionWrongAnswer3 { get; set; }
-       
+        public bool ConfirmState { get; set; }
+
     }
 }
