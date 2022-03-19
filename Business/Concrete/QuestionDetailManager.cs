@@ -33,9 +33,9 @@ namespace Business.Concrete
             _questionDetailDal.Delete(questionDetail);
         }
 
-        public QuestionDetail Get()
+        public QuestionDetail Get(int questiondetailid)
         {
-            return _questionDetailDal.Get();
+            return _questionDetailDal.Get(x => x.QuestionDetailId == questiondetailid);
         }
 
         public List<QuestionDetail> GetAll()
