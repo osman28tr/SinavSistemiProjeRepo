@@ -68,7 +68,7 @@ namespace SinavSistemiProje
         private void QuestionDetailAdd()
         {
             int id = questionManager.GetAll().LastOrDefault().QuestionId;
-            questionDetailManager.Add(new QuestionDetail { QuestionId = id, StudentId = (int)cmbStudents.SelectedValue, AnsweredDate = DateTime.Now, QuestionState = false });
+            questionDetailManager.Add(new QuestionDetail { QuestionId = id, StudentId = (int)cmbStudents.SelectedValue, SigmaCount = 0, AnsweredDate = DateTime.Now, QuestionState = false });
         }
         private void CheckedState()
         {
