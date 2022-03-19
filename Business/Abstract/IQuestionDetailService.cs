@@ -12,9 +12,12 @@ namespace Business.Abstract
     {
         List<QuestionDetail> GetAll();
         QuestionDetail Get();
-        void Add(QuestionDetail questionDetail, int id);
+        //void Add(QuestionDetail questionDetail, int id);
+        void Add(QuestionDetail questionDetail);
         void Update(QuestionDetail questionDetail);
         void Delete(QuestionDetail questionDetail);
         int GetQuestionDetailId(int questionId, int studentId);
+        List<QuestionDetail> GetQuestionsAnsweredByDate(int studentid);
+        List<QuestionDetail> GetQuestionsByFalse(int studentid);
     }
 }
