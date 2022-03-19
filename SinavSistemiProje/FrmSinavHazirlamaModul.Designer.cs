@@ -32,6 +32,8 @@ namespace SinavSistemiProje
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.cmbStudents = new System.Windows.Forms.ComboBox();
             this.cmbSubject = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.btnDosyaSec = new System.Windows.Forms.Button();
@@ -86,6 +88,8 @@ namespace SinavSistemiProje
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.cmbStudents);
             this.groupBox1.Controls.Add(this.cmbSubject);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.btnDosyaSec);
@@ -99,10 +103,29 @@ namespace SinavSistemiProje
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(21, 56);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(495, 428);
+            this.groupBox1.Size = new System.Drawing.Size(543, 428);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "SinavModül";
+            this.groupBox1.Text = "Sorular";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label8.ForeColor = System.Drawing.Color.Teal;
+            this.label8.Location = new System.Drawing.Point(266, 35);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(88, 28);
+            this.label8.TabIndex = 22;
+            this.label8.Text = "Öğrenci:";
+            // 
+            // cmbStudents
+            // 
+            this.cmbStudents.FormattingEnabled = true;
+            this.cmbStudents.Location = new System.Drawing.Point(360, 39);
+            this.cmbStudents.Name = "cmbStudents";
+            this.cmbStudents.Size = new System.Drawing.Size(155, 24);
+            this.cmbStudents.TabIndex = 21;
             // 
             // cmbSubject
             // 
@@ -220,7 +243,7 @@ namespace SinavSistemiProje
             this.groupBox2.Controls.Add(this.txtSecenekB);
             this.groupBox2.Controls.Add(this.radioButton1);
             this.groupBox2.Controls.Add(this.txtSecenekA);
-            this.groupBox2.Location = new System.Drawing.Point(522, 179);
+            this.groupBox2.Location = new System.Drawing.Point(570, 179);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(367, 305);
             this.groupBox2.TabIndex = 14;
@@ -340,7 +363,7 @@ namespace SinavSistemiProje
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(538, 56);
+            this.dataGridView1.Location = new System.Drawing.Point(586, 56);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
@@ -352,7 +375,7 @@ namespace SinavSistemiProje
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(893, 546);
+            this.ClientSize = new System.Drawing.Size(940, 546);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnEkle);
@@ -402,5 +425,7 @@ namespace SinavSistemiProje
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ComboBox cmbStudents;
+        private System.Windows.Forms.Label label8;
     }
 }
