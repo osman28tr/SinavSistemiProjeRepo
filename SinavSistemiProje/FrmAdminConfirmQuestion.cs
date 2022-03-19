@@ -35,31 +35,31 @@ namespace SinavSistemiProje
         }
         private void DgwSorular_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            var row = DgwSorular.CurrentRow;
-            bool durum = false;
-            if ((bool)row.Cells[8].Value == true) {
-                DialogResult result1 = MessageBox.Show("Soruyu iptal etmek istediğinize emin misiniz?", " ", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (result1 == DialogResult.Yes)
-                {
-                    UpdateQuestion(durum);
-                    MessageBox.Show("Soru başarıyla iptal edildi");
-                    GetQuestions();
-                }
-            }
-            else
-            {
-                durum = true;
+            //var row = DgwSorular.CurrentRow;
+            //bool durum = false;
+            //if ((bool)row.Cells[8].Value == true) {
+            //    DialogResult result1 = MessageBox.Show("Soruyu iptal etmek istediğinize emin misiniz?", " ", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            //    if (result1 == DialogResult.Yes)
+            //    {
+            //        UpdateQuestion(durum);
+            //        MessageBox.Show("Soru başarıyla iptal edildi");
+            //        GetQuestions();
+            //    }
+            //}
+            //else
+            //{
+                //durum = true;
                 DialogResult result2 = MessageBox.Show("Soruyu onaylamak istediğinize emin misiniz?", " ", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result2 == DialogResult.Yes)
                 {
-                    UpdateQuestion(durum);
+                    UpdateQuestion(/*durum*/);
                     MessageBox.Show("Soru başarıyla onaylandı");
                     GetQuestions();
                 }
-            }
+            //}
                             
         }
-        private void UpdateQuestion(bool state)
+        private void UpdateQuestion(/*bool state*/)
         {
             var row = DgwSorular.CurrentRow;
             questionManager.Update(new Question
@@ -72,7 +72,7 @@ namespace SinavSistemiProje
                 QuestionWrongAnswer1 = row.Cells[5].Value.ToString(),
                 QuestionWrongAnswer2 = row.Cells[6].Value.ToString(),
                 QuestionWrongAnswer3 = row.Cells[7].Value.ToString(),
-                ConfirmState = state
+                ConfirmState = true
             });
         }
     }
