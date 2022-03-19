@@ -11,7 +11,7 @@ namespace Business.Abstract
     public interface IQuestionDetailService
     {
         List<QuestionDetail> GetAll();
-        QuestionDetail Get();
+        QuestionDetail Get(int questiondetailid);
         //void Add(QuestionDetail questionDetail, int id);
         void Add(QuestionDetail questionDetail);
         void Update(QuestionDetail questionDetail);
