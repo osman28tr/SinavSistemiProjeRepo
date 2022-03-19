@@ -31,15 +31,15 @@ namespace SinavSistemiProje
             lblSoru.Text = soru.ToString();
             btnBitir.Visible = false;
             StartTimer();
-            dataGridView1.DataSource = questionManager.GetQuestionsByNotAnswered(); //deneme için
+            //dataGridView1.DataSource = questionManager.GetQuestionsByNotAnswered(questionDetailManager.GetQuestionsByFalse()); //deneme için
             GenerateQuestions();
             FillTheElements(); //soruüret=1
         }
         private void btnİlerle_Click(object sender, EventArgs e)
         {
             soru++;
-            lblSoru.Text = soru.ToString();           
-            QuestionDetailInsert();//öğrenci id sini alsın.
+            lblSoru.Text = soru.ToString();
+            //QuestionDetailInsert();//öğrenci id sini alsın.
             QuestionDetailUpdate(); //soruyu çözme durumu güncellensin.
             if (soru == 10)
             {
@@ -48,6 +48,23 @@ namespace SinavSistemiProje
                     btnBitir.Visible = true;
                     btnİlerle.Enabled = false;
                 }
+            //    int sorusayisi = 10 + GetByQuestionAnswered().Count;
+            //    if (durum == false)
+            //    {
+            //        if ((sorusayisi == 10 || 10 + soruüret == sorusayisi))
+            //        {
+            //            btnBitir.Visible = true;
+            //            btnİlerle.Enabled = false;
+            //        }
+            //        else if (soruüret > 10)
+            //        {
+            //            sorulistesi.Clear();
+            //            soruüret = 0;
+            //            sorulistesi = GetByQuestionAnswered();
+            //            FillTheElements();
+            //        }
+            //    }
+            //}
             }
             FillTheElements();
         }
@@ -57,10 +74,11 @@ namespace SinavSistemiProje
                 return true;
             return false;
         }
-        private void QuestionDetailUpdate() //ve her soruda ilgili güncellemeyi yapıyor.
+        private void QuestionDetailUpdate() //ve her soruda ilgili güncellemeyi yapıyor.ama
+        //bu güncellemeyi sorudurum=veritabanından çekilen soruyu doğru bildiği durumu olursa yapmasın.(bu durum ise asd)
         {
             bool sorudurum = IsTheQuestionAnsweredCorrectly();
-
+            
             questionDetailManager.Update(new QuestionDetail
             {
                 QuestionDetailId = questionDetailManager.GetQuestionDetailId(sorulistesi[soruüret - 1].QuestionId, id),
@@ -70,21 +88,29 @@ namespace SinavSistemiProje
                 AnsweredDate = DateTime.Now
             });
         }
-        private void QuestionDetailInsert()//ve her soruda ilgili detail ekliyor yapıyor.
-        {
-            int questionId = sorulistesi[soruüret - 1].QuestionId;
-            int studentId = id;
-            int questionDetailId = questionDetailManager.GetQuestionDetailId(questionId, studentId);
-            questionDetailManager.Add(new QuestionDetail { QuestionId = questionId, StudentId = studentId }, questionDetailId);
-        }
+        //private void QuestionDetailInsert()//ve her soruda ilgili detail ekliyor yapıyor.
+        //{
+        //    int questionId = sorulistesi[soruüret - 1].QuestionId;
+        //    int studentId = id;
+        //    int questionDetailId = questionDetailManager.GetQuestionDetailId(questionId, studentId);
+        //    questionDetailManager.Add(new QuestionDetail { QuestionId = questionId, StudentId = studentId }, questionDetailId);
+        //}
         private List<Question> GenerateQuestions() //rastgele soru getirir 10 tane aynı soruyu getirmemesi için ayırdım.
         {
-            //int soruadedi = questionManager.GetQuestionsByNotAnswered().Count; //soru sayısı 10 olunca 10 a göre yapılcak.
-            sorulistesi = questionManager.GetQuestionsByNotAnswered();
+            //int soruadedi = questionManager.GetQuestionsByNotAnswered().Count; //soru sayısı 10 olunca 10 a göre yapılcak. onaylanan soruları getiriyor.
+            var questionsfalse = questionDetailManager.GetQuestionsByFalse(id);
+            sorulistesi = questionManager.GetQuestionsByNotAnswered(questionsfalse);
             return sorulistesi;
         }
-        private void FillTheElements() //rastgele getirilen 10 tane soruyu ilgili toollara doldurur.
+        private List<Question> GetByQuestionAnswered()
         {
+            List<QuestionDetail> questionDetails = new List<QuestionDetail>();
+            questionDetails = questionDetailManager.GetQuestionsAnsweredByDate(id);
+            var questions = questionManager.GetQuestionsByAnswered(questionDetails);
+            return questions;
+        }
+        private void FillTheElements() //rastgele getirilen 10 tane soruyu ilgili toollara doldurur.
+        {           
             rctxQuestionName.Text = sorulistesi[soruüret].QuestionName;
             pictureBox1.ImageLocation = sorulistesi[soruüret].PicturePath;
             txtSecenekA.Text = sorulistesi[soruüret].QuestionCorrectAnswer;
@@ -93,13 +119,14 @@ namespace SinavSistemiProje
             txtSecenekD.Text = sorulistesi[soruüret].QuestionWrongAnswer3;
             soruüret++;
         }
+
         private void btnBitir_Click(object sender, EventArgs e)
         {
             DialogResult result1 = MessageBox.Show("Emin Misiniz?", " ", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result1 == DialogResult.Yes)
             {
-                QuestionDetailInsert();
-                QuestionDetailUpdate();               
+                //QuestionDetailInsert();
+                QuestionDetailUpdate();
                 MessageBox.Show("Cevaplarınız Gönderildi! Geçmiş Olsun :)...");
                 FrmÖgrenci frmÖgrenci = new FrmÖgrenci();
                 frmÖgrenci.Show();
@@ -126,7 +153,7 @@ namespace SinavSistemiProje
                 if (dakika == 10)
                 {
                     timer1.Stop();
-                    durum = true;
+                    durum = true; //süre bitmiştir.
                     MessageBox.Show("Süreniz Bitmiştir. Cevaplarınız Gönderildi. Geçmiş Olsun. :)");
                     FrmÖgrenciAnaSayfa frmÖgrenciAnaSayfa = new FrmÖgrenciAnaSayfa();
                     frmÖgrenciAnaSayfa.Show();
