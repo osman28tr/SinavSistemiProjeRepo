@@ -25,6 +25,7 @@ namespace SinavSistemiProje
         List<Question> sorulistesi = new List<Question>();
         QuestionManager questionManager = new QuestionManager(new EfQuestionDal());
         QuestionDetailManager questionDetailManager = new QuestionDetailManager(new EfQuestionDetailDal());
+        int sorusayisi;
         private void FrmÖgrenciSinavModul_Load(object sender, EventArgs e)
         {
             MessageBox.Show("Sınav Kuralları: Soru başına 1 dk süreniz olacak. Başarılar Dileriz...");
@@ -33,6 +34,8 @@ namespace SinavSistemiProje
             StartTimer();
             //dataGridView1.DataSource = questionManager.GetQuestionsByNotAnswered(questionDetailManager.GetQuestionsByFalse()); //deneme için
             GenerateQuestions();
+            int dogrusorusayisi = GetByQuestionAnswered().Count;
+            sorusayisi = 10 + dogrusorusayisi;
             FillTheElements(); //soruüret=1
         }
         private void btnİlerle_Click(object sender, EventArgs e)
@@ -40,31 +43,39 @@ namespace SinavSistemiProje
             soru++;
             lblSoru.Text = soru.ToString();
             //QuestionDetailInsert();//öğrenci id sini alsın.
-            QuestionDetailUpdate(); //soruyu çözme durumu güncellensin.
-            if (soru == 10)
-            {
-                if (durum == false)
+            QuestionDetailUpdate(); //soruyu çözme durumu güncellensin.           
+            MessageBox.Show("soru: " + soru + " sorusayisi:" + sorusayisi);
+            if (soru == sorusayisi) //10. soruya geldiysek.
+            {           
+                if (durum == false) //süre devam ediyorsa
                 {
                     btnBitir.Visible = true;
                     btnİlerle.Enabled = false;
                 }
-            //    int sorusayisi = 10 + GetByQuestionAnswered().Count;
-            //    if (durum == false)
-            //    {
-            //        if ((sorusayisi == 10 || 10 + soruüret == sorusayisi))
-            //        {
-            //            btnBitir.Visible = true;
-            //            btnİlerle.Enabled = false;
-            //        }
-            //        else if (soruüret > 10)
-            //        {
-            //            sorulistesi.Clear();
-            //            soruüret = 0;
-            //            sorulistesi = GetByQuestionAnswered();
-            //            FillTheElements();
-            //        }
-            //    }
-            //}
+                //    int sorusayisi = 10 + GetByQuestionAnswered().Count;
+                //    if (durum == false)
+                //    {
+                //        if ((sorusayisi == 10 || 10 + soruüret == sorusayisi))
+                //        {
+                //            btnBitir.Visible = true;
+                //            btnİlerle.Enabled = false;
+                //        }
+                //        else if (soruüret > 10)
+                //        {
+                //            sorulistesi.Clear();
+                //            soruüret = 0;
+                //            sorulistesi = GetByQuestionAnswered();
+                //            FillTheElements();
+                //        }
+                //    }
+                //}
+            }
+            else if (soru == 11)
+            {
+                MessageBox.Show("soru sayisi 11 oldu : soru üret: " + soruüret);
+                sorulistesi.Clear();
+                soruüret = 0;
+                sorulistesi = GetByQuestionAnswered();
             }
             FillTheElements();
         }
@@ -78,7 +89,7 @@ namespace SinavSistemiProje
         //bu güncellemeyi sorudurum=veritabanından çekilen soruyu doğru bildiği durumu olursa yapmasın.(bu durum ise asd)
         {
             bool sorudurum = IsTheQuestionAnsweredCorrectly();
-            
+
             questionDetailManager.Update(new QuestionDetail
             {
                 QuestionDetailId = questionDetailManager.GetQuestionDetailId(sorulistesi[soruüret - 1].QuestionId, id),
@@ -110,7 +121,7 @@ namespace SinavSistemiProje
             return questions;
         }
         private void FillTheElements() //rastgele getirilen 10 tane soruyu ilgili toollara doldurur.
-        {           
+        {
             rctxQuestionName.Text = sorulistesi[soruüret].QuestionName;
             pictureBox1.ImageLocation = sorulistesi[soruüret].PicturePath;
             txtSecenekA.Text = sorulistesi[soruüret].QuestionCorrectAnswer;
