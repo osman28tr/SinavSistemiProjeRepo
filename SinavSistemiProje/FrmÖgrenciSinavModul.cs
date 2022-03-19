@@ -46,7 +46,7 @@ namespace SinavSistemiProje
             QuestionDetailUpdate(); //soruyu çözme durumu güncellensin.           
             MessageBox.Show("soru: " + soru + " sorusayisi:" + sorusayisi);
             if (soru == sorusayisi) //10. soruya geldiysek.
-            {           
+            {
                 if (durum == false) //süre devam ediyorsa
                 {
                     btnBitir.Visible = true;
@@ -90,14 +90,35 @@ namespace SinavSistemiProje
         {
             bool sorudurum = IsTheQuestionAnsweredCorrectly();
 
-            questionDetailManager.Update(new QuestionDetail
+            int questiondetailid = questionDetailManager.GetQuestionDetailId(sorulistesi[soruüret - 1].QuestionId, id);
+            bool questiondetailstate = questionDetailManager.Get(questiondetailid).QuestionState;
+            var questiondetaildate = questionDetailManager.Get(questiondetailid).AnsweredDate;
+            int sigmacount = questionDetailManager.Get(questiondetailid).SigmaCount;
+
+            if (questiondetailstate == true && sorudurum == true)
             {
-                QuestionDetailId = questionDetailManager.GetQuestionDetailId(sorulistesi[soruüret - 1].QuestionId, id),
-                QuestionId = sorulistesi[soruüret - 1].QuestionId,
-                StudentId = id,
-                QuestionState = sorudurum,
-                AnsweredDate = DateTime.Now
-            });
+                questionDetailManager.Update(new QuestionDetail
+                {
+                    QuestionDetailId = questiondetailid,
+                    QuestionId = sorulistesi[soruüret - 1].QuestionId,
+                    StudentId = id,
+                    QuestionState = sorudurum,
+                    AnsweredDate = questiondetaildate,
+                    SigmaCount = sigmacount + 1
+                });
+            }
+            else
+            {
+                questionDetailManager.Update(new QuestionDetail
+                {
+                    QuestionDetailId = questiondetailid,
+                    QuestionId = sorulistesi[soruüret - 1].QuestionId,
+                    StudentId = id,
+                    QuestionState = sorudurum,
+                    AnsweredDate = DateTime.Now,
+                    SigmaCount = 0
+                });
+            }
         }
         //private void QuestionDetailInsert()//ve her soruda ilgili detail ekliyor yapıyor.
         //{
