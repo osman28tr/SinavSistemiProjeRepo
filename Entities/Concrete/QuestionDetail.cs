@@ -14,5 +14,6 @@ namespace Entities.Concrete
         public int StudentId { get; set; }
         public bool QuestionState { get; set; }
         public DateTime AnsweredDate { get; set; }
+        public int SigmaCount { get; set; }
     }
 }
