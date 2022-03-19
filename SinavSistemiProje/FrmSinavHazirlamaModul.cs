@@ -20,6 +20,7 @@ namespace SinavSistemiProje
             InitializeComponent();
         }
         QuestionManager questionManager = new QuestionManager(new EfQuestionDal());
+        StudentManager studentManager = new StudentManager(new EfStudentDal());
         QuestionDetailManager questionDetailManager = new QuestionDetailManager(new EfQuestionDetailDal());
         LessonManager lessonManager = new LessonManager(new EfLessonDal());
         UnitManager unitManager = new UnitManager(new EfUnitDal());
@@ -32,6 +33,7 @@ namespace SinavSistemiProje
             LoadLessons();
             LoadUnits(1);
             LoadSubjects(1);
+            LoadStudents();
             MessageBox.Show(Convert.ToInt32(cmbLesson.SelectedValue).ToString());
             //cmbLesson.SelectedIndex = 1;
             //cmbUnit.DataSource = unitManager.GetUnitsByLesson(a);
@@ -60,8 +62,13 @@ namespace SinavSistemiProje
                 QuestionWrongAnswer3 = WrongAnswer[2],
                 SubjectId = (int)cmbSubject.SelectedValue,
             });
-            //questionDetailManager.Add(new QuestionDetail { QuestionId = questionManager.GetAll().Count });
+            QuestionDetailAdd();
             MessageBox.Show("Hazırladığınız soru admine başarıyla gönderildi!");
+        }
+        private void QuestionDetailAdd()
+        {
+            int id = questionManager.GetAll().LastOrDefault().QuestionId;
+            questionDetailManager.Add(new QuestionDetail { QuestionId = id, StudentId = (int)cmbStudents.SelectedValue, AnsweredDate = DateTime.Now, QuestionState = false });
         }
         private void CheckedState()
         {
@@ -128,6 +135,12 @@ namespace SinavSistemiProje
             //}
 
         }
+        private void LoadStudents()
+        {
+            cmbStudents.DataSource = studentManager.GetAll();
+            cmbStudents.DisplayMember = "StudentName";
+            cmbStudents.ValueMember = "StudentId";
+        }
         private void SubjectsByUnit(int id)
         {
             cmbSubject.DataSource = subjectManager.GetSubjectsByUnit(id);
@@ -182,5 +195,6 @@ namespace SinavSistemiProje
                 throw;
             }
         }
+
     }
 }
