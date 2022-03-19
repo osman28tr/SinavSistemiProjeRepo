@@ -18,11 +18,16 @@ namespace Business.Concrete
             _questionDetailDal = questionDetailDal;
         }
 
-        public void Add(QuestionDetail questionDetail, int id)
+        public void Add(QuestionDetail questionDetail)
         {
-            if (_questionDetailDal.Get(x => x.QuestionDetailId == id) == null) //bir öğrenciye aynı soru gelebilir bidaha boşa detail eklemesin
-                _questionDetailDal.Add(questionDetail);
+            _questionDetailDal.Add(questionDetail);
         }
+
+        //public void Add(QuestionDetail questionDetail, int id)
+        //{
+        //    if (_questionDetailDal.Get(x => x.QuestionDetailId == id) == null) //bir öğrenciye aynı soru gelebilir bidaha boşa detail eklemesin
+        //        _questionDetailDal.Add(questionDetail);
+        //}
         public void Delete(QuestionDetail questionDetail)
         {
             _questionDetailDal.Delete(questionDetail);
@@ -43,6 +48,28 @@ namespace Business.Concrete
             if (_questionDetailDal.Get(x => x.QuestionId == questionId && x.StudentId == studentId) == null)
                 return 0;
             return _questionDetailDal.Get(x => x.QuestionId == questionId && x.StudentId == studentId).QuestionDetailId;
+        }
+
+        public List<QuestionDetail> GetQuestionsAnsweredByDate(int studentid)
+        {
+            var questions = _questionDetailDal.GetAll(x => x.QuestionState == true && x.StudentId == studentid).ToList();
+            var questionsDate = questions.Select(x => x.AnsweredDate).ToList();
+            int questionvalues = questionsDate.Count();
+            List<QuestionDetail> questiondetailList = new List<QuestionDetail>();
+            for (int i = 0; i < questionvalues; i++)
+            {
+                TimeSpan timeSpan = DateTime.Now - questionsDate[i];
+                if (timeSpan.Days == 1 || timeSpan.Days == 7 || timeSpan.Days == 30 || timeSpan.Days == 90 || timeSpan.Days == 180 || timeSpan.Days == 365)
+                {
+                    questiondetailList.Add(questions[i]);
+                }
+            }
+            return questiondetailList;
+        }
+
+        public List<QuestionDetail> GetQuestionsByFalse(int studentid)
+        {
+            return _questionDetailDal.GetAll(x => x.QuestionState == false && x.StudentId == studentid);
         }
 
         public void Update(QuestionDetail questionDetail)
