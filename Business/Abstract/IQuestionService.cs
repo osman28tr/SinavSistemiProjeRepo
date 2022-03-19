@@ -15,6 +15,7 @@ namespace Business.Abstract
         void Add(Question question);
         void Update(Question question);
         void Delete(Question question);
-        List<Question> GetQuestionsByNotAnswered();
+        List<Question> GetQuestionsByNotAnswered(List<QuestionDetail> questionDetails);
+        List<Question> GetQuestionsByAnswered(List<QuestionDetail> questionDetails);
     }
 }
