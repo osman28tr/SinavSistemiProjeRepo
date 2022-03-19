@@ -25,7 +25,7 @@ namespace SinavSistemiProje
         }
         private void LoadStudentKnow()
         {
-            
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -36,6 +36,7 @@ namespace SinavSistemiProje
                 FrmÖgrenciSinavModul frmÖgrenciSinavModul = new FrmÖgrenciSinavModul();
                 frmÖgrenciSinavModul.Show();
                 this.Hide();
+
             }
 
         }
