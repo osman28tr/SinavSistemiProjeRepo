@@ -41,7 +41,9 @@ namespace SinavSistemiProje
             {
                 MessageBox.Show("Giriş Başarılı!");
                 FrmÖgrenciSinavModul.id = studentManager.GetStudentId(txtMail.Text);
-                FrmÖgrenciAnaSayfa frmÖgrenciAnaSayfa = new FrmÖgrenciAnaSayfa();
+                FrmÖgrenciAnaSayfa.ogrid = studentManager.GetStudentId(txtMail.Text);
+                FrmÖgrenciSinavDurum.ogrid = studentManager.GetStudentId(txtMail.Text);
+                FrmÖgrenciAnaSayfa frmÖgrenciAnaSayfa = new FrmÖgrenciAnaSayfa();               
                 frmÖgrenciAnaSayfa.Show();
                 this.Hide();
             }
