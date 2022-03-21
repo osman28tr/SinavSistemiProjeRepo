@@ -19,5 +19,7 @@ namespace Business.Abstract
         int GetQuestionDetailId(int questionId, int studentId);
         List<QuestionDetail> GetQuestionsAnsweredByDate(int studentid);
         List<QuestionDetail> GetQuestionsByFalse(int studentid);
+        int TrueAnswerCount(int ogrid);
+        int FalseAnswerCount(int ogrid);
     }
 }

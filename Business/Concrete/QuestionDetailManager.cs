@@ -33,6 +33,11 @@ namespace Business.Concrete
             _questionDetailDal.Delete(questionDetail);
         }
 
+        public int FalseAnswerCount(int ogrid)
+        {
+            return _questionDetailDal.GetAll(x => x.StudentId == ogrid && x.QuestionState == false).Count;
+        }
+
         public QuestionDetail Get(int questiondetailid)
         {
             return _questionDetailDal.Get(x => x.QuestionDetailId == questiondetailid);
@@ -70,6 +75,11 @@ namespace Business.Concrete
         public List<QuestionDetail> GetQuestionsByFalse(int studentid)
         {
             return _questionDetailDal.GetAll(x => x.QuestionState == false && x.StudentId == studentid);
+        }
+
+        public int TrueAnswerCount(int ogrid)
+        {
+            return _questionDetailDal.GetAll(x => x.StudentId == ogrid && x.QuestionState == true).Count;
         }
 
         public void Update(QuestionDetail questionDetail)
