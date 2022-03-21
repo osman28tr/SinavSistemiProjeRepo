@@ -28,9 +28,9 @@ namespace Business.Concrete
             _studentDal.Delete(student);
         }
 
-        public Student Get()
+        public Student Get(int id)
         {
-            return _studentDal.Get();
+            return _studentDal.Get(x => x.StudentId == id);
         }
 
         public List<Student> GetAll()
