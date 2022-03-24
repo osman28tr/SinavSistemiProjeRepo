@@ -19,5 +19,7 @@ namespace DataAccess.Concrete
         public DbSet<Unit> Units { get; set; }
         public DbSet<Subject> Subjects { get; set; }
         public DbSet<QuestionDetail> QuestionDetails { get; set; }
+        public DbSet<CorrectAnswer> CorrectAnswers { get; set; }
+        public DbSet<WrongAnswer> WrongAnswers { get; set; }
     }
 }
