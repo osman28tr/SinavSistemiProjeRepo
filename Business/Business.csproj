@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\IAdminService.cs" />
+    <Compile Include="Abstract\ICorrectAnswerService.cs" />
     <Compile Include="Abstract\ILessonService.cs" />
     <Compile Include="Abstract\IQuestionDetailService.cs" />
     <Compile Include="Abstract\IQuestionService.cs" />
@@ -49,7 +50,9 @@
     <Compile Include="Abstract\ISubjectService.cs" />
     <Compile Include="Abstract\ITeacherService.cs" />
     <Compile Include="Abstract\IUnitService.cs" />
+    <Compile Include="Abstract\IWrongAnswerService.cs" />
     <Compile Include="Concrete\AdminManager.cs" />
+    <Compile Include="Concrete\CorrectAnswerManager.cs" />
     <Compile Include="Concrete\LessonManager.cs" />
     <Compile Include="Concrete\QuestionDetailManager.cs" />
     <Compile Include="Concrete\QuestionManager.cs" />
@@ -57,6 +60,7 @@
     <Compile Include="Concrete\SubjectManager.cs" />
     <Compile Include="Concrete\TeacherManager.cs" />
     <Compile Include="Concrete\UnitManager.cs" />
+    <Compile Include="Concrete\WrongAnswerManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

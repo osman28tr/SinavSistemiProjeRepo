@@ -63,7 +63,7 @@ namespace Business.Concrete
                 //{
 
                 //}
-                questions.Add(_questionDal.Get(x => x.QuestionId == a));
+                questions.Add(_questionDal.Get(x => x.QuestionId == a)); // normal hali.
             }
             return questions;
         }
@@ -75,7 +75,7 @@ namespace Business.Concrete
             int count = questionDetails.Count; //bize gelen doğru çözme durumu false olan soruların sayısını aldık
             int[] dizi = new int[10]; //sayıların aynı olmaması için.
             int[] dizi2 = new int[10]; //bizim durumu false olanların questionid'lerini ilgili diziye atmak için
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 10; i++) //count olan yer normalde 10 dur.(confirmstate'e göre ayarladım.)
             {
                 int a = random.Next(0, count); //1 ile gelen verilerin sayısı arasında rastgele sayı ürettik.(bunu indis için yaptım.)
                 for (int j = 0; j < i; j++) //rastgele üretilen sayı dizinin şuanki indisine kadar kontrol ediyor.(bunu 0 için yaptım. çünkü sıfırda patlıyordu.)
