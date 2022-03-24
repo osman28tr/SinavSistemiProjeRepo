@@ -30,6 +30,7 @@ namespace SinavSistemiProje
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnSifremiUnuttum = new System.Windows.Forms.Button();
             this.txtMail = new System.Windows.Forms.TextBox();
             this.btnKayitOl = new System.Windows.Forms.Button();
             this.txtSifre = new System.Windows.Forms.TextBox();
@@ -37,7 +38,6 @@ namespace SinavSistemiProje
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnSifremiUnuttum = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,6 +56,16 @@ namespace SinavSistemiProje
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Öğrenci";
+            // 
+            // btnSifremiUnuttum
+            // 
+            this.btnSifremiUnuttum.Location = new System.Drawing.Point(311, 126);
+            this.btnSifremiUnuttum.Name = "btnSifremiUnuttum";
+            this.btnSifremiUnuttum.Size = new System.Drawing.Size(125, 30);
+            this.btnSifremiUnuttum.TabIndex = 9;
+            this.btnSifremiUnuttum.Text = "Şifremi Unuttum";
+            this.btnSifremiUnuttum.UseVisualStyleBackColor = true;
+            this.btnSifremiUnuttum.Click += new System.EventHandler(this.btnSifremiUnuttum_Click);
             // 
             // txtMail
             // 
@@ -125,16 +135,6 @@ namespace SinavSistemiProje
             this.label3.Size = new System.Drawing.Size(383, 54);
             this.label3.TabIndex = 8;
             this.label3.Text = "LÜTFEN GİRİŞ YAPINIZ";
-            // 
-            // btnSifremiUnuttum
-            // 
-            this.btnSifremiUnuttum.Location = new System.Drawing.Point(311, 126);
-            this.btnSifremiUnuttum.Name = "btnSifremiUnuttum";
-            this.btnSifremiUnuttum.Size = new System.Drawing.Size(125, 30);
-            this.btnSifremiUnuttum.TabIndex = 9;
-            this.btnSifremiUnuttum.Text = "Şifremi Unuttum";
-            this.btnSifremiUnuttum.UseVisualStyleBackColor = true;
-            this.btnSifremiUnuttum.Click += new System.EventHandler(this.btnSifremiUnuttum_Click);
             // 
             // FrmÖgrenci
             // 

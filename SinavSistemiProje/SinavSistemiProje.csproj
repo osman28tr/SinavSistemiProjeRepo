@@ -45,6 +45,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -110,6 +111,12 @@
     <Compile Include="FrmÖgrenciAnaSayfa.Designer.cs">
       <DependentUpon>FrmÖgrenciAnaSayfa.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmÖgrenciSinavDurum.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmÖgrenciSinavDurum.Designer.cs">
+      <DependentUpon>FrmÖgrenciSinavDurum.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmÖgrenciSinavModul.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,9 +178,13 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmÖgrenciAnaSayfa.resx">
       <DependentUpon>FrmÖgrenciAnaSayfa.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmÖgrenciKayit.resx">
       <DependentUpon>FrmÖgrenciKayit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmÖgrenciSinavDurum.resx">
+      <DependentUpon>FrmÖgrenciSinavDurum.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmÖgrenciSinavModul.resx">
       <DependentUpon>FrmÖgrenciSinavModul.cs</DependentUpon>
@@ -220,6 +231,9 @@
       <Project>{BE4E91D2-1C8F-4DDF-9460-C454299A5D51}</Project>
       <Name>Entities</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="images\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

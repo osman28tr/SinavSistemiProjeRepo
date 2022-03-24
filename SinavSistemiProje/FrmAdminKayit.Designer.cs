@@ -33,13 +33,13 @@ namespace SinavSistemiProje
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.btnAdminKayitOl = new System.Windows.Forms.Button();
-            this.txtAdminName = new System.Windows.Forms.TextBox();
-            this.txtAdminSurname = new System.Windows.Forms.TextBox();
-            this.txtAdminMail = new System.Windows.Forms.TextBox();
             this.txtAdminPassword = new System.Windows.Forms.TextBox();
+            this.txtAdminMail = new System.Windows.Forms.TextBox();
+            this.txtAdminSurname = new System.Windows.Forms.TextBox();
+            this.txtAdminName = new System.Windows.Forms.TextBox();
+            this.btnAdminKayitOl = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -94,27 +94,37 @@ namespace SinavSistemiProje
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "AdminKayıt";
             // 
-            // label4
+            // txtAdminPassword
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label4.ForeColor = System.Drawing.Color.Green;
-            this.label4.Location = new System.Drawing.Point(6, 128);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(112, 25);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "AdminMail:";
+            this.txtAdminPassword.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtAdminPassword.Location = new System.Drawing.Point(210, 173);
+            this.txtAdminPassword.Name = "txtAdminPassword";
+            this.txtAdminPassword.Size = new System.Drawing.Size(195, 30);
+            this.txtAdminPassword.TabIndex = 9;
             // 
-            // label5
+            // txtAdminMail
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label5.ForeColor = System.Drawing.Color.Green;
-            this.label5.Location = new System.Drawing.Point(6, 173);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(153, 25);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "AdminPassword:";
+            this.txtAdminMail.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtAdminMail.Location = new System.Drawing.Point(210, 128);
+            this.txtAdminMail.Name = "txtAdminMail";
+            this.txtAdminMail.Size = new System.Drawing.Size(195, 30);
+            this.txtAdminMail.TabIndex = 8;
+            // 
+            // txtAdminSurname
+            // 
+            this.txtAdminSurname.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtAdminSurname.Location = new System.Drawing.Point(210, 77);
+            this.txtAdminSurname.Name = "txtAdminSurname";
+            this.txtAdminSurname.Size = new System.Drawing.Size(195, 30);
+            this.txtAdminSurname.TabIndex = 7;
+            // 
+            // txtAdminName
+            // 
+            this.txtAdminName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtAdminName.Location = new System.Drawing.Point(210, 28);
+            this.txtAdminName.Name = "txtAdminName";
+            this.txtAdminName.Size = new System.Drawing.Size(195, 30);
+            this.txtAdminName.TabIndex = 6;
             // 
             // btnAdminKayitOl
             // 
@@ -128,37 +138,27 @@ namespace SinavSistemiProje
             this.btnAdminKayitOl.UseVisualStyleBackColor = true;
             this.btnAdminKayitOl.Click += new System.EventHandler(this.btnAdminKayitOl_Click);
             // 
-            // txtAdminName
+            // label5
             // 
-            this.txtAdminName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtAdminName.Location = new System.Drawing.Point(210, 28);
-            this.txtAdminName.Name = "txtAdminName";
-            this.txtAdminName.Size = new System.Drawing.Size(195, 30);
-            this.txtAdminName.TabIndex = 6;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label5.ForeColor = System.Drawing.Color.Green;
+            this.label5.Location = new System.Drawing.Point(6, 173);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(153, 25);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "AdminPassword:";
             // 
-            // txtAdminSurname
+            // label4
             // 
-            this.txtAdminSurname.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtAdminSurname.Location = new System.Drawing.Point(210, 77);
-            this.txtAdminSurname.Name = "txtAdminSurname";
-            this.txtAdminSurname.Size = new System.Drawing.Size(195, 30);
-            this.txtAdminSurname.TabIndex = 7;
-            // 
-            // txtAdminMail
-            // 
-            this.txtAdminMail.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtAdminMail.Location = new System.Drawing.Point(210, 128);
-            this.txtAdminMail.Name = "txtAdminMail";
-            this.txtAdminMail.Size = new System.Drawing.Size(195, 30);
-            this.txtAdminMail.TabIndex = 8;
-            // 
-            // txtAdminPassword
-            // 
-            this.txtAdminPassword.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtAdminPassword.Location = new System.Drawing.Point(210, 173);
-            this.txtAdminPassword.Name = "txtAdminPassword";
-            this.txtAdminPassword.Size = new System.Drawing.Size(195, 30);
-            this.txtAdminPassword.TabIndex = 9;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label4.ForeColor = System.Drawing.Color.Green;
+            this.label4.Location = new System.Drawing.Point(6, 128);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(112, 25);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "AdminMail:";
             // 
             // FrmAdminKayit
             // 
