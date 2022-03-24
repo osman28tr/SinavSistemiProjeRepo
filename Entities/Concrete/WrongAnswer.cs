@@ -7,13 +7,10 @@ using System.Threading.Tasks;
 
 namespace Entities.Concrete
 {
-    public class Question:IEntity
+    public class WrongAnswer:IEntity
     {
+        public int WrongAnswerId { get; set; }
         public int QuestionId { get; set; }
-        public int SubjectId { get; set; }
-        public string QuestionName { get; set; }
-        public string PicturePath { get; set; }
-        public bool ConfirmState { get; set; }
-
+        public string WrongAnswerName { get; set; }
     }
 }

@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Abstract\IEntity.cs" />
     <Compile Include="Concrete\Admin.cs" />
+    <Compile Include="Concrete\CorrectAnswer.cs" />
     <Compile Include="Concrete\Lesson.cs" />
     <Compile Include="Concrete\Question.cs" />
     <Compile Include="Concrete\QuestionDetail.cs" />
@@ -50,7 +51,9 @@
     <Compile Include="Concrete\Subject.cs" />
     <Compile Include="Concrete\Teacher.cs" />
     <Compile Include="Concrete\Unit.cs" />
+    <Compile Include="Concrete\WrongAnswer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
