@@ -25,7 +25,9 @@ namespace SinavSistemiProje
         List<Question> sorulistesi = new List<Question>();
         QuestionManager questionManager = new QuestionManager(new EfQuestionDal());
         QuestionDetailManager questionDetailManager = new QuestionDetailManager(new EfQuestionDetailDal());
-        int sorusayisi;
+        CorrectAnswerManager correctAnswerManager = new CorrectAnswerManager(new EfCorrectAnswerDal());
+        WrongAnswerManager wrongAnswerManager = new WrongAnswerManager(new EfWrongAnswerDal());
+        int sorusayisi, dogrusorusayisi;
         private void FrmÖgrenciSinavModul_Load(object sender, EventArgs e)
         {
             MessageBox.Show("Sınav Kuralları: Soru başına 1 dk süreniz olacak. Başarılar Dileriz...");
@@ -34,7 +36,12 @@ namespace SinavSistemiProje
             StartTimer();
             //dataGridView1.DataSource = questionManager.GetQuestionsByNotAnswered(questionDetailManager.GetQuestionsByFalse()); //deneme için
             GenerateQuestions();
-            int dogrusorusayisi = GetByQuestionAnswered().Count;
+            if (GetByQuestionAnswered() == null)//öğrencinin hiçbir soruyu doğru bilememesi durumuna göre ekledim.       
+                dogrusorusayisi = 0;
+            //else if (GetByQuestionAnswered()[0] == null) // onaylanmayan sorunun karşısına çıkmaması durumuna göre ekledim.
+            //    dogrusorusayisi = 0;
+            else
+                dogrusorusayisi = GetByQuestionAnswered().Count;
             sorusayisi = 10 + dogrusorusayisi;
             FillTheElements(); //soruüret=1
         }
@@ -51,6 +58,13 @@ namespace SinavSistemiProje
                 {
                     btnBitir.Visible = true;
                     btnİlerle.Enabled = false;
+                    if (dogrusorusayisi == 1) //öğrenci daha önceden sadece 1 soruyu bilmesi(ve 6 sigmaya göre) durumuna göre ekledim.
+                    {
+                        MessageBox.Show("soru sayisi 11 oldu : soru üret: " + soruüret);
+                        sorulistesi.Clear();
+                        soruüret = 0;
+                        sorulistesi = GetByQuestionAnswered();
+                    }
                 }
                 //    int sorusayisi = 10 + GetByQuestionAnswered().Count;
                 //    if (durum == false)
@@ -143,12 +157,19 @@ namespace SinavSistemiProje
         }
         private void FillTheElements() //rastgele getirilen 10 tane soruyu ilgili toollara doldurur.
         {
+            //başlangıçta buga girdi bunu ekledim.
+            //var questionsfalse = questionDetailManager.GetQuestionsByFalse(id);
+            //sorulistesi = questionManager.GetQuestionsByNotAnswered(questionsfalse);
+
             rctxQuestionName.Text = sorulistesi[soruüret].QuestionName;
             pictureBox1.ImageLocation = sorulistesi[soruüret].PicturePath;
-            txtSecenekA.Text = sorulistesi[soruüret].QuestionCorrectAnswer;
-            txtSecenekB.Text = sorulistesi[soruüret].QuestionWrongAnswer1;
-            txtSecenekC.Text = sorulistesi[soruüret].QuestionWrongAnswer2;
-            txtSecenekD.Text = sorulistesi[soruüret].QuestionWrongAnswer3;
+            txtSecenekA.Text = correctAnswerManager.Get(sorulistesi[soruüret].QuestionId).CorrectAnswerName;
+            //txtSecenekB.Text = sorulistesi[soruüret].QuestionWrongAnswer1;
+            //txtSecenekC.Text = sorulistesi[soruüret].QuestionWrongAnswer2;
+            //txtSecenekD.Text = sorulistesi[soruüret].QuestionWrongAnswer3;
+            txtSecenekB.Text = wrongAnswerManager.GetAll(sorulistesi[soruüret].QuestionId)[0].WrongAnswerName; //normalizasyon
+            txtSecenekC.Text = wrongAnswerManager.GetAll(sorulistesi[soruüret].QuestionId)[1].WrongAnswerName;
+            txtSecenekD.Text = wrongAnswerManager.GetAll(sorulistesi[soruüret].QuestionId)[2].WrongAnswerName;
             soruüret++;
         }
 

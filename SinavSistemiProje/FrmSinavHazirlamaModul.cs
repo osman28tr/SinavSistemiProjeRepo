@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,9 +26,12 @@ namespace SinavSistemiProje
         LessonManager lessonManager = new LessonManager(new EfLessonDal());
         UnitManager unitManager = new UnitManager(new EfUnitDal());
         SubjectManager subjectManager = new SubjectManager(new EfSubjectDal());
+        WrongAnswerManager wrongAnswerManager = new WrongAnswerManager(new EfWrongAnswerDal());
+        CorrectAnswerManager correctAnswerManager = new CorrectAnswerManager(new EfCorrectAnswerDal());
         string DosyaYolu = "";
         string CorrectAnswer = "";
         string[] WrongAnswer = new string[3];
+        int id; //normalizasyon
         private void FrmSinavHazirlamaModul_Load(object sender, EventArgs e)
         {
             LoadLessons();
@@ -52,23 +56,48 @@ namespace SinavSistemiProje
         private void btnEkle_Click(object sender, EventArgs e)
         {
             CheckedState();
+            //string imagefile = Path.GetFileName(pictureBox1.ImageLocation);
+            //string imagepath = Path.Combine("\\images\\" + imagefile);
+            //File.Copy(pictureBox1.ImageLocation, imagepath, true);
+
             questionManager.Add(new Question
             {
                 QuestionName = rctxQuestionName.Text,
                 PicturePath = DosyaYolu,
-                QuestionCorrectAnswer = CorrectAnswer,
-                QuestionWrongAnswer1 = WrongAnswer[0],
-                QuestionWrongAnswer2 = WrongAnswer[1],
-                QuestionWrongAnswer3 = WrongAnswer[2],
+                //QuestionCorrectAnswer = CorrectAnswer,
+                //QuestionWrongAnswer1 = WrongAnswer[0],
+                //QuestionWrongAnswer2 = WrongAnswer[1],
+                //QuestionWrongAnswer3 = WrongAnswer[2],
                 SubjectId = (int)cmbSubject.SelectedValue,
             });
             QuestionDetailAdd();
+            CorrectAnswerAdd();//normalizasyon
+            WrongAnswerAdd();//normalizasyon
             MessageBox.Show("Hazırladığınız soru admine başarıyla gönderildi!");
         }
         private void QuestionDetailAdd()
         {
-            int id = questionManager.GetAll().LastOrDefault().QuestionId;
+            id = questionManager.GetAll().LastOrDefault().QuestionId;
             questionDetailManager.Add(new QuestionDetail { QuestionId = id, StudentId = (int)cmbStudents.SelectedValue, SigmaCount = 0, AnsweredDate = DateTime.Now, QuestionState = false });
+        }
+        private void CorrectAnswerAdd()
+        {
+            correctAnswerManager.Add(new CorrectAnswer
+            {
+                CorrectAnswerName = CorrectAnswer,
+                QuestionId = id
+            });
+        }
+        private void WrongAnswerAdd()
+        {
+            for (int i = 0; i < 3; i++)
+            {
+                wrongAnswerManager.Add(new WrongAnswer
+                {
+                    WrongAnswerName = WrongAnswer[i],
+                    QuestionId = id
+                });
+            }           
         }
         private void CheckedState()
         {

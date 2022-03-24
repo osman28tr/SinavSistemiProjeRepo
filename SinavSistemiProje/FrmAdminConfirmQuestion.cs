@@ -59,7 +59,7 @@ namespace SinavSistemiProje
             //}
                             
         }
-        private void UpdateQuestion(/*bool state*/)
+        private void UpdateQuestion(/*bool state*/) //normalizasyon.
         {
             var row = DgwSorular.CurrentRow;
             questionManager.Update(new Question
@@ -68,10 +68,6 @@ namespace SinavSistemiProje
                 SubjectId = Convert.ToInt32(row.Cells[1].Value.ToString()),
                 QuestionName = row.Cells[2].Value.ToString(),
                 PicturePath = row.Cells[3].Value.ToString(),
-                QuestionCorrectAnswer = row.Cells[4].Value.ToString(),
-                QuestionWrongAnswer1 = row.Cells[5].Value.ToString(),
-                QuestionWrongAnswer2 = row.Cells[6].Value.ToString(),
-                QuestionWrongAnswer3 = row.Cells[7].Value.ToString(),
                 ConfirmState = true
             });
         }
