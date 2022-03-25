@@ -1,6 +1,8 @@
 ﻿using Business.Abstract;
+using Business.ValidationRules.FluentValidation;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using FluentValidation.Results;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,16 +15,44 @@ namespace Business.Concrete
     public class QuestionManager : IQuestionService
     {
         IQuestionDal _questionDal;
+        private static QuestionValidator questionValidator = new QuestionValidator();
+        List<string> validations = new List<string>();
         Random random = new Random();
         public QuestionManager(IQuestionDal questionDal)
         {
             _questionDal = questionDal;
         }
-        public void Add(Question question)
+        public List<string> Add(Question question)
         {
-            _questionDal.Add(question);
+            IList<ValidationFailure> failures = Dogrula(question);
+            if (failures != null)
+            {
+                foreach (var failure in failures)
+                {
+                    validations.Add(failure.ErrorMessage);
+                }
+                return validations;
+            }
+            else
+            {
+                _questionDal.Add(question);
+                return null;
+            }
         }
+        public IList<ValidationFailure> Dogrula(Question question)
+        {
+            var result = questionValidator.Validate(question);
+            IList<ValidationFailure> failures = result.Errors;
+            if (!result.IsValid)
+            {
+                return failures;
+            }
+            else
+            {
+                return null;
+            }
 
+        }
         public void Delete(Question question)
         {
             _questionDal.Delete(question);

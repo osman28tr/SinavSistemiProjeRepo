@@ -11,8 +11,8 @@ namespace Business.Abstract
     public interface IQuestionService
     {
         List<Question> GetAll();
-        Question Get();       
-        void Add(Question question);
+        Question Get();
+        List<string> Add(Question question);
         void Update(Question question);
         void Delete(Question question);
         List<Question> GetQuestionsByNotAnswered(List<QuestionDetail> questionDetails);

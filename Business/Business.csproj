@@ -69,6 +69,8 @@
     <Compile Include="Concrete\WrongAnswerManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ValidationRules\FluentValidation\AdminValidator.cs" />
+    <Compile Include="ValidationRules\FluentValidation\CorrectAnswerValidator.cs" />
+    <Compile Include="ValidationRules\FluentValidation\QuestionValidator.cs" />
     <Compile Include="ValidationRules\FluentValidation\StudentValidator.cs" />
     <Compile Include="ValidationRules\FluentValidation\TeacherValidator.cs" />
   </ItemGroup>

@@ -97,9 +97,9 @@ namespace SinavSistemiProje
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(251, 118);
+            this.pictureBox1.Location = new System.Drawing.Point(881, 62);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(336, 137);
+            this.pictureBox1.Size = new System.Drawing.Size(382, 268);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 19;
             this.pictureBox1.TabStop = false;
@@ -109,7 +109,7 @@ namespace SinavSistemiProje
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(135, 138);
+            this.label2.Location = new System.Drawing.Point(1192, 31);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(71, 28);
             this.label2.TabIndex = 18;
@@ -119,7 +119,7 @@ namespace SinavSistemiProje
             // 
             this.rctxQuestionName.Location = new System.Drawing.Point(251, 62);
             this.rctxQuestionName.Name = "rctxQuestionName";
-            this.rctxQuestionName.Size = new System.Drawing.Size(336, 50);
+            this.rctxQuestionName.Size = new System.Drawing.Size(624, 268);
             this.rctxQuestionName.TabIndex = 17;
             this.rctxQuestionName.Text = "";
             // 
@@ -145,7 +145,7 @@ namespace SinavSistemiProje
             this.groupBox2.Controls.Add(this.txtSecenekB);
             this.groupBox2.Controls.Add(this.radioButton1);
             this.groupBox2.Controls.Add(this.txtSecenekA);
-            this.groupBox2.Location = new System.Drawing.Point(158, 261);
+            this.groupBox2.Location = new System.Drawing.Point(251, 348);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(446, 287);
             this.groupBox2.TabIndex = 20;
@@ -167,7 +167,7 @@ namespace SinavSistemiProje
             // 
             this.radioButton4.AutoSize = true;
             this.radioButton4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.radioButton4.Location = new System.Drawing.Point(24, 204);
+            this.radioButton4.Location = new System.Drawing.Point(24, 213);
             this.radioButton4.Name = "radioButton4";
             this.radioButton4.Size = new System.Drawing.Size(43, 27);
             this.radioButton4.TabIndex = 7;
@@ -181,14 +181,14 @@ namespace SinavSistemiProje
             this.txtSecenekD.Location = new System.Drawing.Point(86, 204);
             this.txtSecenekD.Multiline = true;
             this.txtSecenekD.Name = "txtSecenekD";
-            this.txtSecenekD.Size = new System.Drawing.Size(299, 27);
+            this.txtSecenekD.Size = new System.Drawing.Size(313, 49);
             this.txtSecenekD.TabIndex = 6;
             // 
             // radioButton3
             // 
             this.radioButton3.AutoSize = true;
             this.radioButton3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.radioButton3.Location = new System.Drawing.Point(24, 146);
+            this.radioButton3.Location = new System.Drawing.Point(23, 146);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(42, 27);
             this.radioButton3.TabIndex = 5;
@@ -202,14 +202,14 @@ namespace SinavSistemiProje
             this.txtSecenekC.Location = new System.Drawing.Point(86, 146);
             this.txtSecenekC.Multiline = true;
             this.txtSecenekC.Name = "txtSecenekC";
-            this.txtSecenekC.Size = new System.Drawing.Size(299, 27);
+            this.txtSecenekC.Size = new System.Drawing.Size(313, 51);
             this.txtSecenekC.TabIndex = 4;
             // 
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
             this.radioButton2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.radioButton2.Location = new System.Drawing.Point(24, 84);
+            this.radioButton2.Location = new System.Drawing.Point(23, 84);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(41, 27);
             this.radioButton2.TabIndex = 3;
@@ -223,7 +223,7 @@ namespace SinavSistemiProje
             this.txtSecenekB.Location = new System.Drawing.Point(86, 84);
             this.txtSecenekB.Multiline = true;
             this.txtSecenekB.Name = "txtSecenekB";
-            this.txtSecenekB.Size = new System.Drawing.Size(299, 27);
+            this.txtSecenekB.Size = new System.Drawing.Size(313, 56);
             this.txtSecenekB.TabIndex = 2;
             // 
             // radioButton1
@@ -244,14 +244,14 @@ namespace SinavSistemiProje
             this.txtSecenekA.Location = new System.Drawing.Point(86, 25);
             this.txtSecenekA.Multiline = true;
             this.txtSecenekA.Name = "txtSecenekA";
-            this.txtSecenekA.Size = new System.Drawing.Size(299, 27);
+            this.txtSecenekA.Size = new System.Drawing.Size(313, 53);
             this.txtSecenekA.TabIndex = 0;
             // 
             // btnİlerle
             // 
             this.btnİlerle.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnİlerle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnİlerle.Location = new System.Drawing.Point(209, 558);
+            this.btnİlerle.Location = new System.Drawing.Point(290, 641);
             this.btnİlerle.Name = "btnİlerle";
             this.btnİlerle.Size = new System.Drawing.Size(179, 54);
             this.btnİlerle.TabIndex = 21;
@@ -264,7 +264,7 @@ namespace SinavSistemiProje
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label4.Location = new System.Drawing.Point(593, 62);
+            this.label4.Location = new System.Drawing.Point(12, 37);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(59, 28);
             this.label4.TabIndex = 22;
@@ -275,7 +275,7 @@ namespace SinavSistemiProje
             this.lblSoru.AutoSize = true;
             this.lblSoru.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblSoru.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblSoru.Location = new System.Drawing.Point(649, 62);
+            this.lblSoru.Location = new System.Drawing.Point(102, 37);
             this.lblSoru.Name = "lblSoru";
             this.lblSoru.Size = new System.Drawing.Size(23, 28);
             this.lblSoru.TabIndex = 23;
@@ -285,7 +285,7 @@ namespace SinavSistemiProje
             // 
             this.btnBitir.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnBitir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnBitir.Location = new System.Drawing.Point(394, 558);
+            this.btnBitir.Location = new System.Drawing.Point(518, 641);
             this.btnBitir.Name = "btnBitir";
             this.btnBitir.Size = new System.Drawing.Size(179, 54);
             this.btnBitir.TabIndex = 24;
@@ -296,7 +296,7 @@ namespace SinavSistemiProje
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(10, 261);
+            this.dataGridView1.Location = new System.Drawing.Point(17, 348);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
@@ -308,7 +308,7 @@ namespace SinavSistemiProje
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Olive;
-            this.ClientSize = new System.Drawing.Size(717, 624);
+            this.ClientSize = new System.Drawing.Size(1275, 721);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnBitir);
             this.Controls.Add(this.lblSoru);

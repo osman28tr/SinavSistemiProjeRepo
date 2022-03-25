@@ -63,22 +63,46 @@ namespace SinavSistemiProje
             string imagefile = Path.GetFileName(pictureBox1.ImageLocation);
             string imagepath = Path.Combine(Application.StartupPath + "\\images\\" + sayi + imagefile);
             string imagename = Path.Combine("\\images\\" + sayi + imagefile);
-            File.Copy(pictureBox1.ImageLocation, imagepath);
-
-            questionManager.Add(new Question
+            //File.Copy(pictureBox1.ImageLocation, imagepath);
+            if (imagefile == null)
+                imagename = "";
+            var failstatestring = questionManager.Add(new Question
             {
                 QuestionName = rctxQuestionName.Text,
-                PicturePath = imagename,
-                //QuestionCorrectAnswer = CorrectAnswer,
-                //QuestionWrongAnswer1 = WrongAnswer[0],
-                //QuestionWrongAnswer2 = WrongAnswer[1],
-                //QuestionWrongAnswer3 = WrongAnswer[2],
                 SubjectId = (int)cmbSubject.SelectedValue,
+
+                PicturePath = imagename,
             });
-            QuestionDetailAdd();
-            CorrectAnswerAdd();//normalizasyon
-            WrongAnswerAdd();//normalizasyon
-            MessageBox.Show("Hazırladığınız soru admine başarıyla gönderildi!");
+            if (failstatestring != null)
+            {
+                foreach (var item in failstatestring)
+                {
+                    MessageBox.Show(item.ToString());
+                }
+                failstatestring.Clear();
+            }
+            else
+            {
+                File.Copy(pictureBox1.ImageLocation, imagepath);
+                MessageBox.Show("Hazırladığınız soru admine başarıyla gönderildi!");
+                QuestionDetailAdd();
+                CorrectAnswerAdd();//normalizasyon
+                WrongAnswerAdd();//normalizasyon
+            }              
+            //questionManager.Add(new Question
+            //{
+            //    QuestionName = rctxQuestionName.Text,
+            //    PicturePath = imagename,
+            //    //QuestionCorrectAnswer = CorrectAnswer,
+            //    //QuestionWrongAnswer1 = WrongAnswer[0],
+            //    //QuestionWrongAnswer2 = WrongAnswer[1],
+            //    //QuestionWrongAnswer3 = WrongAnswer[2],
+            //    SubjectId = (int)cmbSubject.SelectedValue,
+            //});
+            //QuestionDetailAdd();
+            //CorrectAnswerAdd();//normalizasyon
+            //WrongAnswerAdd();//normalizasyon
+            //MessageBox.Show("Hazırladığınız soru admine başarıyla gönderildi!");
         }
         private void QuestionDetailAdd()
         {
