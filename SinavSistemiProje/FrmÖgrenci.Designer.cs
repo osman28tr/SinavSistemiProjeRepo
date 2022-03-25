@@ -38,6 +38,7 @@ namespace SinavSistemiProje
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,7 +53,7 @@ namespace SinavSistemiProje
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(165, 100);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(442, 290);
+            this.groupBox1.Size = new System.Drawing.Size(482, 290);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Öğrenci";
@@ -92,6 +93,7 @@ namespace SinavSistemiProje
             this.txtSifre.Name = "txtSifre";
             this.txtSifre.Size = new System.Drawing.Size(185, 30);
             this.txtSifre.TabIndex = 4;
+            this.txtSifre.UseSystemPasswordChar = true;
             // 
             // btnGiris
             // 
@@ -136,12 +138,24 @@ namespace SinavSistemiProje
             this.label3.TabIndex = 8;
             this.label3.Text = "LÜTFEN GİRİŞ YAPINIZ";
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(514, 173);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(73, 21);
+            this.checkBox1.TabIndex = 11;
+            this.checkBox1.Text = "Göster";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
             // FrmÖgrenci
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Olive;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label3);
             this.Name = "FrmÖgrenci";
@@ -164,5 +178,6 @@ namespace SinavSistemiProje
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnSifremiUnuttum;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

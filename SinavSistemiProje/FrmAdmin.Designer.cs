@@ -37,6 +37,7 @@ namespace SinavSistemiProje
             this.btnGiris = new System.Windows.Forms.Button();
             this.btnKayitOl = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.btnSifremiUnuttum = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -89,6 +90,7 @@ namespace SinavSistemiProje
             this.txtSifre.Name = "txtSifre";
             this.txtSifre.Size = new System.Drawing.Size(185, 30);
             this.txtSifre.TabIndex = 4;
+            this.txtSifre.UseSystemPasswordChar = true;
             // 
             // btnGiris
             // 
@@ -112,6 +114,7 @@ namespace SinavSistemiProje
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.checkBox1);
             this.groupBox1.Controls.Add(this.btnSifremiUnuttum);
             this.groupBox1.Controls.Add(this.txtMail);
             this.groupBox1.Controls.Add(this.btnKayitOl);
@@ -121,10 +124,21 @@ namespace SinavSistemiProje
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(164, 87);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(442, 290);
+            this.groupBox1.Size = new System.Drawing.Size(488, 290);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Admin";
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(349, 77);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(73, 21);
+            this.checkBox1.TabIndex = 9;
+            this.checkBox1.Text = "Göster";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // btnSifremiUnuttum
             // 
@@ -164,5 +178,6 @@ namespace SinavSistemiProje
         private System.Windows.Forms.Button btnKayitOl;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnSifremiUnuttum;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

@@ -33,6 +33,7 @@ namespace SinavSistemiProje
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.txtAdminPassword = new System.Windows.Forms.TextBox();
             this.txtAdminMail = new System.Windows.Forms.TextBox();
             this.txtAdminSurname = new System.Windows.Forms.TextBox();
@@ -78,6 +79,7 @@ namespace SinavSistemiProje
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.checkBox1);
             this.groupBox1.Controls.Add(this.txtAdminPassword);
             this.groupBox1.Controls.Add(this.txtAdminMail);
             this.groupBox1.Controls.Add(this.txtAdminSurname);
@@ -89,10 +91,21 @@ namespace SinavSistemiProje
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Location = new System.Drawing.Point(143, 104);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(516, 304);
+            this.groupBox1.Size = new System.Drawing.Size(537, 304);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "AdminKayıt";
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(411, 180);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(73, 21);
+            this.checkBox1.TabIndex = 10;
+            this.checkBox1.Text = "Göster";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // txtAdminPassword
             // 
@@ -101,6 +114,7 @@ namespace SinavSistemiProje
             this.txtAdminPassword.Name = "txtAdminPassword";
             this.txtAdminPassword.Size = new System.Drawing.Size(195, 30);
             this.txtAdminPassword.TabIndex = 9;
+            this.txtAdminPassword.UseSystemPasswordChar = true;
             // 
             // txtAdminMail
             // 
@@ -190,5 +204,6 @@ namespace SinavSistemiProje
         private System.Windows.Forms.Button btnAdminKayitOl;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

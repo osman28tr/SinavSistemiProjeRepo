@@ -30,6 +30,7 @@ namespace SinavSistemiProje
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.txtTeacherTel = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtTeacherPassword = new System.Windows.Forms.TextBox();
@@ -47,6 +48,7 @@ namespace SinavSistemiProje
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.checkBox1);
             this.groupBox1.Controls.Add(this.txtTeacherTel);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.txtTeacherPassword);
@@ -60,10 +62,21 @@ namespace SinavSistemiProje
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Location = new System.Drawing.Point(142, 91);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(516, 364);
+            this.groupBox1.Size = new System.Drawing.Size(536, 364);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ÖğretmenKayıt";
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(411, 182);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(73, 21);
+            this.checkBox1.TabIndex = 13;
+            this.checkBox1.Text = "Göster";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // txtTeacherTel
             // 
@@ -91,6 +104,7 @@ namespace SinavSistemiProje
             this.txtTeacherPassword.Name = "txtTeacherPassword";
             this.txtTeacherPassword.Size = new System.Drawing.Size(195, 30);
             this.txtTeacherPassword.TabIndex = 9;
+            this.txtTeacherPassword.UseSystemPasswordChar = true;
             // 
             // txtTeacherMail
             // 
@@ -215,5 +229,6 @@ namespace SinavSistemiProje
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

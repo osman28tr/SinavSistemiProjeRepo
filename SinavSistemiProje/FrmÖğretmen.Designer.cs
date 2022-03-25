@@ -30,6 +30,7 @@ namespace SinavSistemiProje
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnSifremiUnuttum = new System.Windows.Forms.Button();
             this.txtMail = new System.Windows.Forms.TextBox();
             this.btnKayitOl = new System.Windows.Forms.Button();
             this.txtSifre = new System.Windows.Forms.TextBox();
@@ -37,12 +38,13 @@ namespace SinavSistemiProje
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnSifremiUnuttum = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.checkBox1);
             this.groupBox1.Controls.Add(this.btnSifremiUnuttum);
             this.groupBox1.Controls.Add(this.txtMail);
             this.groupBox1.Controls.Add(this.btnKayitOl);
@@ -52,10 +54,20 @@ namespace SinavSistemiProje
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(151, 115);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(442, 290);
+            this.groupBox1.Size = new System.Drawing.Size(474, 290);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Öğretmen";
+            // 
+            // btnSifremiUnuttum
+            // 
+            this.btnSifremiUnuttum.Location = new System.Drawing.Point(311, 126);
+            this.btnSifremiUnuttum.Name = "btnSifremiUnuttum";
+            this.btnSifremiUnuttum.Size = new System.Drawing.Size(125, 30);
+            this.btnSifremiUnuttum.TabIndex = 10;
+            this.btnSifremiUnuttum.Text = "Şifremi Unuttum";
+            this.btnSifremiUnuttum.UseVisualStyleBackColor = true;
+            this.btnSifremiUnuttum.Click += new System.EventHandler(this.btnSifremiUnuttum_Click);
             // 
             // txtMail
             // 
@@ -82,6 +94,7 @@ namespace SinavSistemiProje
             this.txtSifre.Name = "txtSifre";
             this.txtSifre.Size = new System.Drawing.Size(185, 30);
             this.txtSifre.TabIndex = 4;
+            this.txtSifre.UseSystemPasswordChar = true;
             // 
             // btnGiris
             // 
@@ -126,15 +139,16 @@ namespace SinavSistemiProje
             this.label3.TabIndex = 10;
             this.label3.Text = "LÜTFEN GİRİŞ YAPINIZ";
             // 
-            // btnSifremiUnuttum
+            // checkBox1
             // 
-            this.btnSifremiUnuttum.Location = new System.Drawing.Point(311, 126);
-            this.btnSifremiUnuttum.Name = "btnSifremiUnuttum";
-            this.btnSifremiUnuttum.Size = new System.Drawing.Size(125, 30);
-            this.btnSifremiUnuttum.TabIndex = 10;
-            this.btnSifremiUnuttum.Text = "Şifremi Unuttum";
-            this.btnSifremiUnuttum.UseVisualStyleBackColor = true;
-            this.btnSifremiUnuttum.Click += new System.EventHandler(this.btnSifremiUnuttum_Click);
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(349, 75);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(73, 21);
+            this.checkBox1.TabIndex = 12;
+            this.checkBox1.Text = "Göster";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // FrmÖğretmen
             // 
@@ -164,5 +178,6 @@ namespace SinavSistemiProje
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnSifremiUnuttum;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

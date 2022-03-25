@@ -58,5 +58,19 @@ namespace SinavSistemiProje
         {
             studentManager.Update(new Student { StudentId = ogrid, StudentName = txtStudentName.Text, StudentSurname = txtStudentSurname.Text, StudentNo = txtStudentNo.Text, StudentMail = txtStudentMail.Text, StudentPassword = txtStudentPassword.Text });
         }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked == true)
+            {
+                txtStudentPassword.UseSystemPasswordChar = false;
+                checkBox1.Text = "Gizle";
+            }
+            else
+            {
+                txtStudentPassword.UseSystemPasswordChar = true;
+                checkBox1.Text = "Göster";
+            }
+        }
     }
 }

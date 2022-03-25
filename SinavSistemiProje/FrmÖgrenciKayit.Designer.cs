@@ -30,6 +30,9 @@ namespace SinavSistemiProje
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.txtStudentNo = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.txtStudentPassword = new System.Windows.Forms.TextBox();
             this.txtStudentMail = new System.Windows.Forms.TextBox();
             this.txtStudentSurname = new System.Windows.Forms.TextBox();
@@ -40,13 +43,12 @@ namespace SinavSistemiProje
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtStudentNo = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.checkBox1);
             this.groupBox1.Controls.Add(this.txtStudentNo);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.txtStudentPassword);
@@ -60,10 +62,41 @@ namespace SinavSistemiProje
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Location = new System.Drawing.Point(152, 117);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(516, 364);
+            this.groupBox1.Size = new System.Drawing.Size(534, 364);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ÖğrenciKayıt";
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(411, 182);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(73, 21);
+            this.checkBox1.TabIndex = 12;
+            this.checkBox1.Text = "Göster";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // txtStudentNo
+            // 
+            this.txtStudentNo.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtStudentNo.Location = new System.Drawing.Point(210, 218);
+            this.txtStudentNo.Name = "txtStudentNo";
+            this.txtStudentNo.Size = new System.Drawing.Size(195, 30);
+            this.txtStudentNo.TabIndex = 11;
+            this.txtStudentNo.UseSystemPasswordChar = true;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label6.Location = new System.Drawing.Point(6, 218);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(110, 25);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "ÖğrenciNo:";
             // 
             // txtStudentPassword
             // 
@@ -164,25 +197,6 @@ namespace SinavSistemiProje
             this.label2.TabIndex = 4;
             this.label2.Text = "ÖğrenciKayıt";
             // 
-            // txtStudentNo
-            // 
-            this.txtStudentNo.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtStudentNo.Location = new System.Drawing.Point(210, 218);
-            this.txtStudentNo.Name = "txtStudentNo";
-            this.txtStudentNo.Size = new System.Drawing.Size(195, 30);
-            this.txtStudentNo.TabIndex = 11;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label6.Location = new System.Drawing.Point(6, 218);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(110, 25);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "ÖğrenciNo:";
-            // 
             // FrmÖgrenciKayit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -215,5 +229,6 @@ namespace SinavSistemiProje
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtStudentNo;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
