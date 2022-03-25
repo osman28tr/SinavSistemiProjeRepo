@@ -16,6 +16,6 @@ namespace Business.Abstract
         void Update(Admin admin);
         void Delete(Admin admin);
         string SifremiGöster(string mail, string name);
-        string GirisYap(string mail, string sifre);
+        Admin GirisYap(string mail, string sifre);
     }
 }

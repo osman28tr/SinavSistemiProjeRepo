@@ -1,6 +1,8 @@
 ﻿using Business.Abstract;
+using Business.ValidationRules.FluentValidation;
 using DataAccess.Abstract;
 using Entities;
+using FluentValidation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +15,7 @@ namespace Business.Concrete
     public class AdminManager : IAdminService
     {
         IAdminDal _adminDal;
+        private static AdminValidator adminValidator = new AdminValidator();
         public AdminManager(IAdminDal adminDal)
         {
             _adminDal = adminDal;
@@ -20,6 +23,11 @@ namespace Business.Concrete
 
         public void Add(Admin admin)
         {
+            var result = adminValidator.Validate(admin);
+            if (result.Errors.Count > 0)
+            {
+                throw new ValidationException(result.Errors);
+            }
             _adminDal.Add(admin);
         }
 
@@ -38,12 +46,10 @@ namespace Business.Concrete
             return _adminDal.GetAll();
         }
 
-        public string GirisYap(string mail, string sifre)
+        public Admin GirisYap(string mail, string sifre)
         {
             var admin = _adminDal.Get(x => x.AdminMail == mail && x.AdminPassword == sifre);
-            if (admin == null)
-                return "Girdiğiniz Bilgiler Yanlış Lütfen Tekrar Deneyin";
-            return "Giriş Başarılı";
+            return admin;
         }
 
         public string SifremiGöster(string mail, string name)
