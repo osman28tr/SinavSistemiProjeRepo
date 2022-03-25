@@ -22,22 +22,24 @@ namespace SinavSistemiProje
         TeacherManager teacherManager = new TeacherManager(new EfTeacherDal());
         private void btnÖğretmenKayitOl_Click(object sender, EventArgs e)
         {
-            try
+            var failstatestring = teacherManager.Add(new Teacher
             {
-                teacherManager.Add(new Teacher
+                TeacherName = txtTeacherName.Text,
+                TeacherSurname = txtTeacherSurname.Text,
+                TeacherMail = txtTeacherMail.Text,
+                TeacherPassword = txtTeacherPassword.Text,
+                TeacherTel = txtTeacherTel.Text
+            });
+            if (failstatestring != null)
+            {
+                foreach (var item in failstatestring)
                 {
-                    TeacherName = txtTeacherName.Text,
-                    TeacherSurname = txtTeacherSurname.Text,
-                    TeacherMail = txtTeacherMail.Text,
-                    TeacherPassword = txtTeacherPassword.Text,
-                    TeacherTel = txtTeacherTel.Text
-                });
-                MessageBox.Show("Kaydınız Başarılı bir Şekilde Tamamlandı");
+                    MessageBox.Show(item.ToString());
+                }
+                failstatestring.Clear();
             }
-            catch (Exception message)
-            {
-                MessageBox.Show(message.Message);
-            }
+            else
+                MessageBox.Show("Kayit Başarıyla Tamamlandı");
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -51,6 +53,15 @@ namespace SinavSistemiProje
             {
                 txtTeacherPassword.UseSystemPasswordChar = true;
                 checkBox1.Text = "Göster";
+            }
+        }
+
+        private void txtTeacherTel_TextChanged(object sender, EventArgs e)
+        {
+            if (System.Text.RegularExpressions.Regex.IsMatch(txtTeacherTel.Text, "[^0-9]"))
+            {
+                MessageBox.Show("Lütfen sadece numara giriniz.");
+                txtTeacherTel.Text = txtTeacherTel.Text.Remove(txtTeacherTel.Text.Length - 1);
             }
         }
     }

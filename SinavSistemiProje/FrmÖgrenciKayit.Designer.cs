@@ -85,7 +85,6 @@ namespace SinavSistemiProje
             this.txtStudentNo.Name = "txtStudentNo";
             this.txtStudentNo.Size = new System.Drawing.Size(195, 30);
             this.txtStudentNo.TabIndex = 11;
-            this.txtStudentNo.UseSystemPasswordChar = true;
             // 
             // label6
             // 
@@ -105,6 +104,7 @@ namespace SinavSistemiProje
             this.txtStudentPassword.Name = "txtStudentPassword";
             this.txtStudentPassword.Size = new System.Drawing.Size(195, 30);
             this.txtStudentPassword.TabIndex = 9;
+            this.txtStudentPassword.UseSystemPasswordChar = true;
             // 
             // txtStudentMail
             // 

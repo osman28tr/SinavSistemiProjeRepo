@@ -22,22 +22,24 @@ namespace SinavSistemiProje
         StudentManager studentManager = new StudentManager(new EfStudentDal());
         private void btnÖğrenciKayitOl_Click(object sender, EventArgs e)
         {
-            try
+            var failstatestring = studentManager.Add(new Student
             {
-                studentManager.Add(new Student
+                StudentName = txtStudentName.Text,
+                StudentSurname = txtStudentSurname.Text,
+                StudentMail = txtStudentMail.Text,
+                StudentPassword = txtStudentPassword.Text,
+                StudentNo = txtStudentNo.Text
+            });
+            if (failstatestring != null)
+            {
+                foreach (var item in failstatestring)
                 {
-                    StudentName = txtStudentName.Text,
-                    StudentSurname = txtStudentSurname.Text,
-                    StudentMail = txtStudentMail.Text,
-                    StudentPassword = txtStudentPassword.Text,
-                    StudentNo = txtStudentNo.Text
-                });
-                MessageBox.Show("Kayit İşlemi Başarı ile Tamamlandı");
+                    MessageBox.Show(item.ToString());
+                }
+                failstatestring.Clear();
             }
-            catch (Exception message)
-            {
-                MessageBox.Show(message.Message);
-            }
+            else
+                MessageBox.Show("Kayit Başarıyla Tamamlandı");
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)

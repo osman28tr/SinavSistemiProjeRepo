@@ -3,6 +3,7 @@ using Business.ValidationRules.FluentValidation;
 using DataAccess.Abstract;
 using Entities;
 using FluentValidation;
+using FluentValidation.Results;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,21 +17,44 @@ namespace Business.Concrete
     {
         IAdminDal _adminDal;
         private static AdminValidator adminValidator = new AdminValidator();
+        List<string> validations = new List<string>();
         public AdminManager(IAdminDal adminDal)
         {
             _adminDal = adminDal;
         }
 
-        public void Add(Admin admin)
+        public List<string> Add(Admin admin)
+        {
+            // var result = adminValidator.Validate(admin);
+            IList<ValidationFailure> failures = Dogrula(admin);
+            if (failures!=null)
+            {
+                foreach (var failure in failures)
+                {
+                    validations.Add(failure.ErrorMessage);
+                }
+                return validations;
+            }
+            else
+            {
+                _adminDal.Add(admin);
+                return null;
+            }           
+        }
+        public IList<ValidationFailure> Dogrula(Admin admin)
         {
             var result = adminValidator.Validate(admin);
-            if (result.Errors.Count > 0)
+            IList<ValidationFailure> failures = result.Errors;
+            if (!result.IsValid)
             {
-                throw new ValidationException(result.Errors);
+                return failures;
             }
-            _adminDal.Add(admin);
-        }
+            else
+            {
+                return null;
+            }
 
+        }
         public void Delete(Admin admin)
         {
             _adminDal.Delete(admin);

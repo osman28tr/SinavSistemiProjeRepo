@@ -1,4 +1,5 @@
 ﻿using Entities.Concrete;
+using FluentValidation.Results;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,8 @@ namespace Business.Abstract
     {
         List<Student> GetAll();
         Student Get(int id);
-        void Add(Student student);
+        List<string> Add(Student student);
+        IList<ValidationFailure> Dogrula(Student student);
         void Update(Student student);
         void Delete(Student student);
         int GetStudentId(string mail);

@@ -85,6 +85,7 @@ namespace SinavSistemiProje
             this.txtTeacherTel.Name = "txtTeacherTel";
             this.txtTeacherTel.Size = new System.Drawing.Size(195, 30);
             this.txtTeacherTel.TabIndex = 11;
+            this.txtTeacherTel.TextChanged += new System.EventHandler(this.txtTeacherTel_TextChanged);
             // 
             // label6
             // 

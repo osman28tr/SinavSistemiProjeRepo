@@ -1,4 +1,5 @@
 ﻿using Entities.Concrete;
+using FluentValidation.Results;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,8 @@ namespace Business.Abstract
     {
         List<Teacher> GetAll();
         Teacher Get();
-        void Add(Teacher teacher);
+        List<string> Add(Teacher teacher);
+        IList<ValidationFailure> Dogrula(Teacher teacher);
         void Update(Teacher teacher);
         void Delete(Teacher teacher);
         string SifremiGöster(string mail, string name);

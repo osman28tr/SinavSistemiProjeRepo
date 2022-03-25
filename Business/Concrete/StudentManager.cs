@@ -1,6 +1,8 @@
 ﻿using Business.Abstract;
+using Business.ValidationRules.FluentValidation;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using FluentValidation.Results;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,19 +15,48 @@ namespace Business.Concrete
     public class StudentManager:IStudentService
     {
         IStudentDal _studentDal;
+        private static StudentValidator studentValidator = new StudentValidator();
+        List<string> validations = new List<string>();
         public StudentManager(IStudentDal studentDal)
         {
             _studentDal = studentDal;
         }
 
-        public void Add(Student student)
+        public List<string> Add(Student student)
         {
-            _studentDal.Add(student);
+            IList<ValidationFailure> failures = Dogrula(student);
+            if (failures != null)
+            {
+                foreach (var failure in failures)
+                {
+                    validations.Add(failure.ErrorMessage);
+                }
+                return validations;
+            }
+            else
+            {
+                _studentDal.Add(student);
+                return null;
+            }
         }
 
         public void Delete(Student student)
         {
             _studentDal.Delete(student);
+        }
+
+        public IList<ValidationFailure> Dogrula(Student student)
+        {
+            var result = studentValidator.Validate(student);
+            IList<ValidationFailure> failures = result.Errors;
+            if (!result.IsValid)
+            {
+                return failures;
+            }
+            else
+            {
+                return null;
+            }
         }
 
         public Student Get(int id)

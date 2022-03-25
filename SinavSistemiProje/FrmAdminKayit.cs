@@ -22,22 +22,23 @@ namespace SinavSistemiProje
         AdminManager adminManager = new AdminManager(new EfAdminDal());
         private void btnAdminKayitOl_Click(object sender, EventArgs e)
         {
-            try
+            var failstatestring = adminManager.Add(new Admin
             {
-                adminManager.Add(new Admin
+                AdminName = txtAdminName.Text,
+                AdminSurname = txtAdminSurname.Text,
+                AdminMail = txtAdminMail.Text,
+                AdminPassword = txtAdminPassword.Text
+            });
+            if (failstatestring != null)
+            {
+                foreach (var item in failstatestring)
                 {
-                    AdminName = txtAdminName.Text,
-                    AdminSurname = txtAdminSurname.Text,
-                    AdminMail = txtAdminMail.Text,
-                    AdminPassword = txtAdminPassword.Text
-                });
+                    MessageBox.Show(item.ToString());
+                }
+                failstatestring.Clear();
+            }
+            else
                 MessageBox.Show("Kayit Başarıyla Tamamlandı");
-            }
-            catch (Exception message)
-            {
-                MessageBox.Show(message.Message);
-            }
-            
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
