@@ -162,7 +162,7 @@ namespace SinavSistemiProje
             //sorulistesi = questionManager.GetQuestionsByNotAnswered(questionsfalse);
 
             rctxQuestionName.Text = sorulistesi[soruüret].QuestionName;
-            pictureBox1.ImageLocation = sorulistesi[soruüret].PicturePath;
+            pictureBox1.ImageLocation = Application.StartupPath + sorulistesi[soruüret].PicturePath;
             txtSecenekA.Text = correctAnswerManager.Get(sorulistesi[soruüret].QuestionId).CorrectAnswerName;
             //txtSecenekB.Text = sorulistesi[soruüret].QuestionWrongAnswer1;
             //txtSecenekC.Text = sorulistesi[soruüret].QuestionWrongAnswer2;

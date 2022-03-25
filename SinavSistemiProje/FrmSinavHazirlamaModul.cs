@@ -56,14 +56,19 @@ namespace SinavSistemiProje
         private void btnEkle_Click(object sender, EventArgs e)
         {
             CheckedState();
-            //string imagefile = Path.GetFileName(pictureBox1.ImageLocation);
-            //string imagepath = Path.Combine("\\images\\" + imagefile);
-            //File.Copy(pictureBox1.ImageLocation, imagepath, true);
+
+            Random rastgele = new Random();
+            int sayi = rastgele.Next(10, 1000000);
+
+            string imagefile = Path.GetFileName(pictureBox1.ImageLocation);
+            string imagepath = Path.Combine(Application.StartupPath + "\\images\\" + sayi + imagefile);
+            string imagename = Path.Combine("\\images\\" + sayi + imagefile);
+            File.Copy(pictureBox1.ImageLocation, imagepath);
 
             questionManager.Add(new Question
             {
                 QuestionName = rctxQuestionName.Text,
-                PicturePath = DosyaYolu,
+                PicturePath = imagename,
                 //QuestionCorrectAnswer = CorrectAnswer,
                 //QuestionWrongAnswer1 = WrongAnswer[0],
                 //QuestionWrongAnswer2 = WrongAnswer[1],
