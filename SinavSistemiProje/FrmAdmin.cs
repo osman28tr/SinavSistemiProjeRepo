@@ -23,6 +23,7 @@ namespace SinavSistemiProje
         {
             FrmAdminKayit frmAdminKayit = new FrmAdminKayit();
             frmAdminKayit.Show();
+            this.Hide();
         }
 
         private void btnSifremiUnuttum_Click(object sender, EventArgs e)
