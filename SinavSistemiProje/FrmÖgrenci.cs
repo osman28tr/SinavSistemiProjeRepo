@@ -29,6 +29,7 @@ namespace SinavSistemiProje
         {
             FrmÖgrenciKayit frmÖgrenciKayit = new FrmÖgrenciKayit();
             frmÖgrenciKayit.Show();
+            this.Hide();
         }
 
         private void btnGiris_Click(object sender, EventArgs e)
