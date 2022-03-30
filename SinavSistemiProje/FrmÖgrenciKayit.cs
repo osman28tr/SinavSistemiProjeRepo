@@ -55,5 +55,12 @@ namespace SinavSistemiProje
                 checkBox1.Text = "Göster";
             }
         }
+
+        private void BtnAnaSayfa_Click(object sender, EventArgs e)
+        {
+            FrmÖgrenci frmÖgrenci = new FrmÖgrenci();
+            frmÖgrenci.Show();
+            this.Hide();
+        }
     }
 }

@@ -43,11 +43,13 @@ namespace SinavSistemiProje
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.BtnAnaSayfa = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.BtnAnaSayfa);
             this.groupBox1.Controls.Add(this.checkBox1);
             this.groupBox1.Controls.Add(this.txtStudentNo);
             this.groupBox1.Controls.Add(this.label6);
@@ -70,7 +72,7 @@ namespace SinavSistemiProje
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(411, 182);
+            this.checkBox1.Location = new System.Drawing.Point(438, 182);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(73, 21);
             this.checkBox1.TabIndex = 12;
@@ -81,9 +83,10 @@ namespace SinavSistemiProje
             // txtStudentNo
             // 
             this.txtStudentNo.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtStudentNo.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtStudentNo.Location = new System.Drawing.Point(210, 218);
             this.txtStudentNo.Name = "txtStudentNo";
-            this.txtStudentNo.Size = new System.Drawing.Size(195, 30);
+            this.txtStudentNo.Size = new System.Drawing.Size(221, 30);
             this.txtStudentNo.TabIndex = 11;
             // 
             // label6
@@ -102,41 +105,44 @@ namespace SinavSistemiProje
             this.txtStudentPassword.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtStudentPassword.Location = new System.Drawing.Point(210, 173);
             this.txtStudentPassword.Name = "txtStudentPassword";
-            this.txtStudentPassword.Size = new System.Drawing.Size(195, 30);
+            this.txtStudentPassword.Size = new System.Drawing.Size(221, 30);
             this.txtStudentPassword.TabIndex = 9;
             this.txtStudentPassword.UseSystemPasswordChar = true;
             // 
             // txtStudentMail
             // 
             this.txtStudentMail.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtStudentMail.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtStudentMail.Location = new System.Drawing.Point(210, 128);
             this.txtStudentMail.Name = "txtStudentMail";
-            this.txtStudentMail.Size = new System.Drawing.Size(195, 30);
+            this.txtStudentMail.Size = new System.Drawing.Size(221, 30);
             this.txtStudentMail.TabIndex = 8;
             // 
             // txtStudentSurname
             // 
             this.txtStudentSurname.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtStudentSurname.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtStudentSurname.Location = new System.Drawing.Point(210, 77);
             this.txtStudentSurname.Name = "txtStudentSurname";
-            this.txtStudentSurname.Size = new System.Drawing.Size(195, 30);
+            this.txtStudentSurname.Size = new System.Drawing.Size(221, 30);
             this.txtStudentSurname.TabIndex = 7;
             // 
             // txtStudentName
             // 
             this.txtStudentName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtStudentName.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtStudentName.Location = new System.Drawing.Point(210, 28);
             this.txtStudentName.Name = "txtStudentName";
-            this.txtStudentName.Size = new System.Drawing.Size(195, 30);
+            this.txtStudentName.Size = new System.Drawing.Size(221, 30);
             this.txtStudentName.TabIndex = 6;
             // 
             // btnÖğrenciKayitOl
             // 
             this.btnÖğrenciKayitOl.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnÖğrenciKayitOl.ForeColor = System.Drawing.Color.Olive;
-            this.btnÖğrenciKayitOl.Location = new System.Drawing.Point(112, 276);
+            this.btnÖğrenciKayitOl.Location = new System.Drawing.Point(50, 276);
             this.btnÖğrenciKayitOl.Name = "btnÖğrenciKayitOl";
-            this.btnÖğrenciKayitOl.Size = new System.Drawing.Size(121, 57);
+            this.btnÖğrenciKayitOl.Size = new System.Drawing.Size(183, 57);
             this.btnÖğrenciKayitOl.TabIndex = 5;
             this.btnÖğrenciKayitOl.Text = "Kayıt Ol";
             this.btnÖğrenciKayitOl.UseVisualStyleBackColor = true;
@@ -197,6 +203,18 @@ namespace SinavSistemiProje
             this.label2.TabIndex = 4;
             this.label2.Text = "ÖğrenciKayıt";
             // 
+            // BtnAnaSayfa
+            // 
+            this.BtnAnaSayfa.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.BtnAnaSayfa.ForeColor = System.Drawing.Color.Olive;
+            this.BtnAnaSayfa.Location = new System.Drawing.Point(300, 276);
+            this.BtnAnaSayfa.Name = "BtnAnaSayfa";
+            this.BtnAnaSayfa.Size = new System.Drawing.Size(184, 57);
+            this.BtnAnaSayfa.TabIndex = 13;
+            this.BtnAnaSayfa.Text = "←AnaSayfayaDon";
+            this.BtnAnaSayfa.UseVisualStyleBackColor = true;
+            this.BtnAnaSayfa.Click += new System.EventHandler(this.BtnAnaSayfa_Click);
+            // 
             // FrmÖgrenciKayit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -230,5 +248,6 @@ namespace SinavSistemiProje
         private System.Windows.Forms.TextBox txtStudentNo;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Button BtnAnaSayfa;
     }
 }
