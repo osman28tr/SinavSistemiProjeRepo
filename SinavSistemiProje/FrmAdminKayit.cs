@@ -54,5 +54,11 @@ namespace SinavSistemiProje
                 checkBox1.Text = "Göster";
             }
         }
+        private void BtnAnasayfa_Click(object sender, EventArgs e)
+        {
+            FrmAdmin frmAdmin = new FrmAdmin();
+            frmAdmin.Show();
+            this.Hide();
+        }
     }
 }

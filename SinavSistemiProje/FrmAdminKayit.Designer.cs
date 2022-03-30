@@ -33,6 +33,7 @@ namespace SinavSistemiProje
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.BtnAnasayfa = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.txtAdminPassword = new System.Windows.Forms.TextBox();
             this.txtAdminMail = new System.Windows.Forms.TextBox();
@@ -79,6 +80,7 @@ namespace SinavSistemiProje
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.BtnAnasayfa);
             this.groupBox1.Controls.Add(this.checkBox1);
             this.groupBox1.Controls.Add(this.txtAdminPassword);
             this.groupBox1.Controls.Add(this.txtAdminMail);
@@ -95,6 +97,18 @@ namespace SinavSistemiProje
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "AdminKayıt";
+            // 
+            // BtnAnasayfa
+            // 
+            this.BtnAnasayfa.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.BtnAnasayfa.ForeColor = System.Drawing.Color.Olive;
+            this.BtnAnasayfa.Location = new System.Drawing.Point(284, 230);
+            this.BtnAnasayfa.Name = "BtnAnasayfa";
+            this.BtnAnasayfa.Size = new System.Drawing.Size(200, 57);
+            this.BtnAnasayfa.TabIndex = 11;
+            this.BtnAnasayfa.Text = "←AnaSayfayaDon";
+            this.BtnAnasayfa.UseVisualStyleBackColor = true;
+            this.BtnAnasayfa.Click += new System.EventHandler(this.BtnAnasayfa_Click);
             // 
             // checkBox1
             // 
@@ -119,6 +133,7 @@ namespace SinavSistemiProje
             // txtAdminMail
             // 
             this.txtAdminMail.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtAdminMail.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtAdminMail.Location = new System.Drawing.Point(210, 128);
             this.txtAdminMail.Name = "txtAdminMail";
             this.txtAdminMail.Size = new System.Drawing.Size(195, 30);
@@ -127,6 +142,7 @@ namespace SinavSistemiProje
             // txtAdminSurname
             // 
             this.txtAdminSurname.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtAdminSurname.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtAdminSurname.Location = new System.Drawing.Point(210, 77);
             this.txtAdminSurname.Name = "txtAdminSurname";
             this.txtAdminSurname.Size = new System.Drawing.Size(195, 30);
@@ -135,6 +151,7 @@ namespace SinavSistemiProje
             // txtAdminName
             // 
             this.txtAdminName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtAdminName.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtAdminName.Location = new System.Drawing.Point(210, 28);
             this.txtAdminName.Name = "txtAdminName";
             this.txtAdminName.Size = new System.Drawing.Size(195, 30);
@@ -144,9 +161,9 @@ namespace SinavSistemiProje
             // 
             this.btnAdminKayitOl.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnAdminKayitOl.ForeColor = System.Drawing.Color.Olive;
-            this.btnAdminKayitOl.Location = new System.Drawing.Point(112, 230);
+            this.btnAdminKayitOl.Location = new System.Drawing.Point(35, 230);
             this.btnAdminKayitOl.Name = "btnAdminKayitOl";
-            this.btnAdminKayitOl.Size = new System.Drawing.Size(121, 57);
+            this.btnAdminKayitOl.Size = new System.Drawing.Size(198, 57);
             this.btnAdminKayitOl.TabIndex = 5;
             this.btnAdminKayitOl.Text = "Kayıt Ol";
             this.btnAdminKayitOl.UseVisualStyleBackColor = true;
@@ -205,5 +222,6 @@ namespace SinavSistemiProje
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Button BtnAnasayfa;
     }
 }
