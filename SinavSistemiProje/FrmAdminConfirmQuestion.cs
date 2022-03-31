@@ -74,29 +74,19 @@ namespace SinavSistemiProje
             });
         }
 
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        private void rbConfirm_CheckedChanged(object sender, EventArgs e)
         {
             DgwSorular.DataSource = questionManager.GetConfirmByQuestions();
         }
 
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        private void rbNotConfirm_CheckedChanged(object sender, EventArgs e)
         {
             DgwSorular.DataSource = questionManager.GetNotConfirmByQuestions();
         }
 
-        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        private void rbAll_CheckedChanged(object sender, EventArgs e)
         {
             GetQuestions();
-        }
-
-        private void chkbxSirala_CheckedChanged(object sender, EventArgs e)
-        {
-            DgwSorular.DataSource = questionManager.GetSortByQuestionNameAscending();
-        }
-
-        private void chkbxSiralaDesc_CheckedChanged(object sender, EventArgs e)
-        {
-            DgwSorular.DataSource = questionManager.GetSortByQuestionNameDescending();
         }
     }
 }

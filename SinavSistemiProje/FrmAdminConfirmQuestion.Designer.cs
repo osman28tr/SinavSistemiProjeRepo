@@ -33,11 +33,9 @@ namespace SinavSistemiProje
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.DgwSorular = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.chkbxSiralaDesc = new System.Windows.Forms.CheckBox();
-            this.chkbxSirala = new System.Windows.Forms.CheckBox();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.rbAll = new System.Windows.Forms.RadioButton();
+            this.rbNotConfirm = new System.Windows.Forms.RadioButton();
+            this.rbConfirm = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgwSorular)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -77,80 +75,54 @@ namespace SinavSistemiProje
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.chkbxSiralaDesc);
-            this.groupBox2.Controls.Add(this.chkbxSirala);
-            this.groupBox2.Controls.Add(this.radioButton3);
-            this.groupBox2.Controls.Add(this.radioButton2);
-            this.groupBox2.Controls.Add(this.radioButton1);
+            this.groupBox2.Controls.Add(this.rbAll);
+            this.groupBox2.Controls.Add(this.rbNotConfirm);
+            this.groupBox2.Controls.Add(this.rbConfirm);
             this.groupBox2.Location = new System.Drawing.Point(1035, 75);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(396, 334);
+            this.groupBox2.Size = new System.Drawing.Size(396, 203);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Filtrele";
             // 
-            // chkbxSiralaDesc
+            // rbAll
             // 
-            this.chkbxSiralaDesc.AutoSize = true;
-            this.chkbxSiralaDesc.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.chkbxSiralaDesc.Location = new System.Drawing.Point(11, 163);
-            this.chkbxSiralaDesc.Name = "chkbxSiralaDesc";
-            this.chkbxSiralaDesc.Size = new System.Drawing.Size(270, 29);
-            this.chkbxSiralaDesc.TabIndex = 6;
-            this.chkbxSiralaDesc.Text = "Soru Adına Göre Sırala(Z-A)";
-            this.chkbxSiralaDesc.UseVisualStyleBackColor = true;
-            this.chkbxSiralaDesc.CheckedChanged += new System.EventHandler(this.chkbxSiralaDesc_CheckedChanged);
+            this.rbAll.AutoSize = true;
+            this.rbAll.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.rbAll.Location = new System.Drawing.Point(105, 158);
+            this.rbAll.Name = "rbAll";
+            this.rbAll.Size = new System.Drawing.Size(150, 29);
+            this.rbAll.TabIndex = 4;
+            this.rbAll.TabStop = true;
+            this.rbAll.Text = "Tümünü Getir";
+            this.rbAll.UseVisualStyleBackColor = true;
+            this.rbAll.CheckedChanged += new System.EventHandler(this.rbAll_CheckedChanged);
             // 
-            // chkbxSirala
+            // rbNotConfirm
             // 
-            this.chkbxSirala.AutoSize = true;
-            this.chkbxSirala.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.chkbxSirala.Location = new System.Drawing.Point(11, 114);
-            this.chkbxSirala.Name = "chkbxSirala";
-            this.chkbxSirala.Size = new System.Drawing.Size(270, 29);
-            this.chkbxSirala.TabIndex = 5;
-            this.chkbxSirala.Text = "Soru Adına Göre Sırala(A-Z)";
-            this.chkbxSirala.UseVisualStyleBackColor = true;
-            this.chkbxSirala.CheckedChanged += new System.EventHandler(this.chkbxSirala_CheckedChanged);
+            this.rbNotConfirm.AutoSize = true;
+            this.rbNotConfirm.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.rbNotConfirm.Location = new System.Drawing.Point(206, 65);
+            this.rbNotConfirm.Name = "rbNotConfirm";
+            this.rbNotConfirm.Size = new System.Drawing.Size(184, 29);
+            this.rbNotConfirm.TabIndex = 1;
+            this.rbNotConfirm.TabStop = true;
+            this.rbNotConfirm.Text = "Onaylanmayanlar";
+            this.rbNotConfirm.UseVisualStyleBackColor = true;
+            this.rbNotConfirm.CheckedChanged += new System.EventHandler(this.rbNotConfirm_CheckedChanged);
             // 
-            // radioButton3
+            // rbConfirm
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.radioButton3.Location = new System.Drawing.Point(182, 21);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(150, 29);
-            this.radioButton3.TabIndex = 4;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Tümünü Getir";
-            this.radioButton3.UseVisualStyleBackColor = true;
-            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.radioButton2.Location = new System.Drawing.Point(6, 56);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(184, 29);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Onaylanmayanlar";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.radioButton1.Location = new System.Drawing.Point(6, 21);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(147, 29);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Onaylananlar";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            this.rbConfirm.AutoSize = true;
+            this.rbConfirm.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.rbConfirm.Location = new System.Drawing.Point(6, 65);
+            this.rbConfirm.Name = "rbConfirm";
+            this.rbConfirm.Size = new System.Drawing.Size(147, 29);
+            this.rbConfirm.TabIndex = 0;
+            this.rbConfirm.TabStop = true;
+            this.rbConfirm.Text = "Onaylananlar";
+            this.rbConfirm.UseVisualStyleBackColor = true;
+            this.rbConfirm.CheckedChanged += new System.EventHandler(this.rbConfirm_CheckedChanged);
             // 
             // FrmAdminConfirmQuestion
             // 
@@ -179,10 +151,8 @@ namespace SinavSistemiProje
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView DgwSorular;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.CheckBox chkbxSirala;
-        private System.Windows.Forms.CheckBox chkbxSiralaDesc;
+        private System.Windows.Forms.RadioButton rbNotConfirm;
+        private System.Windows.Forms.RadioButton rbConfirm;
+        private System.Windows.Forms.RadioButton rbAll;
     }
 }

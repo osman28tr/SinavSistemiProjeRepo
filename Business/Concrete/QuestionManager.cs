@@ -187,14 +187,5 @@ namespace Business.Concrete
             else
                 return GetConfirmByQuestions();
         }
-
-        public List<Question> GetSortByQuestionNameAscending()
-        {
-            return _questionDal.GetAll().OrderBy(x => x.QuestionName).ToList();
-        }
-        public List<Question> GetSortByQuestionNameDescending()
-        {
-            return _questionDal.GetAll().OrderByDescending(x => x.QuestionName).ToList();
-        }
     }
 }
