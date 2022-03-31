@@ -25,7 +25,7 @@ namespace SinavSistemiProje
         List<Question> sorulistesi = new List<Question>();
         QuestionManager questionManager = new QuestionManager(new EfQuestionDal());
         QuestionDetailManager questionDetailManager = new QuestionDetailManager(new EfQuestionDetailDal());
-        CorrectAnswerManager correctAnswerManager = new CorrectAnswerManager(new EfCorrectAnswerDal());
+        //CorrectAnswerManager correctAnswerManager = new CorrectAnswerManager(new EfCorrectAnswerDal());
         WrongAnswerManager wrongAnswerManager = new WrongAnswerManager(new EfWrongAnswerDal());
         int sorusayisi, dogrusorusayisi;
         private void FrmÖgrenciSinavModul_Load(object sender, EventArgs e)
@@ -60,10 +60,11 @@ namespace SinavSistemiProje
                     btnİlerle.Enabled = false;
                     if (dogrusorusayisi == 1) //öğrenci daha önceden sadece 1 soruyu bilmesi(ve 6 sigmaya göre) durumuna göre ekledim.
                     {
-                        MessageBox.Show("soru sayisi 11 oldu : soru üret: " + soruüret);
-                        sorulistesi.Clear();
-                        soruüret = 0;
-                        sorulistesi = GetByQuestionAnswered();
+                        QuestionsBySigma6();
+                        //MessageBox.Show("soru sayisi 11 oldu : soru üret: " + soruüret);
+                        //sorulistesi.Clear();
+                        //soruüret = 0;
+                        //sorulistesi = GetByQuestionAnswered();
                     }
                 }
                 //    int sorusayisi = 10 + GetByQuestionAnswered().Count;
@@ -86,12 +87,20 @@ namespace SinavSistemiProje
             }
             else if (soru == 11)
             {
-                MessageBox.Show("soru sayisi 11 oldu : soru üret: " + soruüret);
-                sorulistesi.Clear();
-                soruüret = 0;
-                sorulistesi = GetByQuestionAnswered();
+                QuestionsBySigma6();
+                //MessageBox.Show("soru sayisi 11 oldu : soru üret: " + soruüret);
+                //sorulistesi.Clear();
+                //soruüret = 0;
+                //sorulistesi = GetByQuestionAnswered();
             }
             FillTheElements();
+        }
+        private void QuestionsBySigma6()
+        {
+            MessageBox.Show("soru sayisi 11 oldu : soru üret: " + soruüret);
+            sorulistesi.Clear();
+            soruüret = 0;
+            sorulistesi = GetByQuestionAnswered();
         }
         private bool IsTheQuestionAnsweredCorrectly() //soru doğru mu yanlış mı çözüldü onu kontrol ediyor.
         {
@@ -118,7 +127,8 @@ namespace SinavSistemiProje
                     StudentId = id,
                     QuestionState = sorudurum,
                     AnsweredDate = questiondetaildate,
-                    SigmaCount = sigmacount + 1
+                    SigmaCount = sigmacount + 1,
+                    AnsweredState = true
                 });
             }
             else
@@ -130,7 +140,8 @@ namespace SinavSistemiProje
                     StudentId = id,
                     QuestionState = sorudurum,
                     AnsweredDate = DateTime.Now,
-                    SigmaCount = 0
+                    SigmaCount = 0,
+                    AnsweredState = true
                 });
             }
         }
@@ -163,7 +174,8 @@ namespace SinavSistemiProje
 
             rctxQuestionName.Text = sorulistesi[soruüret].QuestionName;
             pictureBox1.ImageLocation = Application.StartupPath + sorulistesi[soruüret].PicturePath;
-            txtSecenekA.Text = correctAnswerManager.Get(sorulistesi[soruüret].QuestionId).CorrectAnswerName;
+            //txtSecenekA.Text = correctAnswerManager.Get(sorulistesi[soruüret].QuestionId).CorrectAnswerName;
+            txtSecenekA.Text = sorulistesi[soruüret].CorrectAnswer;
             //txtSecenekB.Text = sorulistesi[soruüret].QuestionWrongAnswer1;
             //txtSecenekC.Text = sorulistesi[soruüret].QuestionWrongAnswer2;
             //txtSecenekD.Text = sorulistesi[soruüret].QuestionWrongAnswer3;

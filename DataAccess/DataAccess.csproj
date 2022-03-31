@@ -52,7 +52,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\IAdminDal.cs" />
-    <Compile Include="Abstract\ICorrectAnswerDal.cs" />
     <Compile Include="Abstract\IEntityRepository.cs" />
     <Compile Include="Abstract\ILessonDal.cs" />
     <Compile Include="Abstract\IQuestionDal.cs" />
@@ -63,7 +62,6 @@
     <Compile Include="Abstract\IUnitDal.cs" />
     <Compile Include="Abstract\IWrongAnswerDal.cs" />
     <Compile Include="Concrete\EfAdminDal.cs" />
-    <Compile Include="Concrete\EfCorrectAnswerDal.cs" />
     <Compile Include="Concrete\EfEntityRepositoryBase.cs" />
     <Compile Include="Concrete\EfLessonDal.cs" />
     <Compile Include="Concrete\EfQuestionDal.cs" />

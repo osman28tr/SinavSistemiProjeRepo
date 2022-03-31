@@ -27,10 +27,11 @@ namespace SinavSistemiProje
         UnitManager unitManager = new UnitManager(new EfUnitDal());
         SubjectManager subjectManager = new SubjectManager(new EfSubjectDal());
         WrongAnswerManager wrongAnswerManager = new WrongAnswerManager(new EfWrongAnswerDal());
-        CorrectAnswerManager correctAnswerManager = new CorrectAnswerManager(new EfCorrectAnswerDal());
+        //CorrectAnswerManager correctAnswerManager = new CorrectAnswerManager(new EfCorrectAnswerDal());
         string DosyaYolu = "";
-        string CorrectAnswer = "";
+        string correctAnswer = "";
         string[] WrongAnswer = new string[3];
+        bool correctAnswerFailState = false, wrongAnswerFailState = false;
         int id; //normalizasyon
         private void FrmSinavHazirlamaModul_Load(object sender, EventArgs e)
         {
@@ -56,7 +57,6 @@ namespace SinavSistemiProje
         private void btnEkle_Click(object sender, EventArgs e)
         {
             CheckedState();
-
             Random rastgele = new Random();
             int sayi = rastgele.Next(10, 1000000);
 
@@ -66,12 +66,14 @@ namespace SinavSistemiProje
             //File.Copy(pictureBox1.ImageLocation, imagepath);
             if (imagefile == null)
                 imagename = "";
+           
             var failstatestring = questionManager.Add(new Question
             {
                 QuestionName = rctxQuestionName.Text,
                 SubjectId = (int)cmbSubject.SelectedValue,
-
+                CreatedDate = DateTime.Now,
                 PicturePath = imagename,
+                CorrectAnswer = correctAnswer
             });
             if (failstatestring != null)
             {
@@ -84,11 +86,11 @@ namespace SinavSistemiProje
             else
             {
                 File.Copy(pictureBox1.ImageLocation, imagepath);
-                MessageBox.Show("Hazırladığınız soru admine başarıyla gönderildi!");
                 QuestionDetailAdd();
-                CorrectAnswerAdd();//normalizasyon
+                //CorrectAnswerAdd();//normalizasyon
                 WrongAnswerAdd();//normalizasyon
-            }              
+                MessageBox.Show("Hazırladığınız soru admine başarıyla gönderildi!");
+            }
             //questionManager.Add(new Question
             //{
             //    QuestionName = rctxQuestionName.Text,
@@ -106,54 +108,100 @@ namespace SinavSistemiProje
         }
         private void QuestionDetailAdd()
         {
-            id = questionManager.GetAll().LastOrDefault().QuestionId;
-            questionDetailManager.Add(new QuestionDetail { QuestionId = id, StudentId = (int)cmbStudents.SelectedValue, SigmaCount = 0, AnsweredDate = DateTime.Now, QuestionState = false });
+            //id = questionManager.GetAll().LastOrDefault().QuestionId;
+            if (correctAnswerFailState == false && wrongAnswerFailState == false)
+            {
+                id = questionManager.GetLastQuestionId();
+                questionDetailManager.Add(new QuestionDetail { QuestionId = id, StudentId = (int)cmbStudents.SelectedValue, SigmaCount = 0, QuestionState = false, AnsweredState = false });
+            }
         }
         private void CorrectAnswerAdd()
         {
-            correctAnswerManager.Add(new CorrectAnswer
-            {
-                CorrectAnswerName = CorrectAnswer,
-                QuestionId = id
-            });
+            //correctAnswerManager.Add(new CorrectAnswer
+            //{
+            //    CorrectAnswerName = CorrectAnswer,
+            //    QuestionId = id
+            //});
+
+
+
+            //var failstatestring = correctAnswerManager.Add(new CorrectAnswer
+            //{
+            //    CorrectAnswerName = CorrectAnswer,
+            //    QuestionId = id
+            //});
+            //if (failstatestring != null)
+            //{
+            //    correctAnswerFailState = true;
+            //    foreach (var item in failstatestring)
+            //    {
+            //        MessageBox.Show(item.ToString());
+            //    }
+            //    failstatestring.Clear();
+            //}
+            //else
+            //    correctAnswerFailState = false;
         }
         private void WrongAnswerAdd()
         {
+            //for (int i = 0; i < 3; i++)
+            //{
+            //    wrongAnswerManager.Add(new WrongAnswer
+            //    {
+            //        WrongAnswerName = WrongAnswer[i],
+            //        QuestionId = id
+            //    });
+            //}
+
+
+
+            List<string> failstatestring = new List<string>();
             for (int i = 0; i < 3; i++)
             {
-                wrongAnswerManager.Add(new WrongAnswer
+                failstatestring = wrongAnswerManager.Add(new WrongAnswer
                 {
                     WrongAnswerName = WrongAnswer[i],
                     QuestionId = id
                 });
-            }           
+            }
+            if (failstatestring != null)
+            {
+                wrongAnswerFailState = true;
+                foreach (var item in failstatestring)
+                {
+                    MessageBox.Show(item.ToString());
+                }
+                failstatestring.Clear();
+            }
+            else
+                wrongAnswerFailState = false;
         }
         private void CheckedState()
         {
             if (radioButton1.Checked == true)
             {
-                CorrectAnswer = txtSecenekA.Text;
+                correctAnswer = txtSecenekA.Text;
                 WrongAnswer[0] = txtSecenekB.Text;
                 WrongAnswer[1] = txtSecenekC.Text;
                 WrongAnswer[2] = txtSecenekD.Text;
             }
             else if (radioButton2.Checked == true)
             {
-                CorrectAnswer = txtSecenekB.Text;
+                correctAnswer = txtSecenekB.Text;
                 WrongAnswer[0] = txtSecenekA.Text;
                 WrongAnswer[1] = txtSecenekC.Text;
                 WrongAnswer[2] = txtSecenekD.Text;
             }
             else if (radioButton3.Checked == true)
             {
-                CorrectAnswer = txtSecenekC.Text;
+                correctAnswer = txtSecenekC.Text;
                 WrongAnswer[0] = txtSecenekA.Text;
                 WrongAnswer[1] = txtSecenekB.Text;
                 WrongAnswer[2] = txtSecenekD.Text;
             }
             else
             {
-                CorrectAnswer = txtSecenekD.Text;
+                correctAnswer = txtSecenekD.Text;
                 WrongAnswer[0] = txtSecenekA.Text;
                 WrongAnswer[1] = txtSecenekC.Text;
                 WrongAnswer[2] = txtSecenekB.Text;
