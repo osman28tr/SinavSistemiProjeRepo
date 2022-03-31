@@ -1,6 +1,8 @@
 ﻿using Business.Abstract;
+using Business.ValidationRules.FluentValidation;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using FluentValidation.Results;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,13 +14,41 @@ namespace Business.Concrete
     public class WrongAnswerManager : IWrongAnswerService
     {
         IWrongAnswerDal _wrongAnswerDal;
+        private static WrongAnswerValidator wrongAnswerValidator = new WrongAnswerValidator();
+        List<string> validations = new List<string>();
         public WrongAnswerManager(IWrongAnswerDal wrongAnswerDal)
         {
             _wrongAnswerDal = wrongAnswerDal;
         }
-        public void Add(WrongAnswer wrongAnswer)
+        public List<string> Add(WrongAnswer wrongAnswer)
         {
-            _wrongAnswerDal.Add(wrongAnswer);
+            IList<ValidationFailure> failures = Dogrula(wrongAnswer);
+            if (failures != null)
+            {
+                foreach (var failure in failures)
+                {
+                    validations.Add(failure.ErrorMessage);
+                }
+                return validations;
+            }
+            else
+            {
+                _wrongAnswerDal.Add(wrongAnswer);
+                return null;
+            }
+        }
+        public IList<ValidationFailure> Dogrula(WrongAnswer wrongAnswer)
+        {
+            var result = wrongAnswerValidator.Validate(wrongAnswer);
+            IList<ValidationFailure> failures = result.Errors;
+            if (!result.IsValid)
+            {
+                return failures;
+            }
+            else
+            {
+                return null;
+            }
         }
 
         public void Delete(WrongAnswer wrongAnswer)
