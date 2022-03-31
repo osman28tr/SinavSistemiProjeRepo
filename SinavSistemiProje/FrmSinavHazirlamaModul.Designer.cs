@@ -88,6 +88,7 @@ namespace SinavSistemiProje
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.dataGridView1);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.cmbStudents);
             this.groupBox1.Controls.Add(this.cmbSubject);
@@ -103,7 +104,7 @@ namespace SinavSistemiProje
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(21, 56);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(921, 522);
+            this.groupBox1.Size = new System.Drawing.Size(921, 767);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Sorular";
@@ -149,7 +150,7 @@ namespace SinavSistemiProje
             // 
             // btnDosyaSec
             // 
-            this.btnDosyaSec.Location = new System.Drawing.Point(491, 375);
+            this.btnDosyaSec.Location = new System.Drawing.Point(726, 375);
             this.btnDosyaSec.Name = "btnDosyaSec";
             this.btnDosyaSec.Size = new System.Drawing.Size(189, 33);
             this.btnDosyaSec.TabIndex = 16;
@@ -183,7 +184,7 @@ namespace SinavSistemiProje
             // 
             this.pictureBox1.Location = new System.Drawing.Point(149, 375);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(336, 137);
+            this.pictureBox1.Size = new System.Drawing.Size(571, 386);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
@@ -236,17 +237,17 @@ namespace SinavSistemiProje
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.radioButton1);
             this.groupBox2.Controls.Add(this.radioButton4);
+            this.groupBox2.Controls.Add(this.txtSecenekA);
             this.groupBox2.Controls.Add(this.txtSecenekD);
-            this.groupBox2.Controls.Add(this.radioButton3);
             this.groupBox2.Controls.Add(this.txtSecenekC);
+            this.groupBox2.Controls.Add(this.radioButton3);
             this.groupBox2.Controls.Add(this.radioButton2);
             this.groupBox2.Controls.Add(this.txtSecenekB);
-            this.groupBox2.Controls.Add(this.radioButton1);
-            this.groupBox2.Controls.Add(this.txtSecenekA);
-            this.groupBox2.Location = new System.Drawing.Point(948, 229);
+            this.groupBox2.Location = new System.Drawing.Point(948, 56);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(371, 349);
+            this.groupBox2.Size = new System.Drawing.Size(392, 767);
             this.groupBox2.TabIndex = 14;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Seçenekler";
@@ -256,7 +257,7 @@ namespace SinavSistemiProje
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label7.ForeColor = System.Drawing.Color.Maroon;
-            this.label7.Location = new System.Drawing.Point(18, 301);
+            this.label7.Location = new System.Drawing.Point(6, 743);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(353, 19);
             this.label7.TabIndex = 15;
@@ -266,7 +267,7 @@ namespace SinavSistemiProje
             // 
             this.radioButton4.AutoSize = true;
             this.radioButton4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.radioButton4.Location = new System.Drawing.Point(25, 202);
+            this.radioButton4.Location = new System.Drawing.Point(35, 565);
             this.radioButton4.Name = "radioButton4";
             this.radioButton4.Size = new System.Drawing.Size(43, 27);
             this.radioButton4.TabIndex = 7;
@@ -277,17 +278,17 @@ namespace SinavSistemiProje
             // txtSecenekD
             // 
             this.txtSecenekD.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSecenekD.Location = new System.Drawing.Point(86, 204);
+            this.txtSecenekD.Location = new System.Drawing.Point(83, 566);
             this.txtSecenekD.Multiline = true;
             this.txtSecenekD.Name = "txtSecenekD";
-            this.txtSecenekD.Size = new System.Drawing.Size(276, 54);
+            this.txtSecenekD.Size = new System.Drawing.Size(288, 174);
             this.txtSecenekD.TabIndex = 6;
             // 
             // radioButton3
             // 
             this.radioButton3.AutoSize = true;
             this.radioButton3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.radioButton3.Location = new System.Drawing.Point(25, 146);
+            this.radioButton3.Location = new System.Drawing.Point(35, 387);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(42, 27);
             this.radioButton3.TabIndex = 5;
@@ -298,17 +299,17 @@ namespace SinavSistemiProje
             // txtSecenekC
             // 
             this.txtSecenekC.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSecenekC.Location = new System.Drawing.Point(86, 146);
+            this.txtSecenekC.Location = new System.Drawing.Point(84, 388);
             this.txtSecenekC.Multiline = true;
             this.txtSecenekC.Name = "txtSecenekC";
-            this.txtSecenekC.Size = new System.Drawing.Size(276, 52);
+            this.txtSecenekC.Size = new System.Drawing.Size(288, 174);
             this.txtSecenekC.TabIndex = 4;
             // 
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
             this.radioButton2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.radioButton2.Location = new System.Drawing.Point(24, 84);
+            this.radioButton2.Location = new System.Drawing.Point(25, 210);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(41, 27);
             this.radioButton2.TabIndex = 3;
@@ -319,10 +320,10 @@ namespace SinavSistemiProje
             // txtSecenekB
             // 
             this.txtSecenekB.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSecenekB.Location = new System.Drawing.Point(86, 84);
+            this.txtSecenekB.Location = new System.Drawing.Point(83, 207);
             this.txtSecenekB.Multiline = true;
             this.txtSecenekB.Name = "txtSecenekB";
-            this.txtSecenekB.Size = new System.Drawing.Size(276, 56);
+            this.txtSecenekB.Size = new System.Drawing.Size(288, 174);
             this.txtSecenekB.TabIndex = 2;
             // 
             // radioButton1
@@ -340,15 +341,15 @@ namespace SinavSistemiProje
             // txtSecenekA
             // 
             this.txtSecenekA.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSecenekA.Location = new System.Drawing.Point(86, 25);
+            this.txtSecenekA.Location = new System.Drawing.Point(83, 26);
             this.txtSecenekA.Multiline = true;
             this.txtSecenekA.Name = "txtSecenekA";
-            this.txtSecenekA.Size = new System.Drawing.Size(279, 53);
+            this.txtSecenekA.Size = new System.Drawing.Size(288, 174);
             this.txtSecenekA.TabIndex = 0;
             // 
             // btnEkle
             // 
-            this.btnEkle.Location = new System.Drawing.Point(381, 613);
+            this.btnEkle.Location = new System.Drawing.Point(357, 829);
             this.btnEkle.Name = "btnEkle";
             this.btnEkle.Size = new System.Drawing.Size(179, 54);
             this.btnEkle.TabIndex = 17;
@@ -358,7 +359,7 @@ namespace SinavSistemiProje
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(729, 613);
+            this.button1.Location = new System.Drawing.Point(705, 829);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(179, 54);
             this.button1.TabIndex = 18;
@@ -368,7 +369,7 @@ namespace SinavSistemiProje
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(963, 56);
+            this.dataGridView1.Location = new System.Drawing.Point(622, 21);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
@@ -379,9 +380,10 @@ namespace SinavSistemiProje
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(1322, 714);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(1352, 895);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnEkle);
             this.Controls.Add(this.groupBox2);
@@ -389,6 +391,7 @@ namespace SinavSistemiProje
             this.Controls.Add(this.label3);
             this.Name = "FrmSinavHazirlamaModul";
             this.Text = "FrmSinavHazirlamaModul";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmSinavHazirlamaModul_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
