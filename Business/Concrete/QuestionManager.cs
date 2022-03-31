@@ -58,9 +58,9 @@ namespace Business.Concrete
             _questionDal.Delete(question);
         }
 
-        public Question Get()
+        public Question Get(int id)
         {
-            return _questionDal.Get();
+            return _questionDal.Get(x => x.QuestionId == id);
         }
 
         public List<Question> GetAll()
@@ -84,7 +84,7 @@ namespace Business.Concrete
                 //}                    
                 //dizi[i] = a;
 
-                int a = dizi2[i];
+                int questionid = dizi2[i];
                 //if (questionDetails.Find(x => x.QuestionId == a) != null) //question'ları false olanları getirsin. ve benim ürettiğim rastgele bir id nin durumu false ise getirsin.
                 //{
                 //    questions.Add(_questionDal.Get(x => x.QuestionId == a));
@@ -93,7 +93,7 @@ namespace Business.Concrete
                 //{
 
                 //}
-                questions.Add(_questionDal.Get(x => x.QuestionId == a)); // normal hali.
+                questions.Add(_questionDal.Get(x => x.QuestionId == questionid)); // normal hali.
             }
             return questions;
         }
@@ -107,11 +107,11 @@ namespace Business.Concrete
             int[] dizi2 = new int[10]; //bizim durumu false olanların questionid'lerini ilgili diziye atmak için
             for (int i = 0; i < 10; i++) //count olan yer normalde 10 dur.(confirmstate'e göre ayarladım.)
             {
-                int a = random.Next(0, count); //1 ile gelen verilerin sayısı arasında rastgele sayı ürettik.(bunu indis için yaptım.)
+                int randomnumberindex = random.Next(0, count); //1 ile gelen verilerin sayısı arasında rastgele sayı ürettik.(bunu indis için yaptım.)
                 for (int j = 0; j < i; j++) //rastgele üretilen sayı dizinin şuanki indisine kadar kontrol ediyor.(bunu 0 için yaptım. çünkü sıfırda patlıyordu.)
                 {
-                    if (dizi[j]==a) //aynı sayı üretmemesi için kontrol ediyor.(yada aynı indis vermemesi için questiondetail için.)
-                    {                        
+                    if (dizi[j] == randomnumberindex) //aynı sayı üretmemesi için kontrol ediyor.(yada aynı indis vermemesi için questiondetail için.)
+                    {
                         //j--;
                         durum = false;
                         break;
@@ -124,8 +124,8 @@ namespace Business.Concrete
                 }
                 if (durum == true) //eğer üretilen rastgele sayı (veya indis) dizinin içinde yoksa diziye at ve o indisin question id sini dizi2 ye ver.
                 {
-                    dizi[i] = a;
-                    dizi2[i] = questionDetails[a].QuestionId;
+                    dizi[i] = randomnumberindex;
+                    dizi2[i] = questionDetails[randomnumberindex].QuestionId;
                 }
                 else //eğer random üretilen sayı aynı sayı geldiyse bidaha üretmesi için i azaltıldı.
                 {
@@ -147,10 +147,54 @@ namespace Business.Concrete
             List<Question> questions = new List<Question>();
             for (int i = 0; i < valuecount; i++)
             {
-                int a = questiondetail[i];
-                questions.Add(_questionDal.Get(x => x.QuestionId == a));
+                int questionid = questiondetail[i];
+                questions.Add(_questionDal.Get(x => x.QuestionId == questionid));
             }
             return questions;
+        }
+
+        public int GetLastQuestionId()
+        {
+            return _questionDal.GetAll().LastOrDefault().QuestionId;
+        }
+
+        public List<Question> GetConfirmByQuestions()
+        {
+            return _questionDal.GetAll(x => x.ConfirmState == true);
+        }
+
+        public List<Question> GetNotConfirmByQuestions()
+        {
+            return _questionDal.GetAll(x => x.ConfirmState == false);
+        }
+
+        public List<Question> GetQuestionsByQuestionName(string questionName, int questionConfirmState)
+        {
+            if (questionConfirmState == 0)
+                return _questionDal.GetAll(x => x.QuestionName.ToLower().Contains(questionName.ToLower()));
+            else if (questionConfirmState == 1)
+                return _questionDal.GetAll(x => x.QuestionName.ToLower().Contains(questionName.ToLower()) && x.ConfirmState == false);
+            else
+                return _questionDal.GetAll(x => x.QuestionName.ToLower().Contains(questionName.ToLower()) && x.ConfirmState == true);
+        }
+
+        public List<Question> GetQuestionsByState(int state)
+        {
+            if (state == 1)
+                return GetNotConfirmByQuestions();
+            else if (state == 0)
+                return GetAll();
+            else
+                return GetConfirmByQuestions();
+        }
+
+        public List<Question> GetSortByQuestionNameAscending()
+        {
+            return _questionDal.GetAll().OrderBy(x => x.QuestionName).ToList();
+        }
+        public List<Question> GetSortByQuestionNameDescending()
+        {
+            return _questionDal.GetAll().OrderByDescending(x => x.QuestionName).ToList();
         }
     }
 }
