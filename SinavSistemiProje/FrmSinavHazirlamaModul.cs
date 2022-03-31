@@ -65,8 +65,8 @@ namespace SinavSistemiProje
             string imagename = Path.Combine("\\images\\" + sayi + imagefile);
             //File.Copy(pictureBox1.ImageLocation, imagepath);
             if (imagefile == null)
-                imagename = "";
-           
+                imagename = null;
+
             var failstatestring = questionManager.Add(new Question
             {
                 QuestionName = rctxQuestionName.Text,
@@ -85,7 +85,8 @@ namespace SinavSistemiProje
             }
             else
             {
-                File.Copy(pictureBox1.ImageLocation, imagepath);
+                if (imagename != null)
+                    File.Copy(pictureBox1.ImageLocation, imagepath);
                 QuestionDetailAdd();
                 //CorrectAnswerAdd();//normalizasyon
                 WrongAnswerAdd();//normalizasyon
