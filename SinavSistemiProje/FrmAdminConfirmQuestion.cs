@@ -20,7 +20,6 @@ namespace SinavSistemiProje
             InitializeComponent();
         }
         QuestionManager questionManager = new QuestionManager(new EfQuestionDal());
-        int questionState;
         private void FrmAdminConfirmQuestion_Load(object sender, EventArgs e)
         {
             GetQuestions();
@@ -78,27 +77,26 @@ namespace SinavSistemiProje
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
             DgwSorular.DataSource = questionManager.GetConfirmByQuestions();
-            questionState = 2;
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
             DgwSorular.DataSource = questionManager.GetNotConfirmByQuestions();
-            questionState = 1;
         }
 
         private void radioButton3_CheckedChanged(object sender, EventArgs e)
         {
             GetQuestions();
-            questionState = 0;
         }
 
-        private void txtSoruAdi_TextChanged(object sender, EventArgs e)
+        private void chkbxSirala_CheckedChanged(object sender, EventArgs e)
         {
-            if (!String.IsNullOrEmpty(txtSoruAdi.Text))
-                DgwSorular.DataSource = questionManager.GetQuestionsByQuestionName(txtSoruAdi.Text, questionState);
-            else
-                DgwSorular.DataSource = questionManager.GetQuestionsByState(questionState);
+            DgwSorular.DataSource = questionManager.GetSortByQuestionNameAscending();
+        }
+
+        private void chkbxSiralaDesc_CheckedChanged(object sender, EventArgs e)
+        {
+            DgwSorular.DataSource = questionManager.GetSortByQuestionNameDescending();
         }
     }
 }

@@ -33,11 +33,11 @@ namespace SinavSistemiProje
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.DgwSorular = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtSoruAdi = new System.Windows.Forms.TextBox();
+            this.chkbxSiralaDesc = new System.Windows.Forms.CheckBox();
+            this.chkbxSirala = new System.Windows.Forms.CheckBox();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgwSorular)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -77,9 +77,9 @@ namespace SinavSistemiProje
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.chkbxSiralaDesc);
+            this.groupBox2.Controls.Add(this.chkbxSirala);
             this.groupBox2.Controls.Add(this.radioButton3);
-            this.groupBox2.Controls.Add(this.txtSoruAdi);
-            this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.radioButton2);
             this.groupBox2.Controls.Add(this.radioButton1);
             this.groupBox2.Location = new System.Drawing.Point(1035, 75);
@@ -89,18 +89,42 @@ namespace SinavSistemiProje
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Filtrele";
             // 
-            // radioButton1
+            // chkbxSiralaDesc
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.radioButton1.Location = new System.Drawing.Point(6, 21);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(147, 29);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Onaylananlar";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            this.chkbxSiralaDesc.AutoSize = true;
+            this.chkbxSiralaDesc.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.chkbxSiralaDesc.Location = new System.Drawing.Point(11, 163);
+            this.chkbxSiralaDesc.Name = "chkbxSiralaDesc";
+            this.chkbxSiralaDesc.Size = new System.Drawing.Size(270, 29);
+            this.chkbxSiralaDesc.TabIndex = 6;
+            this.chkbxSiralaDesc.Text = "Soru Adına Göre Sırala(Z-A)";
+            this.chkbxSiralaDesc.UseVisualStyleBackColor = true;
+            this.chkbxSiralaDesc.CheckedChanged += new System.EventHandler(this.chkbxSiralaDesc_CheckedChanged);
+            // 
+            // chkbxSirala
+            // 
+            this.chkbxSirala.AutoSize = true;
+            this.chkbxSirala.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.chkbxSirala.Location = new System.Drawing.Point(11, 114);
+            this.chkbxSirala.Name = "chkbxSirala";
+            this.chkbxSirala.Size = new System.Drawing.Size(270, 29);
+            this.chkbxSirala.TabIndex = 5;
+            this.chkbxSirala.Text = "Soru Adına Göre Sırala(A-Z)";
+            this.chkbxSirala.UseVisualStyleBackColor = true;
+            this.chkbxSirala.CheckedChanged += new System.EventHandler(this.chkbxSirala_CheckedChanged);
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.radioButton3.Location = new System.Drawing.Point(182, 21);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(150, 29);
+            this.radioButton3.TabIndex = 4;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "Tümünü Getir";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
             // 
             // radioButton2
             // 
@@ -115,37 +139,18 @@ namespace SinavSistemiProje
             this.radioButton2.UseVisualStyleBackColor = true;
             this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
-            // label1
+            // radioButton1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(6, 111);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(147, 28);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "İsme Gore Ara:";
-            // 
-            // txtSoruAdi
-            // 
-            this.txtSoruAdi.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtSoruAdi.Location = new System.Drawing.Point(169, 112);
-            this.txtSoruAdi.Name = "txtSoruAdi";
-            this.txtSoruAdi.Size = new System.Drawing.Size(197, 27);
-            this.txtSoruAdi.TabIndex = 3;
-            this.txtSoruAdi.TextChanged += new System.EventHandler(this.txtSoruAdi_TextChanged);
-            // 
-            // radioButton3
-            // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.radioButton3.Location = new System.Drawing.Point(182, 21);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(150, 29);
-            this.radioButton3.TabIndex = 4;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Tümünü Getir";
-            this.radioButton3.UseVisualStyleBackColor = true;
-            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.radioButton1.Location = new System.Drawing.Point(6, 21);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(147, 29);
+            this.radioButton1.TabIndex = 0;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Onaylananlar";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // FrmAdminConfirmQuestion
             // 
@@ -176,8 +181,8 @@ namespace SinavSistemiProje
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtSoruAdi;
         private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.CheckBox chkbxSirala;
+        private System.Windows.Forms.CheckBox chkbxSiralaDesc;
     }
 }
