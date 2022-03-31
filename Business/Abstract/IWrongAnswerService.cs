@@ -1,4 +1,5 @@
 ﻿using Entities.Concrete;
+using FluentValidation.Results;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,8 @@ namespace Business.Abstract
     {
         List<WrongAnswer> GetAll(int id);
         WrongAnswer Get();
-        void Add(WrongAnswer wrongAnswer);
+        List<string> Add(WrongAnswer wrongAnswer);
+        IList<ValidationFailure> Dogrula(WrongAnswer wrongAnswer);
         void Update(WrongAnswer wrongAnswer);
         void Delete(WrongAnswer wrongAnswer);
     }
