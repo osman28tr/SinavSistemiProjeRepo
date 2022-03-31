@@ -15,6 +15,7 @@ namespace Business.ValidationRules.FluentValidation
             RuleFor(x => x.QuestionName).NotEmpty().WithMessage("Lütfen soruyu boş geçmeyiniz!");
             RuleFor(x => x.SubjectId).NotEmpty().WithMessage("Lütfen bir konu seçiniz!");
             RuleFor(x => x.PicturePath).NotEmpty().WithMessage("Lütfen bir resim seçiniz!");
+            RuleFor(x => x.CorrectAnswer).NotEmpty().WithMessage("Lütfen doğru cevap belirleyiniz");
         }
     }
 }
