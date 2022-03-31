@@ -35,7 +35,7 @@ namespace Business.Concrete
 
         public int FalseAnswerCount(int ogrid)
         {
-            return _questionDetailDal.GetAll(x => x.StudentId == ogrid && x.QuestionState == false).Count;
+            return _questionDetailDal.GetAll(x => x.StudentId == ogrid && x.QuestionState == false && x.AnsweredState == true).Count;
         }
 
         public QuestionDetail Get(int questiondetailid)
@@ -79,7 +79,7 @@ namespace Business.Concrete
 
         public int TrueAnswerCount(int ogrid)
         {
-            return _questionDetailDal.GetAll(x => x.StudentId == ogrid && x.QuestionState == true).Count;
+            return _questionDetailDal.GetAll(x => x.StudentId == ogrid && x.QuestionState == true && x.AnsweredState == true).Count;
         }
 
         public void Update(QuestionDetail questionDetail)
