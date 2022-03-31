@@ -20,14 +20,10 @@ namespace SinavSistemiProje
             InitializeComponent();
         }
         QuestionManager questionManager = new QuestionManager(new EfQuestionDal());
+        int questionState;
         private void FrmAdminConfirmQuestion_Load(object sender, EventArgs e)
         {
             GetQuestions();
-        }
-
-        private void DgwSorular_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
         private void GetQuestions()
         {
@@ -48,7 +44,10 @@ namespace SinavSistemiProje
             //}
             //else
             //{
-                //durum = true;
+            //durum = true;
+            var row = DgwSorular.CurrentRow;
+            if ((bool)row.Cells[4].Value != true)
+            {
                 DialogResult result2 = MessageBox.Show("Soruyu onaylamak istediğinize emin misiniz?", " ", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result2 == DialogResult.Yes)
                 {
@@ -56,20 +55,50 @@ namespace SinavSistemiProje
                     MessageBox.Show("Soru başarıyla onaylandı");
                     GetQuestions();
                 }
+            }           
             //}
-                            
+
         }
         private void UpdateQuestion(/*bool state*/) //normalizasyon.
         {
             var row = DgwSorular.CurrentRow;
+            var questionId = row.Cells[0].Value.ToString();
             questionManager.Update(new Question
             {
-                QuestionId = Convert.ToInt32(row.Cells[0].Value.ToString()),
+                QuestionId = Convert.ToInt32(questionId),
                 SubjectId = Convert.ToInt32(row.Cells[1].Value.ToString()),
                 QuestionName = row.Cells[2].Value.ToString(),
                 PicturePath = row.Cells[3].Value.ToString(),
-                ConfirmState = true
+                ConfirmState = true,
+                CreatedDate = questionManager.Get(Convert.ToInt32(questionId)).CreatedDate,
+                CorrectAnswer = questionManager.Get(Convert.ToInt32(questionId)).CorrectAnswer
             });
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            DgwSorular.DataSource = questionManager.GetConfirmByQuestions();
+            questionState = 2;
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            DgwSorular.DataSource = questionManager.GetNotConfirmByQuestions();
+            questionState = 1;
+        }
+
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+            GetQuestions();
+            questionState = 0;
+        }
+
+        private void txtSoruAdi_TextChanged(object sender, EventArgs e)
+        {
+            if (!String.IsNullOrEmpty(txtSoruAdi.Text))
+                DgwSorular.DataSource = questionManager.GetQuestionsByQuestionName(txtSoruAdi.Text, questionState);
+            else
+                DgwSorular.DataSource = questionManager.GetQuestionsByState(questionState);
         }
     }
 }
