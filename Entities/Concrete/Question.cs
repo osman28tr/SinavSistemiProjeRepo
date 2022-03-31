@@ -14,6 +14,7 @@ namespace Entities.Concrete
         public string QuestionName { get; set; }
         public string PicturePath { get; set; }
         public bool ConfirmState { get; set; }
-
+        public DateTime CreatedDate { get; set; }
+        public string CorrectAnswer { get; set; }
     }
 }
