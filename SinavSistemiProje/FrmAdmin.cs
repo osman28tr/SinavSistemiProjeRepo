@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace SinavSistemiProje
 {
-    public partial class FrmAdmin : Form
+    public partial class FrmAdmin:Form
     {
         public FrmAdmin()
         {

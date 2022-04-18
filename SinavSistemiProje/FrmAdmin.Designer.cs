@@ -69,7 +69,7 @@ namespace SinavSistemiProje
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe Print", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.label3.Location = new System.Drawing.Point(223, 9);
+            this.label3.Location = new System.Drawing.Point(215, 9);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(383, 54);
             this.label3.TabIndex = 2;
@@ -122,7 +122,7 @@ namespace SinavSistemiProje
             this.groupBox1.Controls.Add(this.btnGiris);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(164, 87);
+            this.groupBox1.Location = new System.Drawing.Point(156, 87);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(488, 290);
             this.groupBox1.TabIndex = 7;
@@ -155,11 +155,13 @@ namespace SinavSistemiProje
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.ClientSize = new System.Drawing.Size(795, 450);
+            this.ClientSize = new System.Drawing.Size(795, 459);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label3);
+            this.MaximizeBox = false;
             this.Name = "FrmAdmin";
-            this.Text = "FrmAdmin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Admin";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
