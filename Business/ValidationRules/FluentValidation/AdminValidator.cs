@@ -1,4 +1,5 @@
-﻿using Entities;
+﻿using Business.ValidationRules.Abstract;
+using Entities;
 using FluentValidation;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Business.ValidationRules.FluentValidation
 {
-    public class AdminValidator:AbstractValidator<Admin>
+    public class AdminValidator:AbstractValidator<Admin>,IValidate
     {
         public AdminValidator()
         {

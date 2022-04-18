@@ -1,4 +1,5 @@
-﻿using Entities.Concrete;
+﻿using Business.ValidationRules.Abstract;
+using Entities.Concrete;
 using FluentValidation;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Business.ValidationRules.FluentValidation
 {
-    public class TeacherValidator : AbstractValidator<Teacher>
+    public class TeacherValidator : AbstractValidator<Teacher>,IValidate
     {
         public TeacherValidator()
         {
