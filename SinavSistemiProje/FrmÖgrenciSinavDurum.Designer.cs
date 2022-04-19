@@ -29,14 +29,15 @@ namespace SinavSistemiProje
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.profilimToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sınavDurumumToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.BtnSinavaGir = new System.Windows.Forms.Button();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.btnEksikKapa = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
@@ -80,20 +81,32 @@ namespace SinavSistemiProje
             // 
             // chart1
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
+            chartArea2.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chart1.Legends.Add(legend2);
             this.chart1.Location = new System.Drawing.Point(12, 99);
             this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series1.Legend = "Legend1";
-            series1.Name = "SinavDurumu";
-            this.chart1.Series.Add(series1);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series2.Legend = "Legend1";
+            series2.Name = "SinavDurumu";
+            this.chart1.Series.Add(series2);
             this.chart1.Size = new System.Drawing.Size(592, 368);
             this.chart1.TabIndex = 20;
             this.chart1.Text = "chart1";
+            // 
+            // btnEksikKapa
+            // 
+            this.btnEksikKapa.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnEksikKapa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnEksikKapa.Location = new System.Drawing.Point(12, 31);
+            this.btnEksikKapa.Name = "btnEksikKapa";
+            this.btnEksikKapa.Size = new System.Drawing.Size(178, 62);
+            this.btnEksikKapa.TabIndex = 21;
+            this.btnEksikKapa.Text = "Eksiklerimi Kapat";
+            this.btnEksikKapa.UseVisualStyleBackColor = true;
+            this.btnEksikKapa.Click += new System.EventHandler(this.btnEksikKapa_Click);
             // 
             // FrmÖgrenciSinavDurum
             // 
@@ -101,6 +114,7 @@ namespace SinavSistemiProje
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Olive;
             this.ClientSize = new System.Drawing.Size(869, 479);
+            this.Controls.Add(this.btnEksikKapa);
             this.Controls.Add(this.chart1);
             this.Controls.Add(this.BtnSinavaGir);
             this.Controls.Add(this.menuStrip1);
@@ -122,5 +136,6 @@ namespace SinavSistemiProje
         private System.Windows.Forms.ToolStripMenuItem sınavDurumumToolStripMenuItem;
         private System.Windows.Forms.Button BtnSinavaGir;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.Button btnEksikKapa;
     }
 }

@@ -191,6 +191,7 @@ namespace SinavSistemiProje
             if (result1 == DialogResult.Yes)
             {
                 //QuestionDetailInsert();
+                timer1.Stop();
                 QuestionDetailUpdate();
                 MessageBox.Show("Cevaplarınız Gönderildi! Geçmiş Olsun :)...");
                 Finished();

@@ -82,6 +82,12 @@
     <Compile Include="FrmAdminKayit.Designer.cs">
       <DependentUpon>FrmAdminKayit.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmOgrenciSinavModul2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmOgrenciSinavModul2.Designer.cs">
+      <DependentUpon>FrmOgrenciSinavModul2.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmSifremiUnuttumAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -161,6 +167,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAdminKayit.resx">
       <DependentUpon>FrmAdminKayit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmOgrenciSinavModul2.resx">
+      <DependentUpon>FrmOgrenciSinavModul2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSifremiUnuttumAdmin.resx">
       <DependentUpon>FrmSifremiUnuttumAdmin.cs</DependentUpon>

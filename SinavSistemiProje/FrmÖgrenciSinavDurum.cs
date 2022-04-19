@@ -28,7 +28,6 @@ namespace SinavSistemiProje
                 FrmÖgrenciSinavModul frmÖgrenciSinavModul = new FrmÖgrenciSinavModul();
                 frmÖgrenciSinavModul.Show();
                 this.Hide();
-
             }
         }
 
@@ -45,6 +44,18 @@ namespace SinavSistemiProje
             int falsecount = questionDetailManager.FalseAnswerCount(ogrid);
             chart1.Series["SinavDurumu"].Points.AddXY("Dogru Cevap " + truecount, truecount);
             chart1.Series["SinavDurumu"].Points.AddXY("Yanlis Cevap " + falsecount, falsecount);
+        }
+
+        private void btnEksikKapa_Click(object sender, EventArgs e)
+        {
+            DialogResult result1 = MessageBox.Show("Hazır mısınız?", " ", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result1 == DialogResult.Yes)
+            {
+                FrmOgrenciSinavModul2 frmOgrenciSinavModul2 = new FrmOgrenciSinavModul2();
+                frmOgrenciSinavModul2.id = ogrid;
+                frmOgrenciSinavModul2.Show();
+                this.Hide();
+            }        
         }
     }
 }
