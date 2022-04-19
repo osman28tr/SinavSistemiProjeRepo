@@ -51,7 +51,7 @@ namespace SinavSistemiProje
             lblSoru.Text = soru.ToString();
             //QuestionDetailInsert();//öğrenci id sini alsın.
             QuestionDetailUpdate(); //soruyu çözme durumu güncellensin.           
-            MessageBox.Show("soru: " + soru + " sorusayisi:" + sorusayisi);
+            //MessageBox.Show("soru: " + soru + " sorusayisi:" + sorusayisi);
             if (soru == sorusayisi) //10. soruya geldiysek.
             {
                 if (durum == false) //süre devam ediyorsa
@@ -97,7 +97,7 @@ namespace SinavSistemiProje
         }
         private void QuestionsBySigma6()
         {
-            MessageBox.Show("soru sayisi 11 oldu : soru üret: " + soruüret);
+            //MessageBox.Show("soru sayisi 11 oldu : soru üret: " + soruüret);
             sorulistesi.Clear();
             soruüret = 0;
             sorulistesi = GetByQuestionAnswered();
@@ -193,9 +193,7 @@ namespace SinavSistemiProje
                 //QuestionDetailInsert();
                 QuestionDetailUpdate();
                 MessageBox.Show("Cevaplarınız Gönderildi! Geçmiş Olsun :)...");
-                FrmÖgrenci frmÖgrenci = new FrmÖgrenci();
-                frmÖgrenci.Show();
-                this.Hide();
+                Finished();
             }
         }
 
@@ -220,11 +218,15 @@ namespace SinavSistemiProje
                     timer1.Stop();
                     durum = true; //süre bitmiştir.
                     MessageBox.Show("Süreniz Bitmiştir. Cevaplarınız Gönderildi. Geçmiş Olsun. :)");
-                    FrmÖgrenciAnaSayfa frmÖgrenciAnaSayfa = new FrmÖgrenciAnaSayfa();
-                    frmÖgrenciAnaSayfa.Show();
-                    this.Hide();
+                    Finished();
                 }
             }
+        }
+        private void Finished()
+        {
+            FrmÖgrenci frmÖgrenci = new FrmÖgrenci();
+            frmÖgrenci.Show();
+            this.Hide();
         }
     }
 }
