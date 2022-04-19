@@ -39,7 +39,7 @@ namespace SinavSistemiProje
             this.btnDosyaSec = new System.Windows.Forms.Button();
             this.cmbUnit = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pcbQuestionİmage = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.cmbLesson = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -47,21 +47,19 @@ namespace SinavSistemiProje
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.txtSecenekA = new System.Windows.Forms.TextBox();
             this.txtSecenekD = new System.Windows.Forms.TextBox();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.txtSecenekC = new System.Windows.Forms.TextBox();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.txtSecenekB = new System.Windows.Forms.TextBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.txtSecenekA = new System.Windows.Forms.TextBox();
             this.btnEkle = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbQuestionİmage)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
@@ -88,7 +86,6 @@ namespace SinavSistemiProje
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dataGridView1);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.cmbStudents);
             this.groupBox1.Controls.Add(this.cmbSubject);
@@ -96,7 +93,7 @@ namespace SinavSistemiProje
             this.groupBox1.Controls.Add(this.btnDosyaSec);
             this.groupBox1.Controls.Add(this.cmbUnit);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.pictureBox1);
+            this.groupBox1.Controls.Add(this.pcbQuestionİmage);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.cmbLesson);
             this.groupBox1.Controls.Add(this.label4);
@@ -180,14 +177,14 @@ namespace SinavSistemiProje
             this.label5.TabIndex = 18;
             this.label5.Text = "Ünite:";
             // 
-            // pictureBox1
+            // pcbQuestionİmage
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(149, 375);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(571, 386);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 15;
-            this.pictureBox1.TabStop = false;
+            this.pcbQuestionİmage.Location = new System.Drawing.Point(149, 375);
+            this.pcbQuestionİmage.Name = "pcbQuestionİmage";
+            this.pcbQuestionİmage.Size = new System.Drawing.Size(571, 386);
+            this.pcbQuestionİmage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcbQuestionİmage.TabIndex = 15;
+            this.pcbQuestionİmage.TabStop = false;
             // 
             // label2
             // 
@@ -263,6 +260,18 @@ namespace SinavSistemiProje
             this.label7.TabIndex = 15;
             this.label7.Text = "Lütfen Doğru Cevabı Seçeneklerdeki Optiğe İşaretleyin!!!";
             // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.radioButton1.Location = new System.Drawing.Point(24, 25);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(42, 27);
+            this.radioButton1.TabIndex = 1;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "A";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
             // radioButton4
             // 
             this.radioButton4.AutoSize = true;
@@ -275,6 +284,15 @@ namespace SinavSistemiProje
             this.radioButton4.Text = "D";
             this.radioButton4.UseVisualStyleBackColor = true;
             // 
+            // txtSecenekA
+            // 
+            this.txtSecenekA.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSecenekA.Location = new System.Drawing.Point(83, 26);
+            this.txtSecenekA.Multiline = true;
+            this.txtSecenekA.Name = "txtSecenekA";
+            this.txtSecenekA.Size = new System.Drawing.Size(288, 174);
+            this.txtSecenekA.TabIndex = 0;
+            // 
             // txtSecenekD
             // 
             this.txtSecenekD.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -283,6 +301,15 @@ namespace SinavSistemiProje
             this.txtSecenekD.Name = "txtSecenekD";
             this.txtSecenekD.Size = new System.Drawing.Size(288, 174);
             this.txtSecenekD.TabIndex = 6;
+            // 
+            // txtSecenekC
+            // 
+            this.txtSecenekC.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSecenekC.Location = new System.Drawing.Point(84, 388);
+            this.txtSecenekC.Multiline = true;
+            this.txtSecenekC.Name = "txtSecenekC";
+            this.txtSecenekC.Size = new System.Drawing.Size(288, 174);
+            this.txtSecenekC.TabIndex = 4;
             // 
             // radioButton3
             // 
@@ -295,15 +322,6 @@ namespace SinavSistemiProje
             this.radioButton3.TabStop = true;
             this.radioButton3.Text = "C";
             this.radioButton3.UseVisualStyleBackColor = true;
-            // 
-            // txtSecenekC
-            // 
-            this.txtSecenekC.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSecenekC.Location = new System.Drawing.Point(84, 388);
-            this.txtSecenekC.Multiline = true;
-            this.txtSecenekC.Name = "txtSecenekC";
-            this.txtSecenekC.Size = new System.Drawing.Size(288, 174);
-            this.txtSecenekC.TabIndex = 4;
             // 
             // radioButton2
             // 
@@ -326,27 +344,6 @@ namespace SinavSistemiProje
             this.txtSecenekB.Size = new System.Drawing.Size(288, 174);
             this.txtSecenekB.TabIndex = 2;
             // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.radioButton1.Location = new System.Drawing.Point(24, 25);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(42, 27);
-            this.radioButton1.TabIndex = 1;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "A";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // txtSecenekA
-            // 
-            this.txtSecenekA.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSecenekA.Location = new System.Drawing.Point(83, 26);
-            this.txtSecenekA.Multiline = true;
-            this.txtSecenekA.Name = "txtSecenekA";
-            this.txtSecenekA.Size = new System.Drawing.Size(288, 174);
-            this.txtSecenekA.TabIndex = 0;
-            // 
             // btnEkle
             // 
             this.btnEkle.Location = new System.Drawing.Point(357, 829);
@@ -365,16 +362,6 @@ namespace SinavSistemiProje
             this.button1.TabIndex = 18;
             this.button1.Text = "Soru Havuzunu Güncelle";
             this.button1.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(622, 21);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(293, 117);
-            this.dataGridView1.TabIndex = 19;
             // 
             // FrmSinavHazirlamaModul
             // 
@@ -395,10 +382,9 @@ namespace SinavSistemiProje
             this.Load += new System.EventHandler(this.FrmSinavHazirlamaModul_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbQuestionİmage)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -412,7 +398,7 @@ namespace SinavSistemiProje
         private System.Windows.Forms.RichTextBox rctxQuestionName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pcbQuestionİmage;
         private System.Windows.Forms.Button btnDosyaSec;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox txtSecenekA;
@@ -432,7 +418,6 @@ namespace SinavSistemiProje
         private System.Windows.Forms.Button btnEkle;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ComboBox cmbStudents;
         private System.Windows.Forms.Label label8;
     }

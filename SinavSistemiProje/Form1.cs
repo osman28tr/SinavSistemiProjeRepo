@@ -19,11 +19,6 @@ namespace SinavSistemiProje
             InitializeComponent();
         }
         StudentManager studentManager = new StudentManager(new EfStudentDal());
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            dataGridView1.DataSource = studentManager.GetAll();
-        }
-
         private void BtnAdmin_Click(object sender, EventArgs e)
         {
             FrmAdmin frmAdmin = new FrmAdmin();

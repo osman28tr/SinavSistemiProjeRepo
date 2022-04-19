@@ -31,7 +31,6 @@ namespace SinavSistemiProje
         string DosyaYolu = "";
         string correctAnswer = "";
         string[] WrongAnswer = new string[3];
-        bool correctAnswerFailState = false, wrongAnswerFailState = false;
         int id; //normalizasyon
         private void FrmSinavHazirlamaModul_Load(object sender, EventArgs e)
         {
@@ -39,7 +38,6 @@ namespace SinavSistemiProje
             LoadUnits(1);
             LoadSubjects(1);
             LoadStudents();
-            MessageBox.Show(Convert.ToInt32(cmbLesson.SelectedValue).ToString());
             //cmbLesson.SelectedIndex = 1;
             //cmbUnit.DataSource = unitManager.GetUnitsByLesson(a);
             //cmbUnit.DisplayMember = "UnitName";
@@ -51,7 +49,7 @@ namespace SinavSistemiProje
             dosya.Title = "Sinav Hazırlama Modülü Dosya Seçimi";
             dosya.ShowDialog();
             DosyaYolu = dosya.FileName;
-            pictureBox1.ImageLocation = DosyaYolu;
+            pcbQuestionİmage.ImageLocation = DosyaYolu;
         }
 
         private void btnEkle_Click(object sender, EventArgs e)
@@ -60,7 +58,7 @@ namespace SinavSistemiProje
             Random rastgele = new Random();
             int sayi = rastgele.Next(10, 1000000);
 
-            string imagefile = Path.GetFileName(pictureBox1.ImageLocation);
+            string imagefile = Path.GetFileName(pcbQuestionİmage.ImageLocation);
             string imagepath = Path.Combine(Application.StartupPath + "\\images\\" + sayi + imagefile);
             string imagename = Path.Combine("\\images\\" + sayi + imagefile);
             //File.Copy(pictureBox1.ImageLocation, imagepath);
@@ -86,11 +84,12 @@ namespace SinavSistemiProje
             else
             {
                 if (imagename != null)
-                    File.Copy(pictureBox1.ImageLocation, imagepath);
+                    File.Copy(pcbQuestionİmage.ImageLocation, imagepath);
                 QuestionDetailAdd();
                 //CorrectAnswerAdd();//normalizasyon
                 WrongAnswerAdd();//normalizasyon
                 MessageBox.Show("Hazırladığınız soru admine başarıyla gönderildi!");
+                ToolsClear();
             }
             //questionManager.Add(new Question
             //{
@@ -107,14 +106,24 @@ namespace SinavSistemiProje
             //WrongAnswerAdd();//normalizasyon
             //MessageBox.Show("Hazırladığınız soru admine başarıyla gönderildi!");
         }
+        private void ToolsClear()
+        {
+            rctxQuestionName.Clear();
+            pcbQuestionİmage.Image = null;
+            txtSecenekA.Clear();
+            txtSecenekB.Clear();
+            txtSecenekC.Clear();
+            txtSecenekD.Clear();
+            radioButton1.Checked = false;
+            radioButton2.Checked = false;
+            radioButton3.Checked = false;
+            radioButton4.Checked = false;
+        }
         private void QuestionDetailAdd()
         {
             //id = questionManager.GetAll().LastOrDefault().QuestionId;
-            if (correctAnswerFailState == false && wrongAnswerFailState == false)
-            {
-                id = questionManager.GetLastQuestionId();
-                questionDetailManager.Add(new QuestionDetail { QuestionId = id, StudentId = (int)cmbStudents.SelectedValue, SigmaCount = 0, QuestionState = false, AnsweredState = false });
-            }
+            id = questionManager.GetLastQuestionId();
+            questionDetailManager.Add(new QuestionDetail { QuestionId = id, StudentId = (int)cmbStudents.SelectedValue, SigmaCount = 0, QuestionState = false, AnsweredState = false });
         }
         private void CorrectAnswerAdd()
         {
@@ -153,29 +162,14 @@ namespace SinavSistemiProje
             //        QuestionId = id
             //    });
             //}
-
-
-
-            List<string> failstatestring = new List<string>();
             for (int i = 0; i < 3; i++)
             {
-                failstatestring = wrongAnswerManager.Add(new WrongAnswer
+                wrongAnswerManager.Add(new WrongAnswer
                 {
                     WrongAnswerName = WrongAnswer[i],
                     QuestionId = id
                 });
             }
-            if (failstatestring != null)
-            {
-                wrongAnswerFailState = true;
-                foreach (var item in failstatestring)
-                {
-                    MessageBox.Show(item.ToString());
-                }
-                failstatestring.Clear();
-            }
-            else
-                wrongAnswerFailState = false;
         }
         private void CheckedState()
         {

@@ -51,10 +51,8 @@ namespace SinavSistemiProje
             this.label4 = new System.Windows.Forms.Label();
             this.lblSoru = new System.Windows.Forms.Label();
             this.btnBitir = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -281,16 +279,6 @@ namespace SinavSistemiProje
             this.btnBitir.UseVisualStyleBackColor = true;
             this.btnBitir.Click += new System.EventHandler(this.btnBitir_Click);
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(17, 348);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(142, 197);
-            this.dataGridView1.TabIndex = 25;
-            // 
             // FrmÖgrenciSinavModul
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -299,7 +287,6 @@ namespace SinavSistemiProje
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Olive;
             this.ClientSize = new System.Drawing.Size(1419, 1055);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnBitir);
             this.Controls.Add(this.lblSoru);
             this.Controls.Add(this.label4);
@@ -318,7 +305,6 @@ namespace SinavSistemiProje
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -347,6 +333,5 @@ namespace SinavSistemiProje
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblSoru;
         private System.Windows.Forms.Button btnBitir;
-        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
