@@ -12,8 +12,7 @@ namespace Business.Abstract
     {
         List<WrongAnswer> GetAll(int id);
         WrongAnswer Get();
-        List<string> Add(WrongAnswer wrongAnswer);
-        IList<ValidationFailure> Dogrula(WrongAnswer wrongAnswer);
+        void Add(WrongAnswer wrongAnswer);
         void Update(WrongAnswer wrongAnswer);
         void Delete(WrongAnswer wrongAnswer);
     }

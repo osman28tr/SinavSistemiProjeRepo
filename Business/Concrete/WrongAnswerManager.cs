@@ -14,43 +14,14 @@ namespace Business.Concrete
     public class WrongAnswerManager : IWrongAnswerService
     {
         IWrongAnswerDal _wrongAnswerDal;
-        private static WrongAnswerValidator wrongAnswerValidator = new WrongAnswerValidator();
-        List<string> validations = new List<string>();
         public WrongAnswerManager(IWrongAnswerDal wrongAnswerDal)
         {
             _wrongAnswerDal = wrongAnswerDal;
         }
-        public List<string> Add(WrongAnswer wrongAnswer)
+        public void Add(WrongAnswer wrongAnswer)
         {
-            IList<ValidationFailure> failures = Dogrula(wrongAnswer);
-            if (failures != null)
-            {
-                foreach (var failure in failures)
-                {
-                    validations.Add(failure.ErrorMessage);
-                }
-                return validations;
-            }
-            else
-            {
-                _wrongAnswerDal.Add(wrongAnswer);
-                return null;
-            }
+            _wrongAnswerDal.Add(wrongAnswer);
         }
-        public IList<ValidationFailure> Dogrula(WrongAnswer wrongAnswer)
-        {
-            var result = wrongAnswerValidator.Validate(wrongAnswer);
-            IList<ValidationFailure> failures = result.Errors;
-            if (!result.IsValid)
-            {
-                return failures;
-            }
-            else
-            {
-                return null;
-            }
-        }
-
         public void Delete(WrongAnswer wrongAnswer)
         {
             _wrongAnswerDal.Delete(wrongAnswer);
