@@ -77,6 +77,11 @@ namespace Business.Concrete
             return _questionDetailDal.GetAll(x => x.QuestionState == false && x.StudentId == studentid);
         }
 
+        public List<QuestionDetail> GetQuestionsByFalseAndAnswered(int studentid)
+        {
+            return _questionDetailDal.GetAll(x => x.QuestionState == false && x.StudentId == studentid && x.AnsweredState == true);
+        }
+
         public int TrueAnswerCount(int ogrid)
         {
             return _questionDetailDal.GetAll(x => x.StudentId == ogrid && x.QuestionState == true && x.AnsweredState == true).Count;
