@@ -22,5 +22,8 @@ namespace Business.Abstract
         List<QuestionDetail> GetQuestionsByFalseAndAnswered(int studentid);
         int TrueAnswerCount(int ogrid);
         int FalseAnswerCount(int ogrid);
+        int StudentSuccessQuestionBySubject(int questionId, int studentId);
+        int StudentNotSuccessQuestionBySubject(int questionId, int studentId);
+        int StudentEmptyQuestionBySubject(int questionId, int studentId);
     }
 }

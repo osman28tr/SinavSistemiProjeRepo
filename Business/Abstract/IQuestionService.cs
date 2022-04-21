@@ -24,5 +24,6 @@ namespace Business.Abstract
         List<Question> GetNotConfirmByQuestions();
         List<Question> GetQuestionsByQuestionName(string questionName, int questionConfirmState);
         List<Question> GetQuestionsByState(int state);
+        int QuestionBySubject(int subjectId);
     }
 }

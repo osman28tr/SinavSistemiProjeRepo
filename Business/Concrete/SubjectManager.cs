@@ -21,9 +21,19 @@ namespace Business.Concrete
             return _subjectDal.GetAll(x => x.UnitId == id).ToList();
         }
 
+        public Subject GetSubjectById(int subjectId)
+        {
+            return _subjectDal.Get(x => x.SubjectId == subjectId);
+        }
+
         public List<Subject> GetSubjectsByUnit(int unitid)
         {
             return _subjectDal.GetAll(x => x.UnitId == unitid).ToList();
+        }
+
+        public int SubjectCount()
+        {
+            return _subjectDal.GetAll().Count;
         }
     }
 }

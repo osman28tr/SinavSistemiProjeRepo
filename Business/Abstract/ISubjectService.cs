@@ -10,6 +10,8 @@ namespace Business.Abstract
     public interface ISubjectService
     {
         List<Subject> GetAllById(int id);
+        Subject GetSubjectById(int subjectId);
         List<Subject> GetSubjectsByUnit(int unitid);
+        int SubjectCount();
     }
 }

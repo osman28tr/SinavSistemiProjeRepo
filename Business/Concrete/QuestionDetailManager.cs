@@ -82,6 +82,45 @@ namespace Business.Concrete
             return _questionDetailDal.GetAll(x => x.QuestionState == false && x.StudentId == studentid && x.AnsweredState == true);
         }
 
+        public int StudentEmptyQuestionBySubject(int questionId, int studentId)
+        {
+            if (_questionDetailDal.Get(x => x.QuestionId == questionId && x.StudentId == studentId && x.AnsweredState == false) != null)
+            {
+                return 1;
+            }
+            else
+                return 0;
+        }
+
+        public int StudentNotSuccessQuestionBySubject(int questionId, int studentId)
+        {
+            if (_questionDetailDal.Get(x => x.QuestionId == questionId && x.StudentId == studentId && x.QuestionState == false && x.AnsweredState == true) != null)
+            {
+                return 1;
+            }
+            else
+                return 0;
+        }
+
+        public int StudentSuccessQuestionBySubject(int questionId, int studentId)
+        {
+            //int sayac = 0;
+            //for (int i = 0; i < questionCount; i++)
+            //{
+            //    if (_questionDetailDal.Get(x => x.QuestionId == questionId && x.StudentId == studentId && x.QuestionState == true && x.AnsweredState == true) != null)
+            //    {
+            //        sayac++;
+            //    }
+            //}
+            //return sayac;
+            if (_questionDetailDal.Get(x => x.QuestionId == questionId && x.StudentId == studentId && x.QuestionState == true && x.AnsweredState == true) != null)
+            {
+                return 1;
+            }
+            else
+                return 0;
+        }
+
         public int TrueAnswerCount(int ogrid)
         {
             return _questionDetailDal.GetAll(x => x.StudentId == ogrid && x.QuestionState == true && x.AnsweredState == true).Count;

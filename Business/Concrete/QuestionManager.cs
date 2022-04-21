@@ -187,5 +187,10 @@ namespace Business.Concrete
             else
                 return GetConfirmByQuestions();
         }
+
+        public int QuestionBySubject(int subjectId)
+        {
+            return _questionDal.GetAll(x => x.SubjectId == subjectId).Count;
+        }
     }
 }
