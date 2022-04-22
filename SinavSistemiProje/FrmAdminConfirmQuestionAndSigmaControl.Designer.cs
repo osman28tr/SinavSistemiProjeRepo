@@ -1,7 +1,7 @@
 ﻿
 namespace SinavSistemiProje
 {
-    partial class FrmAdminConfirmQuestion
+    partial class FrmAdminConfirmQuestionAndSigmaControl
     {
         /// <summary>
         /// Required designer variable.

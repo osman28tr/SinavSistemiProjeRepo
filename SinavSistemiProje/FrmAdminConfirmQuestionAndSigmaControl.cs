@@ -13,9 +13,9 @@ using System.Windows.Forms;
 
 namespace SinavSistemiProje
 {
-    public partial class FrmAdminConfirmQuestion : Form
+    public partial class FrmAdminConfirmQuestionAndSigmaControl : Form
     {
-        public FrmAdminConfirmQuestion()
+        public FrmAdminConfirmQuestionAndSigmaControl()
         {
             InitializeComponent();
         }

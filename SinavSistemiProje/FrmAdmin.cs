@@ -41,7 +41,7 @@ namespace SinavSistemiProje
             else
             {
                 MessageBox.Show("Giriş Başarılı!");
-                FrmAdminConfirmQuestion frmAdminConfirmQuestion = new FrmAdminConfirmQuestion();
+                FrmAdminConfirmQuestionAndSigmaControl frmAdminConfirmQuestion = new FrmAdminConfirmQuestionAndSigmaControl();
                 frmAdminConfirmQuestion.Show();
                 this.Hide();
             }
