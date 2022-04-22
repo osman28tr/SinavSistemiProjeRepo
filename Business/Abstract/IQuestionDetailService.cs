@@ -17,7 +17,7 @@ namespace Business.Abstract
         void Update(QuestionDetail questionDetail);
         void Delete(QuestionDetail questionDetail);
         int GetQuestionDetailId(int questionId, int studentId);
-        List<QuestionDetail> GetQuestionsAnsweredByDate(int studentid);
+        List<QuestionDetail> GetQuestionsAnsweredByDate(int studentid, Sigma sigma);
         List<QuestionDetail> GetQuestionsByFalse(int studentid);
         List<QuestionDetail> GetQuestionsByFalseAndAnswered(int studentid);
         int TrueAnswerCount(int ogrid);

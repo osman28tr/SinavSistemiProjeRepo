@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Abstract\IEntity.cs" />
     <Compile Include="Concrete\Admin.cs" />
+    <Compile Include="Concrete\Sigma.cs" />
     <Compile Include="Concrete\Lesson.cs" />
     <Compile Include="Concrete\Question.cs" />
     <Compile Include="Concrete\QuestionDetail.cs" />

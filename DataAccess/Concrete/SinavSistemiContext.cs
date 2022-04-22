@@ -20,5 +20,7 @@ namespace DataAccess.Concrete
         public DbSet<Subject> Subjects { get; set; }
         public DbSet<QuestionDetail> QuestionDetails { get; set; }
         public DbSet<WrongAnswer> WrongAnswers { get; set; }
+        //public DbSet<SigmaTime> SigmaTimes { get; set; }
+        public DbSet<Sigma> Sigmas { get; set; }
     }
 }

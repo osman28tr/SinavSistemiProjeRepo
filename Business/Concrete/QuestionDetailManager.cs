@@ -55,7 +55,7 @@ namespace Business.Concrete
             return _questionDetailDal.Get(x => x.QuestionId == questionId && x.StudentId == studentId).QuestionDetailId;
         }
 
-        public List<QuestionDetail> GetQuestionsAnsweredByDate(int studentid)
+        public List<QuestionDetail> GetQuestionsAnsweredByDate(int studentid, Sigma sigma)
         {
             var questions = _questionDetailDal.GetAll(x => x.QuestionState == true && x.StudentId == studentid).ToList();
             var questionsDate = questions.Select(x => x.AnsweredDate).ToList();
@@ -64,7 +64,7 @@ namespace Business.Concrete
             for (int i = 0; i < questionvalues; i++)
             {
                 TimeSpan timeSpan = DateTime.Now - questionsDate[i];
-                if (timeSpan.Days == 1 || timeSpan.Days == 7 || timeSpan.Days == 30 || timeSpan.Days == 90 || timeSpan.Days == 180 || timeSpan.Days == 365)
+                if (timeSpan.Days == sigma.Sigma1 || timeSpan.Days == sigma.Sigma2 || timeSpan.Days == sigma.Sigma3 || timeSpan.Days == sigma.Sigma4 || timeSpan.Days == sigma.Sigma5 || timeSpan.Days == sigma.Sigma6)
                 {
                     questiondetailList.Add(questions[i]);
                 }
