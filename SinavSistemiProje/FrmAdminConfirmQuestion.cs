@@ -20,13 +20,27 @@ namespace SinavSistemiProje
             InitializeComponent();
         }
         QuestionManager questionManager = new QuestionManager(new EfQuestionDal());
+        SigmaManager sigmaManager = new SigmaManager(new EfSigmaDal());
         private void FrmAdminConfirmQuestion_Load(object sender, EventArgs e)
         {
             GetQuestions();
+            FillSigma();
         }
         private void GetQuestions()
         {
             DgwSorular.DataSource = questionManager.GetAll();
+        }
+        private void FillSigma()
+        {
+            for (int i = 1; i <= 365; i++)
+            {
+                cmbSigma1.Items.Add(i);
+                cmbSigma2.Items.Add(i);
+                cmbSigma3.Items.Add(i);
+                cmbSigma4.Items.Add(i);
+                cmbSigma5.Items.Add(i);
+                cmbSigma6.Items.Add(i);
+            }
         }
         private void DgwSorular_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -87,6 +101,36 @@ namespace SinavSistemiProje
         private void rbAll_CheckedChanged(object sender, EventArgs e)
         {
             GetQuestions();
+        }
+
+        private void btnUygula_Click(object sender, EventArgs e)
+        {
+            if (sigmaManager.GetAll().Count > 0)
+            {
+                sigmaManager.Update(new Sigma
+                {
+                    SigmaId = 1,
+                    Sigma1 = Convert.ToInt32(cmbSigma1.Text),
+                    Sigma2 = Convert.ToInt32(cmbSigma2.Text),
+                    Sigma3 = Convert.ToInt32(cmbSigma3.Text),
+                    Sigma4 = Convert.ToInt32(cmbSigma4.Text),
+                    Sigma5 = Convert.ToInt32(cmbSigma5.Text),
+                    Sigma6 = Convert.ToInt32(cmbSigma6.Text),
+                });
+            }
+            else
+            {
+                sigmaManager.Add(new Sigma
+                {
+                    Sigma1 = Convert.ToInt32(cmbSigma1.Text),
+                    Sigma2 = Convert.ToInt32(cmbSigma2.Text),
+                    Sigma3 = Convert.ToInt32(cmbSigma3.Text),
+                    Sigma4 = Convert.ToInt32(cmbSigma4.Text),
+                    Sigma5 = Convert.ToInt32(cmbSigma5.Text),
+                    Sigma6 = Convert.ToInt32(cmbSigma6.Text),
+                });
+            }
+            MessageBox.Show("Belirlediğiniz zaman aralıkları başarıyla uygulandı");
         }
     }
 }

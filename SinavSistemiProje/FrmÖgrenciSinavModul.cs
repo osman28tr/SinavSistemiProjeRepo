@@ -27,6 +27,7 @@ namespace SinavSistemiProje
         QuestionDetailManager questionDetailManager = new QuestionDetailManager(new EfQuestionDetailDal());
         //CorrectAnswerManager correctAnswerManager = new CorrectAnswerManager(new EfCorrectAnswerDal());
         WrongAnswerManager wrongAnswerManager = new WrongAnswerManager(new EfWrongAnswerDal());
+        SigmaManager sigmaManager = new SigmaManager(new EfSigmaDal());
         int sorusayisi, dogrusorusayisi;
         private void FrmÖgrenciSinavModul_Load(object sender, EventArgs e)
         {
@@ -162,7 +163,8 @@ namespace SinavSistemiProje
         private List<Question> GetByQuestionAnswered()
         {
             List<QuestionDetail> questionDetails = new List<QuestionDetail>();
-            questionDetails = questionDetailManager.GetQuestionsAnsweredByDate(id);
+            Sigma sigma = sigmaManager.Get();
+            questionDetails = questionDetailManager.GetQuestionsAnsweredByDate(id, sigma);
             var questions = questionManager.GetQuestionsByAnswered(questionDetails);
             return questions;
         }

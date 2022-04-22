@@ -27,6 +27,7 @@ namespace SinavSistemiProje
         UnitManager unitManager = new UnitManager(new EfUnitDal());
         SubjectManager subjectManager = new SubjectManager(new EfSubjectDal());
         WrongAnswerManager wrongAnswerManager = new WrongAnswerManager(new EfWrongAnswerDal());
+        SigmaManager sigmaManager = new SigmaManager(new EfSigmaDal());
         //CorrectAnswerManager correctAnswerManager = new CorrectAnswerManager(new EfCorrectAnswerDal());
         string DosyaYolu = "";
         string correctAnswer = "";
@@ -38,6 +39,8 @@ namespace SinavSistemiProje
             LoadUnits(1);
             LoadSubjects(1);
             LoadStudents();
+            FillSigma();
+            dataGridView1.DataSource = sigmaManager.GetAll();
             //cmbLesson.SelectedIndex = 1;
             //cmbUnit.DataSource = unitManager.GetUnitsByLesson(a);
             //cmbUnit.DisplayMember = "UnitName";
@@ -263,7 +266,18 @@ namespace SinavSistemiProje
             //    throw;
             //}
         }
-
+        private void FillSigma()
+        {
+            for (int i = 1; i <= 365; i++)
+            {
+                cmbSigma1.Items.Add(i);
+                cmbSigma2.Items.Add(i);
+                cmbSigma3.Items.Add(i);
+                cmbSigma4.Items.Add(i);
+                cmbSigma5.Items.Add(i);
+                cmbSigma6.Items.Add(i);
+            }
+        }
         private void cmbLesson_SelectionChangeCommitted(object sender, EventArgs e)
         {
             try
@@ -297,5 +311,40 @@ namespace SinavSistemiProje
             }
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form1 form1 = new Form1();
+            form1.Show();
+            this.Hide();
+        }
+        private void btnUygula_Click(object sender, EventArgs e)
+        {
+            if (sigmaManager.GetAll().Count > 0)
+            {
+                sigmaManager.Update(new Sigma
+                {
+                    SigmaId = 1,
+                    Sigma1 = Convert.ToInt32(cmbSigma1.Text),
+                    Sigma2 = Convert.ToInt32(cmbSigma2.Text),
+                    Sigma3 = Convert.ToInt32(cmbSigma3.Text),
+                    Sigma4 = Convert.ToInt32(cmbSigma4.Text),
+                    Sigma5 = Convert.ToInt32(cmbSigma5.Text),
+                    Sigma6 = Convert.ToInt32(cmbSigma6.Text),
+                });
+            }
+            else
+            {
+                sigmaManager.Add(new Sigma
+                {
+                    Sigma1 = Convert.ToInt32(cmbSigma1.Text),
+                    Sigma2 = Convert.ToInt32(cmbSigma2.Text),
+                    Sigma3 = Convert.ToInt32(cmbSigma3.Text),
+                    Sigma4 = Convert.ToInt32(cmbSigma4.Text),
+                    Sigma5 = Convert.ToInt32(cmbSigma5.Text),
+                    Sigma6 = Convert.ToInt32(cmbSigma6.Text),
+                });
+            }
+            MessageBox.Show("Belirlediğiniz zaman aralıkları başarıyla uygulandı");
+        }
     }
 }
