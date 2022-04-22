@@ -40,7 +40,6 @@ namespace SinavSistemiProje
             LoadSubjects(1);
             LoadStudents();
             FillSigma();
-            dataGridView1.DataSource = sigmaManager.GetAll();
             //cmbLesson.SelectedIndex = 1;
             //cmbUnit.DataSource = unitManager.GetUnitsByLesson(a);
             //cmbUnit.DisplayMember = "UnitName";

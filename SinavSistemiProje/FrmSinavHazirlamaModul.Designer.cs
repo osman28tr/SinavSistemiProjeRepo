@@ -73,12 +73,10 @@ namespace SinavSistemiProje
             this.txtSecenekB = new System.Windows.Forms.TextBox();
             this.btnEkle = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbQuestionİmage)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
@@ -105,7 +103,6 @@ namespace SinavSistemiProje
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dataGridView1);
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.cmbStudents);
@@ -149,7 +146,7 @@ namespace SinavSistemiProje
             this.groupBox3.Size = new System.Drawing.Size(395, 197);
             this.groupBox3.TabIndex = 23;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Zaman";
+            this.groupBox3.Text = "Zaman Ayarla";
             // 
             // btnUygula
             // 
@@ -555,16 +552,6 @@ namespace SinavSistemiProje
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(248, 83);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(215, 124);
-            this.dataGridView1.TabIndex = 24;
-            // 
             // FrmSinavHazirlamaModul
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -589,7 +576,6 @@ namespace SinavSistemiProje
             ((System.ComponentModel.ISupportInitialize)(this.pcbQuestionİmage)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -641,6 +627,5 @@ namespace SinavSistemiProje
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnUygula;
-        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
