@@ -30,6 +30,7 @@ namespace SinavSistemiProje
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.BtnAnaSayfa = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.txtStudentNo = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -43,7 +44,6 @@ namespace SinavSistemiProje
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.BtnAnaSayfa = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,6 +68,18 @@ namespace SinavSistemiProje
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ÖğrenciKayıt";
+            // 
+            // BtnAnaSayfa
+            // 
+            this.BtnAnaSayfa.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.BtnAnaSayfa.ForeColor = System.Drawing.Color.Olive;
+            this.BtnAnaSayfa.Location = new System.Drawing.Point(300, 276);
+            this.BtnAnaSayfa.Name = "BtnAnaSayfa";
+            this.BtnAnaSayfa.Size = new System.Drawing.Size(184, 57);
+            this.BtnAnaSayfa.TabIndex = 13;
+            this.BtnAnaSayfa.Text = "←AnaSayfayaDon";
+            this.BtnAnaSayfa.UseVisualStyleBackColor = true;
+            this.BtnAnaSayfa.Click += new System.EventHandler(this.BtnAnaSayfa_Click);
             // 
             // checkBox1
             // 
@@ -203,18 +215,6 @@ namespace SinavSistemiProje
             this.label2.TabIndex = 4;
             this.label2.Text = "ÖğrenciKayıt";
             // 
-            // BtnAnaSayfa
-            // 
-            this.BtnAnaSayfa.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.BtnAnaSayfa.ForeColor = System.Drawing.Color.Olive;
-            this.BtnAnaSayfa.Location = new System.Drawing.Point(300, 276);
-            this.BtnAnaSayfa.Name = "BtnAnaSayfa";
-            this.BtnAnaSayfa.Size = new System.Drawing.Size(184, 57);
-            this.BtnAnaSayfa.TabIndex = 13;
-            this.BtnAnaSayfa.Text = "←AnaSayfayaDon";
-            this.BtnAnaSayfa.UseVisualStyleBackColor = true;
-            this.BtnAnaSayfa.Click += new System.EventHandler(this.BtnAnaSayfa_Click);
-            // 
             // FrmÖgrenciKayit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -224,7 +224,7 @@ namespace SinavSistemiProje
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label2);
             this.Name = "FrmÖgrenciKayit";
-            this.Text = "FrmÖgrenciKayit";
+            this.Text = "ÖgrenciKayit";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

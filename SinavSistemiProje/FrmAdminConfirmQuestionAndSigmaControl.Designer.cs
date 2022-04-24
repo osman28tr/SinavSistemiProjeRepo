@@ -37,7 +37,6 @@ namespace SinavSistemiProje
             this.rbNotConfirm = new System.Windows.Forms.RadioButton();
             this.rbConfirm = new System.Windows.Forms.RadioButton();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.btnUygula = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -53,6 +52,7 @@ namespace SinavSistemiProje
             this.label10 = new System.Windows.Forms.Label();
             this.cmbSigma1 = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgwSorular)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -64,7 +64,7 @@ namespace SinavSistemiProje
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe Print", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.label3.Location = new System.Drawing.Point(294, 9);
+            this.label3.Location = new System.Drawing.Point(405, 9);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(275, 54);
             this.label3.TabIndex = 3;
@@ -166,17 +166,6 @@ namespace SinavSistemiProje
             this.groupBox3.TabIndex = 10;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Zaman Ayarla";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe Script", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(16, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(548, 22);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "Ogrencinin Dogru Cozdugu Sorularla İlgili Zamani Ayarlayabilirsiniz";
             // 
             // btnUygula
             // 
@@ -324,7 +313,18 @@ namespace SinavSistemiProje
             this.label9.TabIndex = 39;
             this.label9.Text = "Lütfen zaman araligini belirleyin";
             // 
-            // FrmAdminConfirmQuestion
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe Script", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(16, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(548, 22);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Ogrencinin Dogru Cozdugu Sorularla İlgili Zamani Ayarlayabilirsiniz";
+            // 
+            // FrmAdminConfirmQuestionAndSigmaControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -336,8 +336,8 @@ namespace SinavSistemiProje
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label3);
-            this.Name = "FrmAdminConfirmQuestion";
-            this.Text = "FrmAdminConfirmQuestion";
+            this.Name = "FrmAdminConfirmQuestionAndSigmaControl";
+            this.Text = "Adminİslem";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmAdminConfirmQuestion_Load);
             this.groupBox1.ResumeLayout(false);

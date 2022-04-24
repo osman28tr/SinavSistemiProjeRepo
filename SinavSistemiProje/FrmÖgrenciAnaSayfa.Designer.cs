@@ -33,6 +33,7 @@ namespace SinavSistemiProje
             this.profilimToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sınavDurumumToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.txtStudentNo = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtStudentPassword = new System.Windows.Forms.TextBox();
@@ -44,8 +45,7 @@ namespace SinavSistemiProje
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.lblOgrenciIsim = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -58,20 +58,20 @@ namespace SinavSistemiProje
             this.sınavDurumumToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(928, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(928, 30);
             this.menuStrip1.TabIndex = 15;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // profilimToolStripMenuItem
             // 
             this.profilimToolStripMenuItem.Name = "profilimToolStripMenuItem";
-            this.profilimToolStripMenuItem.Size = new System.Drawing.Size(75, 24);
+            this.profilimToolStripMenuItem.Size = new System.Drawing.Size(75, 26);
             this.profilimToolStripMenuItem.Text = "Profilim";
             // 
             // sınavDurumumToolStripMenuItem
             // 
             this.sınavDurumumToolStripMenuItem.Name = "sınavDurumumToolStripMenuItem";
-            this.sınavDurumumToolStripMenuItem.Size = new System.Drawing.Size(128, 24);
+            this.sınavDurumumToolStripMenuItem.Size = new System.Drawing.Size(128, 26);
             this.sınavDurumumToolStripMenuItem.Text = "Sınav Durumum";
             this.sınavDurumumToolStripMenuItem.Click += new System.EventHandler(this.sınavDurumumToolStripMenuItem_Click);
             // 
@@ -95,6 +95,17 @@ namespace SinavSistemiProje
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Bilgilerim";
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(411, 172);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(73, 21);
+            this.checkBox1.TabIndex = 23;
+            this.checkBox1.Text = "Göster";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // txtStudentNo
             // 
@@ -122,6 +133,7 @@ namespace SinavSistemiProje
             this.txtStudentPassword.Name = "txtStudentPassword";
             this.txtStudentPassword.Size = new System.Drawing.Size(195, 30);
             this.txtStudentPassword.TabIndex = 20;
+            this.txtStudentPassword.UseSystemPasswordChar = true;
             // 
             // txtStudentMail
             // 
@@ -203,27 +215,16 @@ namespace SinavSistemiProje
             this.label2.TabIndex = 13;
             this.label2.Text = "ÖğrenciSurname:";
             // 
-            // label3
+            // lblOgrenciIsim
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe Print", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(285, 40);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(266, 54);
-            this.label3.TabIndex = 17;
-            this.label3.Text = "HOŞ GELDİNİZ ";
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(411, 172);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(73, 21);
-            this.checkBox1.TabIndex = 23;
-            this.checkBox1.Text = "Göster";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.lblOgrenciIsim.AutoSize = true;
+            this.lblOgrenciIsim.Font = new System.Drawing.Font("Segoe Print", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblOgrenciIsim.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblOgrenciIsim.Location = new System.Drawing.Point(285, 40);
+            this.lblOgrenciIsim.Name = "lblOgrenciIsim";
+            this.lblOgrenciIsim.Size = new System.Drawing.Size(266, 54);
+            this.lblOgrenciIsim.TabIndex = 17;
+            this.lblOgrenciIsim.Text = "HOŞ GELDİNİZ ";
             // 
             // FrmÖgrenciAnaSayfa
             // 
@@ -232,11 +233,11 @@ namespace SinavSistemiProje
             this.BackColor = System.Drawing.Color.Olive;
             this.ClientSize = new System.Drawing.Size(928, 513);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblOgrenciIsim);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FrmÖgrenciAnaSayfa";
-            this.Text = "FrmÖgrenciAnaSayfa";
+            this.Text = "OgrenciAnaSayfa";
             this.Load += new System.EventHandler(this.FrmÖgrenciAnaSayfa_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -263,7 +264,7 @@ namespace SinavSistemiProje
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblOgrenciIsim;
         private System.Windows.Forms.CheckBox checkBox1;
     }
 }

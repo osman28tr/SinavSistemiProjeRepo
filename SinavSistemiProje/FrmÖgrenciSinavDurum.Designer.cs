@@ -57,6 +57,7 @@ namespace SinavSistemiProje
             this.label10 = new System.Windows.Forms.Label();
             this.cmbSigma1 = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -91,9 +92,9 @@ namespace SinavSistemiProje
             // 
             this.BtnSinavaGir.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.BtnSinavaGir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.BtnSinavaGir.Location = new System.Drawing.Point(197, 255);
+            this.BtnSinavaGir.Location = new System.Drawing.Point(417, 120);
             this.BtnSinavaGir.Name = "BtnSinavaGir";
-            this.BtnSinavaGir.Size = new System.Drawing.Size(161, 62);
+            this.BtnSinavaGir.Size = new System.Drawing.Size(178, 62);
             this.BtnSinavaGir.TabIndex = 19;
             this.BtnSinavaGir.Text = "Sınava Gir →";
             this.BtnSinavaGir.UseVisualStyleBackColor = true;
@@ -120,7 +121,7 @@ namespace SinavSistemiProje
             // 
             this.btnEksikKapa.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnEksikKapa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnEksikKapa.Location = new System.Drawing.Point(12, 255);
+            this.btnEksikKapa.Location = new System.Drawing.Point(417, 52);
             this.btnEksikKapa.Name = "btnEksikKapa";
             this.btnEksikKapa.Size = new System.Drawing.Size(178, 62);
             this.btnEksikKapa.TabIndex = 21;
@@ -328,12 +329,24 @@ namespace SinavSistemiProje
             this.label9.TabIndex = 24;
             this.label9.Text = "Lütfen zaman araligini belirleyin";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(94, 297);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(372, 23);
+            this.label1.TabIndex = 27;
+            this.label1.Text = "100 sorudan verdiginiz doğru ve yanlış cevaplar";
+            // 
             // FrmÖgrenciSinavDurum
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Olive;
             this.ClientSize = new System.Drawing.Size(1445, 772);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.rctBasariDurumu);
             this.Controls.Add(this.btnCiktiAl);
@@ -382,5 +395,6 @@ namespace SinavSistemiProje
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox cmbSigma1;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label1;
     }
 }

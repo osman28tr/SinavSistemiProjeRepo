@@ -19,7 +19,7 @@ namespace SinavSistemiProje
         {
             InitializeComponent();
         }
-        public int id = 0;
+        public int ogrid = 0;
         int soruüret = 0, soru = 1, saniye = 0, dakika = 0, sayac = 0;
         bool durum = false;
         QuestionManager questionManager = new QuestionManager(new EfQuestionDal());
@@ -77,8 +77,8 @@ namespace SinavSistemiProje
                 for (int j = 0; j < questionBySubjectCount; j++)
                 {
                     int questionId = questions[j].QuestionId;
-                    countSuccess = countSuccess + questionDetailManager.StudentSuccessQuestionBySubject(questionId, id);
-                    countNotSuccess = countNotSuccess + questionDetailManager.StudentNotSuccessQuestionBySubject(questionId, id);
+                    countSuccess = countSuccess + questionDetailManager.StudentSuccessQuestionBySubject(questionId, ogrid);
+                    countNotSuccess = countNotSuccess + questionDetailManager.StudentNotSuccessQuestionBySubject(questionId, ogrid);
                 }
                 if (countNotSuccess > countSuccess)
                 {

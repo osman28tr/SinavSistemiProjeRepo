@@ -84,7 +84,7 @@ namespace SinavSistemiProje
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe Print", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(31, 9);
+            this.label3.Location = new System.Drawing.Point(151, 5);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(766, 54);
             this.label3.TabIndex = 11;
@@ -566,7 +566,7 @@ namespace SinavSistemiProje
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label3);
             this.Name = "FrmSinavHazirlamaModul";
-            this.Text = "FrmSinavHazirlamaModul";
+            this.Text = "SinavHazirlamaModul";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmSinavHazirlamaModul_Load);
             this.groupBox1.ResumeLayout(false);

@@ -299,7 +299,7 @@ namespace SinavSistemiProje
             this.Controls.Add(this.lblSaniye);
             this.Controls.Add(this.label1);
             this.Name = "FrmÖgrenciSinavModul";
-            this.Text = "FrmSinavModul";
+            this.Text = "SinavModul";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmÖgrenciSinavModul_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

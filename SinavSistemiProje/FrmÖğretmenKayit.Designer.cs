@@ -207,7 +207,7 @@ namespace SinavSistemiProje
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label2);
             this.Name = "FrmÖğretmenKayit";
-            this.Text = "FrmÖğretmenKayit";
+            this.Text = "ÖğretmenKayit";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

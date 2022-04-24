@@ -51,7 +51,7 @@ namespace SinavSistemiProje
             int falsecount = questionDetailManager.FalseAnswerCount(ogrid);
             chart1.Series["SinavDurumu"].Points.AddXY("Dogru Cevap " + truecount, truecount);
             chart1.Series["SinavDurumu"].Points.AddXY("Yanlis Cevap " + falsecount, falsecount);
-            lblStudent.Text = "Merhaba " + studentManager.Get(ogrid).StudentName;
+            lblStudent.Text = studentManager.Get(ogrid).StudentName;
 
             FillSigma();
             GetSuccessStatus();

@@ -19,7 +19,7 @@ namespace SinavSistemiProje
         {
             InitializeComponent();
         }
-        public static int id = 0;
+        public static int ogrid = 0;
         int saniye = 0, dakika = 0, soru = 1/*label'a soruyu yazdırmak için*/, soruüret = 0;/*database'den gelen sorularda kaçıncı soruda kaldığını öğrenmek için (indis)*/
         bool durum = false; /*öğrencinin soruyu bilip bilemediği*/
         List<Question> sorulistesi = new List<Question>();
@@ -114,7 +114,7 @@ namespace SinavSistemiProje
         {
             bool sorudurum = IsTheQuestionAnsweredCorrectly();
 
-            int questiondetailid = questionDetailManager.GetQuestionDetailId(sorulistesi[soruüret - 1].QuestionId, id);
+            int questiondetailid = questionDetailManager.GetQuestionDetailId(sorulistesi[soruüret - 1].QuestionId, ogrid);
             bool questiondetailstate = questionDetailManager.Get(questiondetailid).QuestionState;
             var questiondetaildate = questionDetailManager.Get(questiondetailid).AnsweredDate;
             int sigmacount = questionDetailManager.Get(questiondetailid).SigmaCount;
@@ -125,7 +125,7 @@ namespace SinavSistemiProje
                 {
                     QuestionDetailId = questiondetailid,
                     QuestionId = sorulistesi[soruüret - 1].QuestionId,
-                    StudentId = id,
+                    StudentId = ogrid,
                     QuestionState = sorudurum,
                     AnsweredDate = questiondetaildate,
                     SigmaCount = sigmacount + 1,
@@ -138,7 +138,7 @@ namespace SinavSistemiProje
                 {
                     QuestionDetailId = questiondetailid,
                     QuestionId = sorulistesi[soruüret - 1].QuestionId,
-                    StudentId = id,
+                    StudentId = ogrid,
                     QuestionState = sorudurum,
                     AnsweredDate = DateTime.Now,
                     SigmaCount = 0,
@@ -156,7 +156,7 @@ namespace SinavSistemiProje
         private List<Question> GenerateQuestions() //rastgele soru getirir 10 tane aynı soruyu getirmemesi için ayırdım.
         {
             //int soruadedi = questionManager.GetQuestionsByNotAnswered().Count; //soru sayısı 10 olunca 10 a göre yapılcak. onaylanan soruları getiriyor.
-            var questionsfalse = questionDetailManager.GetQuestionsByFalse(id);
+            var questionsfalse = questionDetailManager.GetQuestionsByFalse(ogrid);
             sorulistesi = questionManager.GetQuestionsByNotAnswered(questionsfalse);
             return sorulistesi;
         }
@@ -164,7 +164,7 @@ namespace SinavSistemiProje
         {
             List<QuestionDetail> questionDetails = new List<QuestionDetail>();
             Sigma sigma = sigmaManager.Get();
-            questionDetails = questionDetailManager.GetQuestionsAnsweredByDate(id, sigma);
+            questionDetails = questionDetailManager.GetQuestionsAnsweredByDate(ogrid, sigma);
             var questions = questionManager.GetQuestionsByAnswered(questionDetails);
             return questions;
         }
