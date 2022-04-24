@@ -196,6 +196,7 @@ namespace SinavSistemiProje
                 timer1.Stop();
                 QuestionDetailUpdate();
                 MessageBox.Show("Cevaplarınız Gönderildi! Geçmiş Olsun :)...");
+                ShowAnswers();
                 Finished();
             }
         }
@@ -221,6 +222,7 @@ namespace SinavSistemiProje
                     timer1.Stop();
                     durum = true; //süre bitmiştir.
                     MessageBox.Show("Süreniz Bitmiştir. Cevaplarınız Gönderildi. Geçmiş Olsun. :)");
+                    ShowAnswers();
                     Finished();
                 }
             }
@@ -230,6 +232,10 @@ namespace SinavSistemiProje
             FrmÖgrenci frmÖgrenci = new FrmÖgrenci();
             frmÖgrenci.Show();
             this.Hide();
+        }
+        private void ShowAnswers()
+        {
+            MessageBox.Show("Cevap Kağıdınız: 1-" + sorusayisi + " arası A şıkkıdır");
         }
     }
 }
