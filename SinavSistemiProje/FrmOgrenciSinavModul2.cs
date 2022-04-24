@@ -20,11 +20,12 @@ namespace SinavSistemiProje
             InitializeComponent();
         }
         public int id = 0;
-        int soruüret = 0, soru = 1, saniye = 0, dakika = 0;
+        int soruüret = 0, soru = 1, saniye = 0, dakika = 0, sayac = 0;
         bool durum = false;
         QuestionManager questionManager = new QuestionManager(new EfQuestionDal());
         QuestionDetailManager questionDetailManager = new QuestionDetailManager(new EfQuestionDetailDal());
         WrongAnswerManager wrongAnswerManager = new WrongAnswerManager(new EfWrongAnswerDal());
+        SubjectManager subjectManager = new SubjectManager(new EfSubjectDal());
         List<Question> sorulistesi = new List<Question>();
         private void FrmOgrenciSinavModul2_Load(object sender, EventArgs e)
         {
@@ -32,7 +33,7 @@ namespace SinavSistemiProje
             lblSoru.Text = soru.ToString();
             btnBitir.Visible = false;
             StartTimer();
-            GenerateQuestions();        
+            GenerateQuestions();
             FillTheElements();
         }
         private void FillTheElements()
@@ -40,7 +41,7 @@ namespace SinavSistemiProje
             rctxQuestionName.Text = sorulistesi[soruüret].QuestionName;
             pcbQuestionİmage.ImageLocation = Application.StartupPath + sorulistesi[soruüret].PicturePath;
             txtSecenekA.Text = sorulistesi[soruüret].CorrectAnswer;
-            txtSecenekB.Text = wrongAnswerManager.GetAll(sorulistesi[soruüret].QuestionId)[0].WrongAnswerName; 
+            txtSecenekB.Text = wrongAnswerManager.GetAll(sorulistesi[soruüret].QuestionId)[0].WrongAnswerName;
             txtSecenekC.Text = wrongAnswerManager.GetAll(sorulistesi[soruüret].QuestionId)[1].WrongAnswerName;
             txtSecenekD.Text = wrongAnswerManager.GetAll(sorulistesi[soruüret].QuestionId)[2].WrongAnswerName;
             soruüret++;
@@ -50,7 +51,7 @@ namespace SinavSistemiProje
         {
             soru++;
             lblSoru.Text = soru.ToString();
-            if (soru == 10)
+            if (soru == sayac)
             {
                 if (durum == false)
                 {
@@ -62,11 +63,36 @@ namespace SinavSistemiProje
         }
         private List<Question> GenerateQuestions()
         {
-            var questionsfalse = questionDetailManager.GetQuestionsByFalseAndAnswered(id);
-            sorulistesi = questionManager.GetQuestionsByNotAnswered(questionsfalse);
+            //var questionsfalse = questionDetailManager.GetQuestionsByFalseAndAnswered(id);
+            //sorulistesi = questionManager.GetQuestionsByNotAnswered(questionsfalse);
+            //return sorulistesi;
+
+            List<Question> questions;
+            int count = subjectManager.SubjectCount();
+            int countSuccess = 0, countNotSuccess = 0;
+            for (int i = 1; i <= count; i++)
+            {
+                int questionBySubjectCount = questionManager.QuestionBySubject(i);
+                questions = questionManager.GetAll().Where(x => x.SubjectId == i).ToList();
+                for (int j = 0; j < questionBySubjectCount; j++)
+                {
+                    int questionId = questions[j].QuestionId;
+                    countSuccess = countSuccess + questionDetailManager.StudentSuccessQuestionBySubject(questionId, id);
+                    countNotSuccess = countNotSuccess + questionDetailManager.StudentNotSuccessQuestionBySubject(questionId, id);
+                }
+                if (countNotSuccess > countSuccess)
+                {
+                    for (int j = 1; j <= questionBySubjectCount; j++)
+                    {
+                        sorulistesi.Add(questions[j - 1]);
+                        sayac++;
+                    }
+                }
+                countSuccess = 0;
+                countNotSuccess = 0;
+            }
             return sorulistesi;
         }
-
         private void btnBitir_Click(object sender, EventArgs e)
         {
             DialogResult result1 = MessageBox.Show("Emin Misiniz?", " ", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -112,7 +138,7 @@ namespace SinavSistemiProje
         }
         private void ShowAnswers()
         {
-            MessageBox.Show("Cevap Kağıdınız: 1-A\n2-A\n3-A\n4-A\n5-A\n6-A\n7-A\n8-A\n9-A\n10-A");
+            MessageBox.Show("Cevap Kağıdınız: 1-" + sayac + " arası A şıkkıdır");
         }
     }
 }
