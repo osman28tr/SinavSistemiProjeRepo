@@ -12,7 +12,7 @@ namespace Business.Abstract
     public interface ITeacherService
     {
         List<Teacher> GetAll();
-        Teacher Get();
+        Teacher Get(int id);
         List<string> Add(Teacher teacher);
         IList<ValidationFailure> Dogrula(Teacher teacher);
         void Update(Teacher teacher);

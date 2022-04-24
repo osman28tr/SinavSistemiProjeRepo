@@ -11,7 +11,7 @@ namespace Business.Abstract
     public interface IWrongAnswerService
     {
         List<WrongAnswer> GetAll(int id);
-        WrongAnswer Get();
+        WrongAnswer Get(int id);
         void Add(WrongAnswer wrongAnswer);
         void Update(WrongAnswer wrongAnswer);
         void Delete(WrongAnswer wrongAnswer);

@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using Business.ValidationRules.Abstract;
 using Business.ValidationRules.FluentValidation;
 using DataAccess.Abstract;
 using Entities;
@@ -27,7 +28,7 @@ namespace Business.Concrete
         {
             // var result = adminValidator.Validate(admin);
             IList<ValidationFailure> failures = Dogrula(admin);
-            if (failures!=null)
+            if (failures != null)
             {
                 foreach (var failure in failures)
                 {
@@ -39,7 +40,7 @@ namespace Business.Concrete
             {
                 _adminDal.Add(admin);
                 return null;
-            }           
+            }
         }
         public IList<ValidationFailure> Dogrula(Admin admin)
         {
@@ -60,9 +61,9 @@ namespace Business.Concrete
             _adminDal.Delete(admin);
         }
 
-        public Admin Get()
+        public Admin Get(int id)
         {
-            return _adminDal.Get();
+            return _adminDal.Get(x => x.AdminId == id);
         }
 
         public List<Admin> GetAll()

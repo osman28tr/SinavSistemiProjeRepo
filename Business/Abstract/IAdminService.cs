@@ -12,7 +12,7 @@ namespace Business.Abstract
     public interface IAdminService
     {
         List<Admin> GetAll();
-        Admin Get();
+        Admin Get(int id);
         List<string> Add(Admin admin);
         IList<ValidationFailure> Dogrula(Admin admin);
         void Update(Admin admin);

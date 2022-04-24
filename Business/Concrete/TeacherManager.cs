@@ -59,9 +59,9 @@ namespace Business.Concrete
             }
         }
 
-        public Teacher Get()
+        public Teacher Get(int id)
         {
-            return _teacherDal.Get();
+            return _teacherDal.Get(x => x.TeacherId == id);
         }
 
         public List<Teacher> GetAll()

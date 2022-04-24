@@ -27,9 +27,9 @@ namespace Business.Concrete
             _wrongAnswerDal.Delete(wrongAnswer);
         }
 
-        public WrongAnswer Get()
+        public WrongAnswer Get(int id)
         {
-            return _wrongAnswerDal.Get();
+            return _wrongAnswerDal.Get(x => x.WrongAnswerId == id);
         }
 
         public List<WrongAnswer> GetAll(int id)

@@ -11,7 +11,7 @@ namespace Business.Abstract
     public interface ILessonService
     {
         List<Lesson> GetAll();
-        Lesson Get();
+        Lesson Get(int id);
         void Add(Lesson lesson);
         void Update(Lesson lesson);
         void Delete(Lesson lesson);
