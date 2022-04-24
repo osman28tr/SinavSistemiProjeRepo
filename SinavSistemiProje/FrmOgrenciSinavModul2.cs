@@ -120,7 +120,7 @@ namespace SinavSistemiProje
                 lblSaniye.Text = "0";
                 lblDakika.Text = dakika + " dk";
                 saniye = 0;
-                if (dakika == 10)
+                if (dakika == sayac)
                 {
                     timer1.Stop();
                     durum = true;
@@ -138,7 +138,7 @@ namespace SinavSistemiProje
         }
         private void ShowAnswers()
         {
-            MessageBox.Show("Cevap Kağıdınız: 1-" + sayac + " arası A şıkkıdır");
+            MessageBox.Show("Cevap Kağıdınız: 1-" + sayac + " arası A şıkkıdır");         
         }
     }
 }

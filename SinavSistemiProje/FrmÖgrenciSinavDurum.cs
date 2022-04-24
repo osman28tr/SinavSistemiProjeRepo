@@ -106,7 +106,7 @@ namespace SinavSistemiProje
             if (result1 == DialogResult.Yes)
             {
                 FrmOgrenciSinavModul2 frmOgrenciSinavModul2 = new FrmOgrenciSinavModul2();
-                frmOgrenciSinavModul2.id = ogrid;
+                frmOgrenciSinavModul2.ogrid = ogrid;
                 frmOgrenciSinavModul2.Show();
                 this.Hide();
             }
