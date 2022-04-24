@@ -25,6 +25,7 @@ namespace SinavSistemiProje
         QuestionManager questionManager = new QuestionManager(new EfQuestionDal());
         StudentManager studentManager = new StudentManager(new EfStudentDal());
         SubjectManager subjectManager = new SubjectManager(new EfSubjectDal());
+        SigmaManager sigmaManager = new SigmaManager(new EfSigmaDal());
         PrintDialog Prd = new PrintDialog();
         private void BtnSinavaGir_Click(object sender, EventArgs e)
         {
@@ -52,15 +53,29 @@ namespace SinavSistemiProje
             chart1.Series["SinavDurumu"].Points.AddXY("Yanlis Cevap " + falsecount, falsecount);
             lblStudent.Text = "Merhaba " + studentManager.Get(ogrid).StudentName;
 
+            FillSigma();
             GetSuccessStatus();
+        }
+        private void FillSigma()
+        {
+            for (int i = 1; i <= 365; i++)
+            {
+                cmbSigma1.Items.Add(i);
+                cmbSigma2.Items.Add(i);
+                cmbSigma3.Items.Add(i);
+                cmbSigma4.Items.Add(i);
+                cmbSigma5.Items.Add(i);
+                cmbSigma6.Items.Add(i);
+            }
         }
         private void GetSuccessStatus()
         {
             int count = subjectManager.SubjectCount();
-            int countSuccess = 0, countNotSuccess = 0, countEmpty = 0;
+            double countSuccess = 0, countNotSuccess = 0, countEmpty = 0;
+            double successState;
             for (int i = 1; i <= count; i++)
             {
-                int questionBySubjectCount = questionManager.QuestionBySubject(i);
+                double questionBySubjectCount = questionManager.QuestionBySubject(i);
                 string subjectName = subjectManager.GetSubjectById(i).SubjectName;
                 List<Question> questions = questionManager.GetAll().Where(x => x.SubjectId == i).ToList();
                 for (int j = 0; j < questionBySubjectCount; j++)
@@ -70,13 +85,19 @@ namespace SinavSistemiProje
                     countNotSuccess = countNotSuccess + questionDetailManager.StudentNotSuccessQuestionBySubject(questionId, ogrid);
                     countEmpty = countEmpty + questionDetailManager.StudentEmptyQuestionBySubject(questionId, ogrid);
                 }
+                if ((questionBySubjectCount - countEmpty) != 0 && countSuccess != 0)
+                    successState = (countSuccess / (questionBySubjectCount - countEmpty)) * 100;
+                else
+                    successState = 0;
+                successState = Math.Round(successState);
                 rctBasariDurumu.Text = rctBasariDurumu.Text + subjectName + " Konulu sorulardan " + " Size sorulan, " + questionBySubjectCount + " adet sorudan "
                 + countSuccess +
                 " soruyu doğru " + countNotSuccess + " soruyu yanlis " +
-                "bildiniz" + countEmpty + " soruyu ise henüz çözmediniz!!!\n";
+                "bildiniz" + countEmpty + " soruyu ise henüz çözmediniz " + " % " + successState + " basarili oldunuz!!!\n";
                 countSuccess = 0;
                 countNotSuccess = 0;
                 countEmpty = 0;
+
             }
         }
         private void btnEksikKapa_Click(object sender, EventArgs e)
@@ -109,6 +130,36 @@ namespace SinavSistemiProje
             Font writeFamily = new Font("Arial", 12);
             SolidBrush pencil = new SolidBrush(Color.Black);
             e.Graphics.DrawString(write, writeFamily, pencil, 10, 20);
+        }
+
+        private void btnUygula_Click(object sender, EventArgs e)
+        {
+            if (sigmaManager.GetAll().Count > 0)
+            {
+                sigmaManager.Update(new Sigma
+                {
+                    SigmaId = 1,
+                    Sigma1 = Convert.ToInt32(cmbSigma1.Text),
+                    Sigma2 = Convert.ToInt32(cmbSigma2.Text),
+                    Sigma3 = Convert.ToInt32(cmbSigma3.Text),
+                    Sigma4 = Convert.ToInt32(cmbSigma4.Text),
+                    Sigma5 = Convert.ToInt32(cmbSigma5.Text),
+                    Sigma6 = Convert.ToInt32(cmbSigma6.Text),
+                });
+            }
+            else
+            {
+                sigmaManager.Add(new Sigma
+                {
+                    Sigma1 = Convert.ToInt32(cmbSigma1.Text),
+                    Sigma2 = Convert.ToInt32(cmbSigma2.Text),
+                    Sigma3 = Convert.ToInt32(cmbSigma3.Text),
+                    Sigma4 = Convert.ToInt32(cmbSigma4.Text),
+                    Sigma5 = Convert.ToInt32(cmbSigma5.Text),
+                    Sigma6 = Convert.ToInt32(cmbSigma6.Text),
+                });
+            }
+            MessageBox.Show("Belirlediğiniz zaman aralıkları başarıyla uygulandı");
         }
     }
 }
