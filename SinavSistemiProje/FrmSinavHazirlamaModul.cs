@@ -123,9 +123,19 @@ namespace SinavSistemiProje
         }
         private void QuestionDetailAdd()
         {
-            //id = questionManager.GetAll().LastOrDefault().QuestionId;
+            //id = questionManager.GetAll().LastOrDefault().QuestionId;            
             id = questionManager.GetLastQuestionId();
-            questionDetailManager.Add(new QuestionDetail { QuestionId = id, StudentId = (int)cmbStudents.SelectedValue, SigmaCount = 0, QuestionState = false, AnsweredState = false });
+            if (checkBox1.Checked == true)
+            {
+                int studentCount = studentManager.GetAll().Count;
+                List<Student> students = studentManager.GetAll();
+                for (int i = 0; i < studentCount; i++)
+                {
+                    questionDetailManager.Add(new QuestionDetail { QuestionId = id, StudentId = students[i].StudentId, SigmaCount = 0, QuestionState = false, AnsweredState = false });
+                }
+            }
+            else
+                questionDetailManager.Add(new QuestionDetail { QuestionId = id, StudentId = (int)cmbStudents.SelectedValue, SigmaCount = 0, QuestionState = false, AnsweredState = false });
         }
         private void CorrectAnswerAdd()
         {
@@ -344,6 +354,13 @@ namespace SinavSistemiProje
                 });
             }
             MessageBox.Show("Belirlediğiniz zaman aralıkları başarıyla uygulandı");
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            cmbStudents.Enabled = false;
+            if (checkBox1.Checked == false)
+                cmbStudents.Enabled = true;
         }
     }
 }
