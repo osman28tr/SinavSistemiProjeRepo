@@ -90,6 +90,8 @@ namespace SinavSistemiProje
                 else
                     successState = 0;
                 successState = Math.Round(successState);
+                if ((countSuccess + countNotSuccess + countEmpty) != questionBySubjectCount)
+                    questionBySubjectCount = countSuccess + countNotSuccess + countEmpty;
                 rctBasariDurumu.Text = rctBasariDurumu.Text + subjectName + " Konulu sorulardan " + " Size sorulan, " + questionBySubjectCount + " adet sorudan "
                 + countSuccess +
                 " soruyu doğru " + countNotSuccess + " soruyu yanlis " +
