@@ -58,8 +58,8 @@ namespace SinavSistemiProje
         {
             CheckedState();
             Random rastgele = new Random();
-            int sayi = rastgele.Next(10, 1000000);
-
+            int sayi = rastgele.Next(10, 1000000);     
+            
             string imagefile = Path.GetFileName(pcbQuestionİmage.ImageLocation);
             string imagepath = Path.Combine(Application.StartupPath + "\\images\\" + sayi + imagefile);
             string imagename = Path.Combine("\\images\\" + sayi + imagefile);
