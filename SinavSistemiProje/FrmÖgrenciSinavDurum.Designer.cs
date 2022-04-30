@@ -29,9 +29,9 @@ namespace SinavSistemiProje
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.profilimToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sınavDurumumToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,9 +41,9 @@ namespace SinavSistemiProje
             this.lblStudent = new System.Windows.Forms.Label();
             this.btnCiktiAl = new System.Windows.Forms.Button();
             this.rctBasariDurumu = new System.Windows.Forms.RichTextBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.grbxZamanAyarla = new System.Windows.Forms.GroupBox();
             this.btnUygula = new System.Windows.Forms.Button();
-            this.label16 = new System.Windows.Forms.Label();
+            this.lblBilgi2 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.cmbSigma6 = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -56,11 +56,11 @@ namespace SinavSistemiProje
             this.cmbSigma2 = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.cmbSigma1 = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lblBilgi1 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
-            this.groupBox3.SuspendLayout();
+            this.grbxZamanAyarla.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -102,17 +102,17 @@ namespace SinavSistemiProje
             // 
             // chart1
             // 
-            chartArea3.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chart1.Legends.Add(legend3);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(13, 323);
             this.chart1.Name = "chart1";
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series3.Legend = "Legend1";
-            series3.Name = "SinavDurumu";
-            this.chart1.Series.Add(series3);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.Legend = "Legend1";
+            series1.Name = "SinavDurumu";
+            this.chart1.Series.Add(series1);
             this.chart1.Size = new System.Drawing.Size(592, 368);
             this.chart1.TabIndex = 20;
             this.chart1.Text = "chart1";
@@ -159,29 +159,29 @@ namespace SinavSistemiProje
             this.rctBasariDurumu.TabIndex = 25;
             this.rctBasariDurumu.Text = "";
             // 
-            // groupBox3
+            // grbxZamanAyarla
             // 
-            this.groupBox3.Controls.Add(this.btnUygula);
-            this.groupBox3.Controls.Add(this.label16);
-            this.groupBox3.Controls.Add(this.label15);
-            this.groupBox3.Controls.Add(this.cmbSigma6);
-            this.groupBox3.Controls.Add(this.label14);
-            this.groupBox3.Controls.Add(this.cmbSigma5);
-            this.groupBox3.Controls.Add(this.label13);
-            this.groupBox3.Controls.Add(this.cmbSigma4);
-            this.groupBox3.Controls.Add(this.label12);
-            this.groupBox3.Controls.Add(this.cmbSigma3);
-            this.groupBox3.Controls.Add(this.label11);
-            this.groupBox3.Controls.Add(this.cmbSigma2);
-            this.groupBox3.Controls.Add(this.label10);
-            this.groupBox3.Controls.Add(this.cmbSigma1);
-            this.groupBox3.Controls.Add(this.label9);
-            this.groupBox3.Location = new System.Drawing.Point(13, 43);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(398, 196);
-            this.groupBox3.TabIndex = 26;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Zaman Ayarla";
+            this.grbxZamanAyarla.Controls.Add(this.btnUygula);
+            this.grbxZamanAyarla.Controls.Add(this.lblBilgi2);
+            this.grbxZamanAyarla.Controls.Add(this.label15);
+            this.grbxZamanAyarla.Controls.Add(this.cmbSigma6);
+            this.grbxZamanAyarla.Controls.Add(this.label14);
+            this.grbxZamanAyarla.Controls.Add(this.cmbSigma5);
+            this.grbxZamanAyarla.Controls.Add(this.label13);
+            this.grbxZamanAyarla.Controls.Add(this.cmbSigma4);
+            this.grbxZamanAyarla.Controls.Add(this.label12);
+            this.grbxZamanAyarla.Controls.Add(this.cmbSigma3);
+            this.grbxZamanAyarla.Controls.Add(this.label11);
+            this.grbxZamanAyarla.Controls.Add(this.cmbSigma2);
+            this.grbxZamanAyarla.Controls.Add(this.label10);
+            this.grbxZamanAyarla.Controls.Add(this.cmbSigma1);
+            this.grbxZamanAyarla.Controls.Add(this.lblBilgi1);
+            this.grbxZamanAyarla.Location = new System.Drawing.Point(13, 43);
+            this.grbxZamanAyarla.Name = "grbxZamanAyarla";
+            this.grbxZamanAyarla.Size = new System.Drawing.Size(398, 196);
+            this.grbxZamanAyarla.TabIndex = 26;
+            this.grbxZamanAyarla.TabStop = false;
+            this.grbxZamanAyarla.Text = "Zaman Ayarla";
             // 
             // btnUygula
             // 
@@ -193,16 +193,16 @@ namespace SinavSistemiProje
             this.btnUygula.UseVisualStyleBackColor = true;
             this.btnUygula.Click += new System.EventHandler(this.btnUygula_Click);
             // 
-            // label16
+            // lblBilgi2
             // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label16.ForeColor = System.Drawing.Color.Maroon;
-            this.label16.Location = new System.Drawing.Point(6, 133);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(354, 19);
-            this.label16.TabIndex = 24;
-            this.label16.Text = "Lütfen zamanı gün faktörünü göz önüne alarak belirleyin";
+            this.lblBilgi2.AutoSize = true;
+            this.lblBilgi2.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblBilgi2.ForeColor = System.Drawing.Color.Maroon;
+            this.lblBilgi2.Location = new System.Drawing.Point(6, 133);
+            this.lblBilgi2.Name = "lblBilgi2";
+            this.lblBilgi2.Size = new System.Drawing.Size(354, 19);
+            this.lblBilgi2.TabIndex = 24;
+            this.lblBilgi2.Text = "Lütfen zamanı gün faktörünü göz önüne alarak belirleyin";
             // 
             // label15
             // 
@@ -318,16 +318,16 @@ namespace SinavSistemiProje
             this.cmbSigma1.Size = new System.Drawing.Size(121, 24);
             this.cmbSigma1.TabIndex = 25;
             // 
-            // label9
+            // lblBilgi1
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe Print", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label9.Location = new System.Drawing.Point(45, 14);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(294, 30);
-            this.label9.TabIndex = 24;
-            this.label9.Text = "Lütfen zaman araligini belirleyin";
+            this.lblBilgi1.AutoSize = true;
+            this.lblBilgi1.Font = new System.Drawing.Font("Segoe Print", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblBilgi1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblBilgi1.Location = new System.Drawing.Point(45, 14);
+            this.lblBilgi1.Name = "lblBilgi1";
+            this.lblBilgi1.Size = new System.Drawing.Size(294, 30);
+            this.lblBilgi1.TabIndex = 24;
+            this.lblBilgi1.Text = "Lütfen zaman araligini belirleyin";
             // 
             // label1
             // 
@@ -347,7 +347,7 @@ namespace SinavSistemiProje
             this.BackColor = System.Drawing.Color.Olive;
             this.ClientSize = new System.Drawing.Size(1445, 772);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.grbxZamanAyarla);
             this.Controls.Add(this.rctBasariDurumu);
             this.Controls.Add(this.btnCiktiAl);
             this.Controls.Add(this.lblStudent);
@@ -361,8 +361,8 @@ namespace SinavSistemiProje
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
+            this.grbxZamanAyarla.ResumeLayout(false);
+            this.grbxZamanAyarla.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -379,9 +379,9 @@ namespace SinavSistemiProje
         private System.Windows.Forms.Label lblStudent;
         private System.Windows.Forms.Button btnCiktiAl;
         private System.Windows.Forms.RichTextBox rctBasariDurumu;
-        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox grbxZamanAyarla;
         private System.Windows.Forms.Button btnUygula;
-        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label lblBilgi2;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.ComboBox cmbSigma6;
         private System.Windows.Forms.Label label14;
@@ -394,7 +394,7 @@ namespace SinavSistemiProje
         private System.Windows.Forms.ComboBox cmbSigma2;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox cmbSigma1;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblBilgi1;
         private System.Windows.Forms.Label label1;
     }
 }

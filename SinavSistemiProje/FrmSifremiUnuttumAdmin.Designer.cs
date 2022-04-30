@@ -29,29 +29,29 @@ namespace SinavSistemiProje
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.grbxSifremiUnuttum = new System.Windows.Forms.GroupBox();
             this.txtAdminMail = new System.Windows.Forms.TextBox();
             this.txtAdminName = new System.Windows.Forms.TextBox();
             this.btnSifremiGöster = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
+            this.lblAdminMail = new System.Windows.Forms.Label();
+            this.lblAdminName = new System.Windows.Forms.Label();
+            this.lblBilgiDoldur = new System.Windows.Forms.Label();
+            this.grbxSifremiUnuttum.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // grbxSifremiUnuttum
             // 
-            this.groupBox1.Controls.Add(this.txtAdminMail);
-            this.groupBox1.Controls.Add(this.txtAdminName);
-            this.groupBox1.Controls.Add(this.btnSifremiGöster);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(138, 100);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(516, 265);
-            this.groupBox1.TabIndex = 5;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Şifremi Unuttum";
+            this.grbxSifremiUnuttum.Controls.Add(this.txtAdminMail);
+            this.grbxSifremiUnuttum.Controls.Add(this.txtAdminName);
+            this.grbxSifremiUnuttum.Controls.Add(this.btnSifremiGöster);
+            this.grbxSifremiUnuttum.Controls.Add(this.lblAdminMail);
+            this.grbxSifremiUnuttum.Controls.Add(this.lblAdminName);
+            this.grbxSifremiUnuttum.Location = new System.Drawing.Point(138, 100);
+            this.grbxSifremiUnuttum.Name = "grbxSifremiUnuttum";
+            this.grbxSifremiUnuttum.Size = new System.Drawing.Size(516, 265);
+            this.grbxSifremiUnuttum.TabIndex = 5;
+            this.grbxSifremiUnuttum.TabStop = false;
+            this.grbxSifremiUnuttum.Text = "Şifremi Unuttum";
             // 
             // txtAdminMail
             // 
@@ -81,38 +81,38 @@ namespace SinavSistemiProje
             this.btnSifremiGöster.UseVisualStyleBackColor = true;
             this.btnSifremiGöster.Click += new System.EventHandler(this.btnSifremiGöster_Click);
             // 
-            // label4
+            // lblAdminMail
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label4.ForeColor = System.Drawing.Color.Green;
-            this.label4.Location = new System.Drawing.Point(6, 110);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(112, 25);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "AdminMail:";
+            this.lblAdminMail.AutoSize = true;
+            this.lblAdminMail.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblAdminMail.ForeColor = System.Drawing.Color.Green;
+            this.lblAdminMail.Location = new System.Drawing.Point(6, 110);
+            this.lblAdminMail.Name = "lblAdminMail";
+            this.lblAdminMail.Size = new System.Drawing.Size(112, 25);
+            this.lblAdminMail.TabIndex = 3;
+            this.lblAdminMail.Text = "AdminMail:";
             // 
-            // label1
+            // lblAdminName
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.ForeColor = System.Drawing.Color.Green;
-            this.label1.Location = new System.Drawing.Point(6, 28);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(126, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "AdminName:";
+            this.lblAdminName.AutoSize = true;
+            this.lblAdminName.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblAdminName.ForeColor = System.Drawing.Color.Green;
+            this.lblAdminName.Location = new System.Drawing.Point(6, 28);
+            this.lblAdminName.Name = "lblAdminName";
+            this.lblAdminName.Size = new System.Drawing.Size(126, 25);
+            this.lblAdminName.TabIndex = 0;
+            this.lblAdminName.Text = "AdminName:";
             // 
-            // label2
+            // lblBilgiDoldur
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe Print", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.label2.Location = new System.Drawing.Point(126, 9);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(546, 68);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Lütfen Bilgileri Doldurunuz";
+            this.lblBilgiDoldur.AutoSize = true;
+            this.lblBilgiDoldur.Font = new System.Drawing.Font("Segoe Print", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblBilgiDoldur.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.lblBilgiDoldur.Location = new System.Drawing.Point(126, 9);
+            this.lblBilgiDoldur.Name = "lblBilgiDoldur";
+            this.lblBilgiDoldur.Size = new System.Drawing.Size(546, 68);
+            this.lblBilgiDoldur.TabIndex = 4;
+            this.lblBilgiDoldur.Text = "Lütfen Bilgileri Doldurunuz";
             // 
             // FrmSifremiUnuttumAdmin
             // 
@@ -120,12 +120,12 @@ namespace SinavSistemiProje
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.grbxSifremiUnuttum);
+            this.Controls.Add(this.lblBilgiDoldur);
             this.Name = "FrmSifremiUnuttumAdmin";
             this.Text = "SifremiUnuttumAdmin";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.grbxSifremiUnuttum.ResumeLayout(false);
+            this.grbxSifremiUnuttum.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -133,12 +133,12 @@ namespace SinavSistemiProje
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox grbxSifremiUnuttum;
         private System.Windows.Forms.TextBox txtAdminMail;
         private System.Windows.Forms.TextBox txtAdminName;
         private System.Windows.Forms.Button btnSifremiGöster;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblAdminMail;
+        private System.Windows.Forms.Label lblAdminName;
+        private System.Windows.Forms.Label lblBilgiDoldur;
     }
 }

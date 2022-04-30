@@ -64,17 +64,17 @@ namespace SinavSistemiProje
             MessageBox.Show("Bilgileriniz basarili bir sekilde güncellendi");
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        private void chbxSifre_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBox1.Checked == true)
+            if (chbxSifre.Checked == true)
             {
                 txtStudentPassword.UseSystemPasswordChar = false;
-                checkBox1.Text = "Gizle";
+                chbxSifre.Text = "Gizle";
             }
             else
             {
                 txtStudentPassword.UseSystemPasswordChar = true;
-                checkBox1.Text = "Göster";
+                chbxSifre.Text = "Göster";
             }
         }
     }

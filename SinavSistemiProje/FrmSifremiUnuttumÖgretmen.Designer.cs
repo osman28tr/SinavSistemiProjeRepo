@@ -29,29 +29,29 @@ namespace SinavSistemiProje
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.grbxSifremiUnuttum = new System.Windows.Forms.GroupBox();
             this.txtTeacherMail = new System.Windows.Forms.TextBox();
             this.txtTeacherName = new System.Windows.Forms.TextBox();
             this.btnSifremiGöster = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
+            this.lblTeacherMail = new System.Windows.Forms.Label();
+            this.lblTeacherName = new System.Windows.Forms.Label();
+            this.lblBilgiDoldur = new System.Windows.Forms.Label();
+            this.grbxSifremiUnuttum.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // grbxSifremiUnuttum
             // 
-            this.groupBox1.Controls.Add(this.txtTeacherMail);
-            this.groupBox1.Controls.Add(this.txtTeacherName);
-            this.groupBox1.Controls.Add(this.btnSifremiGöster);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(135, 118);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(516, 265);
-            this.groupBox1.TabIndex = 9;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Şifremi Unuttum";
+            this.grbxSifremiUnuttum.Controls.Add(this.txtTeacherMail);
+            this.grbxSifremiUnuttum.Controls.Add(this.txtTeacherName);
+            this.grbxSifremiUnuttum.Controls.Add(this.btnSifremiGöster);
+            this.grbxSifremiUnuttum.Controls.Add(this.lblTeacherMail);
+            this.grbxSifremiUnuttum.Controls.Add(this.lblTeacherName);
+            this.grbxSifremiUnuttum.Location = new System.Drawing.Point(135, 118);
+            this.grbxSifremiUnuttum.Name = "grbxSifremiUnuttum";
+            this.grbxSifremiUnuttum.Size = new System.Drawing.Size(516, 265);
+            this.grbxSifremiUnuttum.TabIndex = 9;
+            this.grbxSifremiUnuttum.TabStop = false;
+            this.grbxSifremiUnuttum.Text = "SifremiUnuttum";
             // 
             // txtTeacherMail
             // 
@@ -81,38 +81,38 @@ namespace SinavSistemiProje
             this.btnSifremiGöster.UseVisualStyleBackColor = true;
             this.btnSifremiGöster.Click += new System.EventHandler(this.btnSifremiGöster_Click);
             // 
-            // label4
+            // lblTeacherMail
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label4.Location = new System.Drawing.Point(6, 110);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(120, 25);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "TeacherMail:";
+            this.lblTeacherMail.AutoSize = true;
+            this.lblTeacherMail.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblTeacherMail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblTeacherMail.Location = new System.Drawing.Point(6, 110);
+            this.lblTeacherMail.Name = "lblTeacherMail";
+            this.lblTeacherMail.Size = new System.Drawing.Size(120, 25);
+            this.lblTeacherMail.TabIndex = 3;
+            this.lblTeacherMail.Text = "TeacherMail:";
             // 
-            // label1
+            // lblTeacherName
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(6, 28);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(134, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "TeacherName:";
+            this.lblTeacherName.AutoSize = true;
+            this.lblTeacherName.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblTeacherName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblTeacherName.Location = new System.Drawing.Point(6, 28);
+            this.lblTeacherName.Name = "lblTeacherName";
+            this.lblTeacherName.Size = new System.Drawing.Size(129, 25);
+            this.lblTeacherName.TabIndex = 0;
+            this.lblTeacherName.Text = "TeacherName";
             // 
-            // label2
+            // lblBilgiDoldur
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe Print", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.label2.Location = new System.Drawing.Point(123, 27);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(546, 68);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Lütfen Bilgileri Doldurunuz";
+            this.lblBilgiDoldur.AutoSize = true;
+            this.lblBilgiDoldur.Font = new System.Drawing.Font("Segoe Print", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblBilgiDoldur.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.lblBilgiDoldur.Location = new System.Drawing.Point(123, 27);
+            this.lblBilgiDoldur.Name = "lblBilgiDoldur";
+            this.lblBilgiDoldur.Size = new System.Drawing.Size(546, 68);
+            this.lblBilgiDoldur.TabIndex = 8;
+            this.lblBilgiDoldur.Text = "Lütfen Bilgileri Doldurunuz";
             // 
             // FrmSifremiUnuttumÖgretmen
             // 
@@ -120,12 +120,12 @@ namespace SinavSistemiProje
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Teal;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.grbxSifremiUnuttum);
+            this.Controls.Add(this.lblBilgiDoldur);
             this.Name = "FrmSifremiUnuttumÖgretmen";
             this.Text = "SifremiUnuttumÖgretmen";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.grbxSifremiUnuttum.ResumeLayout(false);
+            this.grbxSifremiUnuttum.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -133,12 +133,12 @@ namespace SinavSistemiProje
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox grbxSifremiUnuttum;
         private System.Windows.Forms.TextBox txtTeacherMail;
         private System.Windows.Forms.TextBox txtTeacherName;
         private System.Windows.Forms.Button btnSifremiGöster;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblTeacherMail;
+        private System.Windows.Forms.Label lblTeacherName;
+        private System.Windows.Forms.Label lblBilgiDoldur;
     }
 }

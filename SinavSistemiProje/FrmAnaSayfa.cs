@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace SinavSistemiProje
 {
-    public partial class Form1 : Form
+    public partial class FrmAnaSayfa : Form
     {
-        public Form1()
+        public FrmAnaSayfa()
         {
             InitializeComponent();
         }
@@ -25,18 +25,17 @@ namespace SinavSistemiProje
             frmAdmin.Show();
             this.Hide();
         }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            FrmÖğretmen frmÖğretmen = new FrmÖğretmen();
-            frmÖğretmen.Show();
-            this.Hide();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
+        private void btnOgrenci_Click(object sender, EventArgs e)
         {
             FrmÖgrenci frmÖgrenci = new FrmÖgrenci();
             frmÖgrenci.Show();
+            this.Hide();
+        }
+
+        private void btnOgretmen_Click(object sender, EventArgs e)
+        {
+            FrmÖğretmen frmÖğretmen = new FrmÖğretmen();
+            frmÖğretmen.Show();
             this.Hide();
         }
     }

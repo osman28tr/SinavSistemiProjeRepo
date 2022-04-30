@@ -29,45 +29,45 @@ namespace SinavSistemiProje
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.grbxOgrenciKayit = new System.Windows.Forms.GroupBox();
             this.BtnAnaSayfa = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.chbxSifre = new System.Windows.Forms.CheckBox();
             this.txtStudentNo = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblStudentNo = new System.Windows.Forms.Label();
             this.txtStudentPassword = new System.Windows.Forms.TextBox();
             this.txtStudentMail = new System.Windows.Forms.TextBox();
             this.txtStudentSurname = new System.Windows.Forms.TextBox();
             this.txtStudentName = new System.Windows.Forms.TextBox();
             this.btnÖğrenciKayitOl = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
+            this.lblStudentPassword = new System.Windows.Forms.Label();
+            this.lblStudentMail = new System.Windows.Forms.Label();
+            this.lblStudentName = new System.Windows.Forms.Label();
+            this.lblStudentSurname = new System.Windows.Forms.Label();
+            this.lblOgrenciKayit = new System.Windows.Forms.Label();
+            this.grbxOgrenciKayit.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // grbxOgrenciKayit
             // 
-            this.groupBox1.Controls.Add(this.BtnAnaSayfa);
-            this.groupBox1.Controls.Add(this.checkBox1);
-            this.groupBox1.Controls.Add(this.txtStudentNo);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.txtStudentPassword);
-            this.groupBox1.Controls.Add(this.txtStudentMail);
-            this.groupBox1.Controls.Add(this.txtStudentSurname);
-            this.groupBox1.Controls.Add(this.txtStudentName);
-            this.groupBox1.Controls.Add(this.btnÖğrenciKayitOl);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Location = new System.Drawing.Point(152, 117);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(534, 364);
-            this.groupBox1.TabIndex = 5;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "ÖğrenciKayıt";
+            this.grbxOgrenciKayit.Controls.Add(this.BtnAnaSayfa);
+            this.grbxOgrenciKayit.Controls.Add(this.chbxSifre);
+            this.grbxOgrenciKayit.Controls.Add(this.txtStudentNo);
+            this.grbxOgrenciKayit.Controls.Add(this.lblStudentNo);
+            this.grbxOgrenciKayit.Controls.Add(this.txtStudentPassword);
+            this.grbxOgrenciKayit.Controls.Add(this.txtStudentMail);
+            this.grbxOgrenciKayit.Controls.Add(this.txtStudentSurname);
+            this.grbxOgrenciKayit.Controls.Add(this.txtStudentName);
+            this.grbxOgrenciKayit.Controls.Add(this.btnÖğrenciKayitOl);
+            this.grbxOgrenciKayit.Controls.Add(this.lblStudentPassword);
+            this.grbxOgrenciKayit.Controls.Add(this.lblStudentMail);
+            this.grbxOgrenciKayit.Controls.Add(this.lblStudentName);
+            this.grbxOgrenciKayit.Controls.Add(this.lblStudentSurname);
+            this.grbxOgrenciKayit.Location = new System.Drawing.Point(152, 117);
+            this.grbxOgrenciKayit.Name = "grbxOgrenciKayit";
+            this.grbxOgrenciKayit.Size = new System.Drawing.Size(534, 364);
+            this.grbxOgrenciKayit.TabIndex = 5;
+            this.grbxOgrenciKayit.TabStop = false;
+            this.grbxOgrenciKayit.Text = "ÖğrenciKayıt";
             // 
             // BtnAnaSayfa
             // 
@@ -81,16 +81,16 @@ namespace SinavSistemiProje
             this.BtnAnaSayfa.UseVisualStyleBackColor = true;
             this.BtnAnaSayfa.Click += new System.EventHandler(this.BtnAnaSayfa_Click);
             // 
-            // checkBox1
+            // chbxSifre
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(438, 182);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(73, 21);
-            this.checkBox1.TabIndex = 12;
-            this.checkBox1.Text = "Göster";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.chbxSifre.AutoSize = true;
+            this.chbxSifre.Location = new System.Drawing.Point(438, 182);
+            this.chbxSifre.Name = "chbxSifre";
+            this.chbxSifre.Size = new System.Drawing.Size(73, 21);
+            this.chbxSifre.TabIndex = 12;
+            this.chbxSifre.Text = "Göster";
+            this.chbxSifre.UseVisualStyleBackColor = true;
+            this.chbxSifre.CheckedChanged += new System.EventHandler(this.chbxSifre_CheckedChanged);
             // 
             // txtStudentNo
             // 
@@ -101,16 +101,16 @@ namespace SinavSistemiProje
             this.txtStudentNo.Size = new System.Drawing.Size(221, 30);
             this.txtStudentNo.TabIndex = 11;
             // 
-            // label6
+            // lblStudentNo
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label6.Location = new System.Drawing.Point(6, 218);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(110, 25);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "ÖğrenciNo:";
+            this.lblStudentNo.AutoSize = true;
+            this.lblStudentNo.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblStudentNo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblStudentNo.Location = new System.Drawing.Point(6, 218);
+            this.lblStudentNo.Name = "lblStudentNo";
+            this.lblStudentNo.Size = new System.Drawing.Size(110, 25);
+            this.lblStudentNo.TabIndex = 10;
+            this.lblStudentNo.Text = "ÖğrenciNo:";
             // 
             // txtStudentPassword
             // 
@@ -160,60 +160,60 @@ namespace SinavSistemiProje
             this.btnÖğrenciKayitOl.UseVisualStyleBackColor = true;
             this.btnÖğrenciKayitOl.Click += new System.EventHandler(this.btnÖğrenciKayitOl_Click);
             // 
-            // label5
+            // lblStudentPassword
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label5.Location = new System.Drawing.Point(6, 173);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(163, 25);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "ÖğrenciPassword:";
+            this.lblStudentPassword.AutoSize = true;
+            this.lblStudentPassword.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblStudentPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblStudentPassword.Location = new System.Drawing.Point(6, 173);
+            this.lblStudentPassword.Name = "lblStudentPassword";
+            this.lblStudentPassword.Size = new System.Drawing.Size(163, 25);
+            this.lblStudentPassword.TabIndex = 4;
+            this.lblStudentPassword.Text = "ÖğrenciPassword:";
             // 
-            // label4
+            // lblStudentMail
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label4.Location = new System.Drawing.Point(6, 128);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(122, 25);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "ÖğrenciMail:";
+            this.lblStudentMail.AutoSize = true;
+            this.lblStudentMail.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblStudentMail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblStudentMail.Location = new System.Drawing.Point(6, 128);
+            this.lblStudentMail.Name = "lblStudentMail";
+            this.lblStudentMail.Size = new System.Drawing.Size(122, 25);
+            this.lblStudentMail.TabIndex = 3;
+            this.lblStudentMail.Text = "ÖğrenciMail:";
             // 
-            // label1
+            // lblStudentName
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(6, 28);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(136, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "ÖğrenciName:";
+            this.lblStudentName.AutoSize = true;
+            this.lblStudentName.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblStudentName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblStudentName.Location = new System.Drawing.Point(6, 28);
+            this.lblStudentName.Name = "lblStudentName";
+            this.lblStudentName.Size = new System.Drawing.Size(136, 25);
+            this.lblStudentName.TabIndex = 0;
+            this.lblStudentName.Text = "ÖğrenciName:";
             // 
-            // label3
+            // lblStudentSurname
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(6, 82);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(160, 25);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "ÖğrenciSurname:";
+            this.lblStudentSurname.AutoSize = true;
+            this.lblStudentSurname.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblStudentSurname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblStudentSurname.Location = new System.Drawing.Point(6, 82);
+            this.lblStudentSurname.Name = "lblStudentSurname";
+            this.lblStudentSurname.Size = new System.Drawing.Size(160, 25);
+            this.lblStudentSurname.TabIndex = 2;
+            this.lblStudentSurname.Text = "ÖğrenciSurname:";
             // 
-            // label2
+            // lblOgrenciKayit
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe Print", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.label2.Location = new System.Drawing.Point(252, 22);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(276, 68);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "ÖğrenciKayıt";
+            this.lblOgrenciKayit.AutoSize = true;
+            this.lblOgrenciKayit.Font = new System.Drawing.Font("Segoe Print", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblOgrenciKayit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lblOgrenciKayit.Location = new System.Drawing.Point(252, 22);
+            this.lblOgrenciKayit.Name = "lblOgrenciKayit";
+            this.lblOgrenciKayit.Size = new System.Drawing.Size(276, 68);
+            this.lblOgrenciKayit.TabIndex = 4;
+            this.lblOgrenciKayit.Text = "ÖğrenciKayıt";
             // 
             // FrmÖgrenciKayit
             // 
@@ -221,12 +221,12 @@ namespace SinavSistemiProje
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Olive;
             this.ClientSize = new System.Drawing.Size(819, 521);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.grbxOgrenciKayit);
+            this.Controls.Add(this.lblOgrenciKayit);
             this.Name = "FrmÖgrenciKayit";
             this.Text = "ÖgrenciKayit";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.grbxOgrenciKayit.ResumeLayout(false);
+            this.grbxOgrenciKayit.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -234,20 +234,20 @@ namespace SinavSistemiProje
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox grbxOgrenciKayit;
         private System.Windows.Forms.TextBox txtStudentPassword;
         private System.Windows.Forms.TextBox txtStudentMail;
         private System.Windows.Forms.TextBox txtStudentSurname;
         private System.Windows.Forms.TextBox txtStudentName;
         private System.Windows.Forms.Button btnÖğrenciKayitOl;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblStudentPassword;
+        private System.Windows.Forms.Label lblStudentMail;
+        private System.Windows.Forms.Label lblStudentName;
+        private System.Windows.Forms.Label lblStudentSurname;
+        private System.Windows.Forms.Label lblOgrenciKayit;
         private System.Windows.Forms.TextBox txtStudentNo;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Label lblStudentNo;
+        private System.Windows.Forms.CheckBox chbxSifre;
         private System.Windows.Forms.Button BtnAnaSayfa;
     }
 }

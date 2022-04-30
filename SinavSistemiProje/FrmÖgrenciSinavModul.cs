@@ -105,7 +105,7 @@ namespace SinavSistemiProje
         }
         private bool IsTheQuestionAnsweredCorrectly() //soru doğru mu yanlış mı çözüldü onu kontrol ediyor.
         {
-            if (radioButton1.Checked == true)
+            if (rdbA.Checked == true)
                 return true;
             return false;
         }
@@ -175,7 +175,7 @@ namespace SinavSistemiProje
             //sorulistesi = questionManager.GetQuestionsByNotAnswered(questionsfalse);
 
             rctxQuestionName.Text = sorulistesi[soruüret].QuestionName;
-            pictureBox1.ImageLocation = Application.StartupPath + sorulistesi[soruüret].PicturePath;
+            pcbxQuestionImage.ImageLocation = Application.StartupPath + sorulistesi[soruüret].PicturePath;
             //txtSecenekA.Text = correctAnswerManager.Get(sorulistesi[soruüret].QuestionId).CorrectAnswerName;
             txtSecenekA.Text = sorulistesi[soruüret].CorrectAnswer;
             //txtSecenekB.Text = sorulistesi[soruüret].QuestionWrongAnswer1;

@@ -32,7 +32,7 @@ namespace SinavSistemiProje
         string DosyaYolu = "";
         string correctAnswer = "";
         string[] WrongAnswer = new string[3];
-        int id; //normalizasyon
+        int lastQuestionId; //normalizasyon
         private void FrmSinavHazirlamaModul_Load(object sender, EventArgs e)
         {
             LoadLessons();
@@ -58,8 +58,8 @@ namespace SinavSistemiProje
         {
             CheckedState();
             Random rastgele = new Random();
-            int sayi = rastgele.Next(10, 1000000);     
-            
+            int sayi = rastgele.Next(10, 1000000);
+
             string imagefile = Path.GetFileName(pcbQuestionİmage.ImageLocation);
             string imagepath = Path.Combine(Application.StartupPath + "\\images\\" + sayi + imagefile);
             string imagename = Path.Combine("\\images\\" + sayi + imagefile);
@@ -116,26 +116,26 @@ namespace SinavSistemiProje
             txtSecenekB.Clear();
             txtSecenekC.Clear();
             txtSecenekD.Clear();
-            radioButton1.Checked = false;
-            radioButton2.Checked = false;
-            radioButton3.Checked = false;
-            radioButton4.Checked = false;
+            rdbA.Checked = false;
+            rdbB.Checked = false;
+            rdbC.Checked = false;
+            rdbD.Checked = false;
         }
         private void QuestionDetailAdd()
         {
             //id = questionManager.GetAll().LastOrDefault().QuestionId;            
-            id = questionManager.GetLastQuestionId();
-            if (checkBox1.Checked == true)
+            lastQuestionId = questionManager.GetLastQuestionId();
+            if (chbxHerkes.Checked == true)
             {
                 int studentCount = studentManager.GetAll().Count;
                 List<Student> students = studentManager.GetAll();
                 for (int i = 0; i < studentCount; i++)
                 {
-                    questionDetailManager.Add(new QuestionDetail { QuestionId = id, StudentId = students[i].StudentId, SigmaCount = 0, QuestionState = false, AnsweredState = false });
+                    questionDetailManager.Add(new QuestionDetail { QuestionId = lastQuestionId, StudentId = students[i].StudentId, SigmaCount = 0, QuestionState = false, AnsweredState = false });
                 }
             }
             else
-                questionDetailManager.Add(new QuestionDetail { QuestionId = id, StudentId = (int)cmbStudents.SelectedValue, SigmaCount = 0, QuestionState = false, AnsweredState = false });
+                questionDetailManager.Add(new QuestionDetail { QuestionId = lastQuestionId, StudentId = (int)cmbStudents.SelectedValue, SigmaCount = 0, QuestionState = false, AnsweredState = false });
         }
         private void CorrectAnswerAdd()
         {
@@ -179,27 +179,27 @@ namespace SinavSistemiProje
                 wrongAnswerManager.Add(new WrongAnswer
                 {
                     WrongAnswerName = WrongAnswer[i],
-                    QuestionId = id
+                    QuestionId = lastQuestionId
                 });
             }
         }
         private void CheckedState()
         {
-            if (radioButton1.Checked == true)
+            if (rdbA.Checked == true)
             {
                 correctAnswer = txtSecenekA.Text;
                 WrongAnswer[0] = txtSecenekB.Text;
                 WrongAnswer[1] = txtSecenekC.Text;
                 WrongAnswer[2] = txtSecenekD.Text;
             }
-            else if (radioButton2.Checked == true)
+            else if (rdbB.Checked == true)
             {
                 correctAnswer = txtSecenekB.Text;
                 WrongAnswer[0] = txtSecenekA.Text;
                 WrongAnswer[1] = txtSecenekC.Text;
                 WrongAnswer[2] = txtSecenekD.Text;
             }
-            else if (radioButton3.Checked == true)
+            else if (rdbC.Checked == true)
             {
                 correctAnswer = txtSecenekC.Text;
                 WrongAnswer[0] = txtSecenekA.Text;
@@ -292,8 +292,8 @@ namespace SinavSistemiProje
             try
             {
                 //string a = cmbLesson.SelectedValue.ToString();
-                int a = (int)(cmbLesson.SelectedValue);
-                cmbUnit.DataSource = unitManager.GetUnitsByLesson(a);
+                int chosenLesson = (int)(cmbLesson.SelectedValue);
+                cmbUnit.DataSource = unitManager.GetUnitsByLesson(chosenLesson);
                 cmbUnit.DisplayMember = "UnitName";
                 cmbUnit.ValueMember = "UnitId";
                 cmbLesson.SelectionChangeCommitted += cmbUnit_SelectionChangeCommitted;
@@ -309,8 +309,8 @@ namespace SinavSistemiProje
             try
             {
                 //string a = cmbLesson.SelectedValue.ToString();
-                int a = (int)(cmbUnit.SelectedValue);
-                cmbSubject.DataSource = subjectManager.GetSubjectsByUnit(a);
+                int chosenUnit = (int)(cmbUnit.SelectedValue);
+                cmbSubject.DataSource = subjectManager.GetSubjectsByUnit(chosenUnit);
                 cmbSubject.DisplayMember = "SubjectName";
                 cmbSubject.ValueMember = "SubjectId";
             }
@@ -320,10 +320,10 @@ namespace SinavSistemiProje
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnAnasayfa_Click(object sender, EventArgs e)
         {
-            Form1 form1 = new Form1();
-            form1.Show();
+            FrmAnaSayfa frmAnaSayfa = new FrmAnaSayfa();
+            frmAnaSayfa.Show();
             this.Hide();
         }
         private void btnUygula_Click(object sender, EventArgs e)
@@ -356,10 +356,10 @@ namespace SinavSistemiProje
             MessageBox.Show("Belirlediğiniz zaman aralıkları başarıyla uygulandı");
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        private void chbxHerkes_CheckedChanged(object sender, EventArgs e)
         {
             cmbStudents.Enabled = false;
-            if (checkBox1.Checked == false)
+            if (chbxHerkes.Checked == false)
                 cmbStudents.Enabled = true;
         }
     }

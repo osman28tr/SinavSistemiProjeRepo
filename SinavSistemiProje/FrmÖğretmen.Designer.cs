@@ -29,46 +29,46 @@ namespace SinavSistemiProje
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.grbxOgretmen = new System.Windows.Forms.GroupBox();
+            this.chbxSifre = new System.Windows.Forms.CheckBox();
             this.btnSifremiUnuttum = new System.Windows.Forms.Button();
             this.txtMail = new System.Windows.Forms.TextBox();
             this.btnKayitOl = new System.Windows.Forms.Button();
             this.txtSifre = new System.Windows.Forms.TextBox();
             this.btnGiris = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
+            this.lblMail = new System.Windows.Forms.Label();
+            this.lblSifre = new System.Windows.Forms.Label();
+            this.lblGiris = new System.Windows.Forms.Label();
+            this.grbxOgretmen.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // grbxOgretmen
             // 
-            this.groupBox1.Controls.Add(this.checkBox1);
-            this.groupBox1.Controls.Add(this.btnSifremiUnuttum);
-            this.groupBox1.Controls.Add(this.txtMail);
-            this.groupBox1.Controls.Add(this.btnKayitOl);
-            this.groupBox1.Controls.Add(this.txtSifre);
-            this.groupBox1.Controls.Add(this.btnGiris);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(151, 115);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(474, 290);
-            this.groupBox1.TabIndex = 11;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Öğretmen";
+            this.grbxOgretmen.Controls.Add(this.chbxSifre);
+            this.grbxOgretmen.Controls.Add(this.btnSifremiUnuttum);
+            this.grbxOgretmen.Controls.Add(this.txtMail);
+            this.grbxOgretmen.Controls.Add(this.btnKayitOl);
+            this.grbxOgretmen.Controls.Add(this.txtSifre);
+            this.grbxOgretmen.Controls.Add(this.btnGiris);
+            this.grbxOgretmen.Controls.Add(this.lblMail);
+            this.grbxOgretmen.Controls.Add(this.lblSifre);
+            this.grbxOgretmen.Location = new System.Drawing.Point(151, 115);
+            this.grbxOgretmen.Name = "grbxOgretmen";
+            this.grbxOgretmen.Size = new System.Drawing.Size(474, 290);
+            this.grbxOgretmen.TabIndex = 11;
+            this.grbxOgretmen.TabStop = false;
+            this.grbxOgretmen.Text = "Öğretmen";
             // 
-            // checkBox1
+            // chbxSifre
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(349, 75);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(73, 21);
-            this.checkBox1.TabIndex = 12;
-            this.checkBox1.Text = "Göster";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.chbxSifre.AutoSize = true;
+            this.chbxSifre.Location = new System.Drawing.Point(349, 75);
+            this.chbxSifre.Name = "chbxSifre";
+            this.chbxSifre.Size = new System.Drawing.Size(73, 21);
+            this.chbxSifre.TabIndex = 12;
+            this.chbxSifre.Text = "Göster";
+            this.chbxSifre.UseVisualStyleBackColor = true;
+            this.chbxSifre.CheckedChanged += new System.EventHandler(this.chbxSifre_CheckedChanged);
             // 
             // btnSifremiUnuttum
             // 
@@ -117,38 +117,38 @@ namespace SinavSistemiProje
             this.btnGiris.UseVisualStyleBackColor = true;
             this.btnGiris.Click += new System.EventHandler(this.btnGiris_Click);
             // 
-            // label1
+            // lblMail
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(25, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 28);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Mail:";
+            this.lblMail.AutoSize = true;
+            this.lblMail.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblMail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblMail.Location = new System.Drawing.Point(25, 22);
+            this.lblMail.Name = "lblMail";
+            this.lblMail.Size = new System.Drawing.Size(55, 28);
+            this.lblMail.TabIndex = 0;
+            this.lblMail.Text = "Mail:";
             // 
-            // label2
+            // lblSifre
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(25, 68);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 28);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Şifre:";
+            this.lblSifre.AutoSize = true;
+            this.lblSifre.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblSifre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblSifre.Location = new System.Drawing.Point(25, 68);
+            this.lblSifre.Name = "lblSifre";
+            this.lblSifre.Size = new System.Drawing.Size(58, 28);
+            this.lblSifre.TabIndex = 1;
+            this.lblSifre.Text = "Şifre:";
             // 
-            // label3
+            // lblGiris
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe Print", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.label3.Location = new System.Drawing.Point(210, 37);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(383, 54);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "LÜTFEN GİRİŞ YAPINIZ";
+            this.lblGiris.AutoSize = true;
+            this.lblGiris.Font = new System.Drawing.Font("Segoe Print", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblGiris.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lblGiris.Location = new System.Drawing.Point(210, 37);
+            this.lblGiris.Name = "lblGiris";
+            this.lblGiris.Size = new System.Drawing.Size(383, 54);
+            this.lblGiris.TabIndex = 10;
+            this.lblGiris.Text = "LÜTFEN GİRİŞ YAPINIZ";
             // 
             // FrmÖğretmen
             // 
@@ -156,12 +156,12 @@ namespace SinavSistemiProje
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Teal;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.grbxOgretmen);
+            this.Controls.Add(this.lblGiris);
             this.Name = "FrmÖğretmen";
             this.Text = "Öğretmen";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.grbxOgretmen.ResumeLayout(false);
+            this.grbxOgretmen.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -169,15 +169,15 @@ namespace SinavSistemiProje
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox grbxOgretmen;
         private System.Windows.Forms.TextBox txtMail;
         private System.Windows.Forms.Button btnKayitOl;
         private System.Windows.Forms.TextBox txtSifre;
         private System.Windows.Forms.Button btnGiris;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblMail;
+        private System.Windows.Forms.Label lblSifre;
+        private System.Windows.Forms.Label lblGiris;
         private System.Windows.Forms.Button btnSifremiUnuttum;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox chbxSifre;
     }
 }

@@ -41,17 +41,17 @@ namespace SinavSistemiProje
                 MessageBox.Show("Kayit Başarıyla Tamamlandı");
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        private void chbxSifre_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBox1.Checked == true)
+            if (chbxSifre.Checked == true)
             {
                 txtAdminPassword.UseSystemPasswordChar = false;
-                checkBox1.Text = "Gizle";
+                chbxSifre.Text = "Gizle";
             }
             else
             {
                 txtAdminPassword.UseSystemPasswordChar = true;
-                checkBox1.Text = "Göster";
+                chbxSifre.Text = "Göster";
             }
         }
         private void BtnAnasayfa_Click(object sender, EventArgs e)

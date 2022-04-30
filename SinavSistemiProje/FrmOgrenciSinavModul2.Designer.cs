@@ -31,28 +31,28 @@ namespace SinavSistemiProje
         {
             this.components = new System.ComponentModel.Container();
             this.lblSoru = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblBilgiSoru = new System.Windows.Forms.Label();
             this.pcbQuestionİmage = new System.Windows.Forms.PictureBox();
             this.rctxQuestionName = new System.Windows.Forms.RichTextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblSoruAdi = new System.Windows.Forms.Label();
             this.lblDakika = new System.Windows.Forms.Label();
             this.lblSaniye = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblSure = new System.Windows.Forms.Label();
             this.btnBitir = new System.Windows.Forms.Button();
             this.btnİlerle = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.grbxSecenekler = new System.Windows.Forms.GroupBox();
+            this.lblBilgi = new System.Windows.Forms.Label();
+            this.rdbD = new System.Windows.Forms.RadioButton();
             this.txtSecenekD = new System.Windows.Forms.TextBox();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.rdbC = new System.Windows.Forms.RadioButton();
             this.txtSecenekC = new System.Windows.Forms.TextBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.rdbB = new System.Windows.Forms.RadioButton();
             this.txtSecenekB = new System.Windows.Forms.TextBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.rdbA = new System.Windows.Forms.RadioButton();
             this.txtSecenekA = new System.Windows.Forms.TextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pcbQuestionİmage)).BeginInit();
-            this.groupBox2.SuspendLayout();
+            this.grbxSecenekler.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblSoru
@@ -66,16 +66,16 @@ namespace SinavSistemiProje
             this.lblSoru.TabIndex = 31;
             this.lblSoru.Text = "0";
             // 
-            // label4
+            // lblBilgiSoru
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label4.Location = new System.Drawing.Point(12, 37);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(59, 28);
-            this.label4.TabIndex = 30;
-            this.label4.Text = "Soru:";
+            this.lblBilgiSoru.AutoSize = true;
+            this.lblBilgiSoru.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblBilgiSoru.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblBilgiSoru.Location = new System.Drawing.Point(12, 37);
+            this.lblBilgiSoru.Name = "lblBilgiSoru";
+            this.lblBilgiSoru.Size = new System.Drawing.Size(59, 28);
+            this.lblBilgiSoru.TabIndex = 30;
+            this.lblBilgiSoru.Text = "Soru:";
             // 
             // pcbQuestionİmage
             // 
@@ -94,16 +94,16 @@ namespace SinavSistemiProje
             this.rctxQuestionName.TabIndex = 28;
             this.rctxQuestionName.Text = "";
             // 
-            // label3
+            // lblSoruAdi
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(228, 25);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(95, 28);
-            this.label3.TabIndex = 27;
-            this.label3.Text = "Soru Adı:";
+            this.lblSoruAdi.AutoSize = true;
+            this.lblSoruAdi.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblSoruAdi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblSoruAdi.Location = new System.Drawing.Point(228, 25);
+            this.lblSoruAdi.Name = "lblSoruAdi";
+            this.lblSoruAdi.Size = new System.Drawing.Size(95, 28);
+            this.lblSoruAdi.TabIndex = 27;
+            this.lblSoruAdi.Text = "Soru Adı:";
             // 
             // lblDakika
             // 
@@ -127,16 +127,16 @@ namespace SinavSistemiProje
             this.lblSaniye.TabIndex = 25;
             this.lblSaniye.Text = "0";
             // 
-            // label1
+            // lblSure
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 28);
-            this.label1.TabIndex = 24;
-            this.label1.Text = "Süreniz:";
+            this.lblSure.AutoSize = true;
+            this.lblSure.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblSure.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblSure.Location = new System.Drawing.Point(12, 9);
+            this.lblSure.Name = "lblSure";
+            this.lblSure.Size = new System.Drawing.Size(84, 28);
+            this.lblSure.TabIndex = 24;
+            this.lblSure.Text = "Süreniz:";
             // 
             // btnBitir
             // 
@@ -162,46 +162,46 @@ namespace SinavSistemiProje
             this.btnİlerle.UseVisualStyleBackColor = true;
             this.btnİlerle.Click += new System.EventHandler(this.btnİlerle_Click);
             // 
-            // groupBox2
+            // grbxSecenekler
             // 
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.radioButton4);
-            this.groupBox2.Controls.Add(this.txtSecenekD);
-            this.groupBox2.Controls.Add(this.radioButton3);
-            this.groupBox2.Controls.Add(this.txtSecenekC);
-            this.groupBox2.Controls.Add(this.radioButton2);
-            this.groupBox2.Controls.Add(this.txtSecenekB);
-            this.groupBox2.Controls.Add(this.radioButton1);
-            this.groupBox2.Controls.Add(this.txtSecenekA);
-            this.groupBox2.Location = new System.Drawing.Point(329, 693);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(847, 287);
-            this.groupBox2.TabIndex = 32;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Seçenekler";
+            this.grbxSecenekler.Controls.Add(this.lblBilgi);
+            this.grbxSecenekler.Controls.Add(this.rdbD);
+            this.grbxSecenekler.Controls.Add(this.txtSecenekD);
+            this.grbxSecenekler.Controls.Add(this.rdbC);
+            this.grbxSecenekler.Controls.Add(this.txtSecenekC);
+            this.grbxSecenekler.Controls.Add(this.rdbB);
+            this.grbxSecenekler.Controls.Add(this.txtSecenekB);
+            this.grbxSecenekler.Controls.Add(this.rdbA);
+            this.grbxSecenekler.Controls.Add(this.txtSecenekA);
+            this.grbxSecenekler.Location = new System.Drawing.Point(329, 693);
+            this.grbxSecenekler.Name = "grbxSecenekler";
+            this.grbxSecenekler.Size = new System.Drawing.Size(847, 287);
+            this.grbxSecenekler.TabIndex = 32;
+            this.grbxSecenekler.TabStop = false;
+            this.grbxSecenekler.Text = "Seçenekler";
             // 
-            // label7
+            // lblBilgi
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label7.ForeColor = System.Drawing.Color.Maroon;
-            this.label7.Location = new System.Drawing.Point(12, 256);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(353, 19);
-            this.label7.TabIndex = 15;
-            this.label7.Text = "Lütfen Doğru Cevabı Seçeneklerdeki Optiğe İşaretleyin!!!";
+            this.lblBilgi.AutoSize = true;
+            this.lblBilgi.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblBilgi.ForeColor = System.Drawing.Color.Maroon;
+            this.lblBilgi.Location = new System.Drawing.Point(12, 256);
+            this.lblBilgi.Name = "lblBilgi";
+            this.lblBilgi.Size = new System.Drawing.Size(353, 19);
+            this.lblBilgi.TabIndex = 15;
+            this.lblBilgi.Text = "Lütfen Doğru Cevabı Seçeneklerdeki Optiğe İşaretleyin!!!";
             // 
-            // radioButton4
+            // rdbD
             // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.radioButton4.Location = new System.Drawing.Point(24, 213);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(43, 27);
-            this.radioButton4.TabIndex = 7;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "D";
-            this.radioButton4.UseVisualStyleBackColor = true;
+            this.rdbD.AutoSize = true;
+            this.rdbD.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.rdbD.Location = new System.Drawing.Point(24, 213);
+            this.rdbD.Name = "rdbD";
+            this.rdbD.Size = new System.Drawing.Size(43, 27);
+            this.rdbD.TabIndex = 7;
+            this.rdbD.TabStop = true;
+            this.rdbD.Text = "D";
+            this.rdbD.UseVisualStyleBackColor = true;
             // 
             // txtSecenekD
             // 
@@ -212,17 +212,17 @@ namespace SinavSistemiProje
             this.txtSecenekD.Size = new System.Drawing.Size(533, 49);
             this.txtSecenekD.TabIndex = 6;
             // 
-            // radioButton3
+            // rdbC
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.radioButton3.Location = new System.Drawing.Point(23, 146);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(42, 27);
-            this.radioButton3.TabIndex = 5;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "C";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.rdbC.AutoSize = true;
+            this.rdbC.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.rdbC.Location = new System.Drawing.Point(23, 146);
+            this.rdbC.Name = "rdbC";
+            this.rdbC.Size = new System.Drawing.Size(42, 27);
+            this.rdbC.TabIndex = 5;
+            this.rdbC.TabStop = true;
+            this.rdbC.Text = "C";
+            this.rdbC.UseVisualStyleBackColor = true;
             // 
             // txtSecenekC
             // 
@@ -233,17 +233,17 @@ namespace SinavSistemiProje
             this.txtSecenekC.Size = new System.Drawing.Size(533, 51);
             this.txtSecenekC.TabIndex = 4;
             // 
-            // radioButton2
+            // rdbB
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.radioButton2.Location = new System.Drawing.Point(23, 84);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(41, 27);
-            this.radioButton2.TabIndex = 3;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "B";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rdbB.AutoSize = true;
+            this.rdbB.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.rdbB.Location = new System.Drawing.Point(23, 84);
+            this.rdbB.Name = "rdbB";
+            this.rdbB.Size = new System.Drawing.Size(41, 27);
+            this.rdbB.TabIndex = 3;
+            this.rdbB.TabStop = true;
+            this.rdbB.Text = "B";
+            this.rdbB.UseVisualStyleBackColor = true;
             // 
             // txtSecenekB
             // 
@@ -254,17 +254,17 @@ namespace SinavSistemiProje
             this.txtSecenekB.Size = new System.Drawing.Size(533, 56);
             this.txtSecenekB.TabIndex = 2;
             // 
-            // radioButton1
+            // rdbA
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.radioButton1.Location = new System.Drawing.Point(24, 25);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(42, 27);
-            this.radioButton1.TabIndex = 1;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "A";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rdbA.AutoSize = true;
+            this.rdbA.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.rdbA.Location = new System.Drawing.Point(24, 25);
+            this.rdbA.Name = "rdbA";
+            this.rdbA.Size = new System.Drawing.Size(42, 27);
+            this.rdbA.TabIndex = 1;
+            this.rdbA.TabStop = true;
+            this.rdbA.Text = "A";
+            this.rdbA.UseVisualStyleBackColor = true;
             // 
             // txtSecenekA
             // 
@@ -289,22 +289,22 @@ namespace SinavSistemiProje
             this.ClientSize = new System.Drawing.Size(1453, 992);
             this.Controls.Add(this.btnBitir);
             this.Controls.Add(this.btnİlerle);
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.grbxSecenekler);
             this.Controls.Add(this.lblSoru);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lblBilgiSoru);
             this.Controls.Add(this.pcbQuestionİmage);
             this.Controls.Add(this.rctxQuestionName);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblSoruAdi);
             this.Controls.Add(this.lblDakika);
             this.Controls.Add(this.lblSaniye);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblSure);
             this.Name = "FrmOgrenciSinavModul2";
             this.Text = "Sinav";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmOgrenciSinavModul2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pcbQuestionİmage)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.grbxSecenekler.ResumeLayout(false);
+            this.grbxSecenekler.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -313,24 +313,24 @@ namespace SinavSistemiProje
         #endregion
 
         private System.Windows.Forms.Label lblSoru;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblBilgiSoru;
         private System.Windows.Forms.PictureBox pcbQuestionİmage;
         private System.Windows.Forms.RichTextBox rctxQuestionName;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblSoruAdi;
         private System.Windows.Forms.Label lblDakika;
         private System.Windows.Forms.Label lblSaniye;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblSure;
         private System.Windows.Forms.Button btnBitir;
         private System.Windows.Forms.Button btnİlerle;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.RadioButton radioButton4;
+        private System.Windows.Forms.GroupBox grbxSecenekler;
+        private System.Windows.Forms.Label lblBilgi;
+        private System.Windows.Forms.RadioButton rdbD;
         private System.Windows.Forms.TextBox txtSecenekD;
-        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton rdbC;
         private System.Windows.Forms.TextBox txtSecenekC;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton rdbB;
         private System.Windows.Forms.TextBox txtSecenekB;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton rdbA;
         private System.Windows.Forms.TextBox txtSecenekA;
         private System.Windows.Forms.Timer timer1;
     }

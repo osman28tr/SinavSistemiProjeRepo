@@ -46,18 +46,17 @@ namespace SinavSistemiProje
                 this.Hide();
             }
         }
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        private void chbxSifre_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBox1.Checked == true)
+            if (chbxSifre.Checked == true)
             {
                 txtSifre.UseSystemPasswordChar = false;
-                checkBox1.Text = "Gizle";
+                chbxSifre.Text = "Gizle";
             }
             else
             {
                 txtSifre.UseSystemPasswordChar = true;
-                checkBox1.Text = "Göster";
+                chbxSifre.Text = "Göster";
             }
         }
     }

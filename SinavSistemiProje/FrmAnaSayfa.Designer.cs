@@ -1,7 +1,7 @@
 ﻿
 namespace SinavSistemiProje
 {
-    partial class Form1
+    partial class FrmAnaSayfa
     {
         /// <summary>
         /// Required designer variable.
@@ -29,50 +29,50 @@ namespace SinavSistemiProje
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.grbxKullaniciTur = new System.Windows.Forms.GroupBox();
+            this.btnOgretmen = new System.Windows.Forms.Button();
+            this.btnOgrenci = new System.Windows.Forms.Button();
             this.BtnAdmin = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
+            this.grbxKullaniciTur.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // grbxKullaniciTur
             // 
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.BtnAdmin);
-            this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(188, 129);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(427, 252);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Kullanıcı Türleri";
+            this.grbxKullaniciTur.Controls.Add(this.btnOgretmen);
+            this.grbxKullaniciTur.Controls.Add(this.btnOgrenci);
+            this.grbxKullaniciTur.Controls.Add(this.BtnAdmin);
+            this.grbxKullaniciTur.ForeColor = System.Drawing.Color.White;
+            this.grbxKullaniciTur.Location = new System.Drawing.Point(188, 129);
+            this.grbxKullaniciTur.Name = "grbxKullaniciTur";
+            this.grbxKullaniciTur.Size = new System.Drawing.Size(427, 252);
+            this.grbxKullaniciTur.TabIndex = 0;
+            this.grbxKullaniciTur.TabStop = false;
+            this.grbxKullaniciTur.Text = "Kullanıcı Türleri";
             // 
-            // button3
+            // btnOgretmen
             // 
-            this.button3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.button3.Location = new System.Drawing.Point(280, 30);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(141, 82);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Öğretmen";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnOgretmen.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnOgretmen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnOgretmen.Location = new System.Drawing.Point(280, 30);
+            this.btnOgretmen.Name = "btnOgretmen";
+            this.btnOgretmen.Size = new System.Drawing.Size(141, 82);
+            this.btnOgretmen.TabIndex = 2;
+            this.btnOgretmen.Text = "Öğretmen";
+            this.btnOgretmen.UseVisualStyleBackColor = true;
+            this.btnOgretmen.Click += new System.EventHandler(this.btnOgretmen_Click);
             // 
-            // button2
+            // btnOgrenci
             // 
-            this.button2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.button2.Location = new System.Drawing.Point(151, 127);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(141, 82);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Öğrenci";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnOgrenci.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnOgrenci.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnOgrenci.Location = new System.Drawing.Point(151, 127);
+            this.btnOgrenci.Name = "btnOgrenci";
+            this.btnOgrenci.Size = new System.Drawing.Size(141, 82);
+            this.btnOgrenci.TabIndex = 1;
+            this.btnOgrenci.Text = "Öğrenci";
+            this.btnOgrenci.UseVisualStyleBackColor = true;
+            this.btnOgrenci.Click += new System.EventHandler(this.btnOgrenci_Click);
             // 
             // BtnAdmin
             // 
@@ -97,17 +97,17 @@ namespace SinavSistemiProje
             this.label1.TabIndex = 1;
             this.label1.Text = "HOŞ GELDİNİZ ";
             // 
-            // Form1
+            // FrmAnaSayfa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(756, 451);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.groupBox1);
-            this.Name = "Form1";
+            this.Controls.Add(this.grbxKullaniciTur);
+            this.Name = "FrmAnaSayfa";
             this.Text = "AnaSayfa";
-            this.groupBox1.ResumeLayout(false);
+            this.grbxKullaniciTur.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -115,9 +115,9 @@ namespace SinavSistemiProje
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.GroupBox grbxKullaniciTur;
+        private System.Windows.Forms.Button btnOgretmen;
+        private System.Windows.Forms.Button btnOgrenci;
         private System.Windows.Forms.Button BtnAdmin;
         private System.Windows.Forms.Label label1;
     }
