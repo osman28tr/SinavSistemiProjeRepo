@@ -63,10 +63,6 @@ namespace SinavSistemiProje
         }
         private List<Question> GenerateQuestions()
         {
-            //var questionsfalse = questionDetailManager.GetQuestionsByFalseAndAnswered(id);
-            //sorulistesi = questionManager.GetQuestionsByNotAnswered(questionsfalse);
-            //return sorulistesi;
-
             List<Question> questions;
             int count = subjectManager.SubjectCount();
             int countSuccess = 0, countNotSuccess = 0;

@@ -44,35 +44,19 @@ namespace SinavSistemiProje
         }
         private void DgwSorular_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            //var row = DgwSorular.CurrentRow;
-            //bool durum = false;
-            //if ((bool)row.Cells[8].Value == true) {
-            //    DialogResult result1 = MessageBox.Show("Soruyu iptal etmek istediğinize emin misiniz?", " ", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            //    if (result1 == DialogResult.Yes)
-            //    {
-            //        UpdateQuestion(durum);
-            //        MessageBox.Show("Soru başarıyla iptal edildi");
-            //        GetQuestions();
-            //    }
-            //}
-            //else
-            //{
-            //durum = true;
             var row = DgwSorular.CurrentRow;
             if ((bool)row.Cells[4].Value != true)
             {
                 DialogResult result2 = MessageBox.Show("Soruyu onaylamak istediğinize emin misiniz?", " ", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result2 == DialogResult.Yes)
                 {
-                    UpdateQuestion(/*durum*/);
+                    UpdateQuestion();
                     MessageBox.Show("Soru başarıyla onaylandı");
                     GetQuestions();
                 }
             }           
-            //}
-
         }
-        private void UpdateQuestion(/*bool state*/) //normalizasyon.
+        private void UpdateQuestion() 
         {
             var row = DgwSorular.CurrentRow;
             var questionId = row.Cells[0].Value.ToString();

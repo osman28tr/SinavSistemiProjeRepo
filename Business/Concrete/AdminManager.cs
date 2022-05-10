@@ -26,7 +26,6 @@ namespace Business.Concrete
 
         public List<string> Add(Admin admin)
         {
-            // var result = adminValidator.Validate(admin);
             IList<ValidationFailure> failures = Dogrula(admin);
             if (failures != null)
             {

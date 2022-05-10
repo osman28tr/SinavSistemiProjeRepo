@@ -12,7 +12,6 @@ namespace Business.Abstract
     {
         List<QuestionDetail> GetAll();
         QuestionDetail Get(int questiondetailid);
-        //void Add(QuestionDetail questionDetail, int id);
         void Add(QuestionDetail questionDetail);
         void Update(QuestionDetail questionDetail);
         void Delete(QuestionDetail questionDetail);

@@ -22,12 +22,6 @@ namespace Business.Concrete
         {
             _questionDetailDal.Add(questionDetail);
         }
-
-        //public void Add(QuestionDetail questionDetail, int id)
-        //{
-        //    if (_questionDetailDal.Get(x => x.QuestionDetailId == id) == null) //bir öğrenciye aynı soru gelebilir bidaha boşa detail eklemesin
-        //        _questionDetailDal.Add(questionDetail);
-        //}
         public void Delete(QuestionDetail questionDetail)
         {
             _questionDetailDal.Delete(questionDetail);
@@ -104,15 +98,6 @@ namespace Business.Concrete
 
         public int StudentSuccessQuestionBySubject(int questionId, int studentId)
         {
-            //int sayac = 0;
-            //for (int i = 0; i < questionCount; i++)
-            //{
-            //    if (_questionDetailDal.Get(x => x.QuestionId == questionId && x.StudentId == studentId && x.QuestionState == true && x.AnsweredState == true) != null)
-            //    {
-            //        sayac++;
-            //    }
-            //}
-            //return sayac;
             if (_questionDetailDal.Get(x => x.QuestionId == questionId && x.StudentId == studentId && x.QuestionState == true && x.AnsweredState == true) != null)
             {
                 return 1;

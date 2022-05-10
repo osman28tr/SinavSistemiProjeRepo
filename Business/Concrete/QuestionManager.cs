@@ -68,66 +68,44 @@ namespace Business.Concrete
             return _questionDal.GetAll();
         }
 
-        public List<Question> GetQuestionsByNotAnswered(List<QuestionDetail> questionDetails)//çözme durumu false olanlar üzerinden ve student id ye göre rastgele sorular üretildi.
+        public List<Question> GetQuestionsByNotAnswered(List<QuestionDetail> questionDetails)
         {
-            int[] dizi2 = GenerateRandomNumber(questionDetails); //question id leri rastgele verildi.
-            //int questionmenstruation = _questionDal.GetAll().Count;
-            //int[] dizi = new int[questionmenstruation];
+            int[] dizi2 = GenerateRandomNumber(questionDetails); 
             List<Question> questions = new List<Question>();
-            for (int i = 0; i < 10; i++) //soru sayısı 10 olunca 10 a göre yapılcak
+            for (int i = 0; i < 10; i++) 
             {
-                //int a = random.Next(1, questionmenstruation + 1);
-                //if (dizi.Contains(a))
-                //{
-                //    i--;
-                //    continue;
-                //}                    
-                //dizi[i] = a;
-
-                int questionid = dizi2[i];
-                //if (questionDetails.Find(x => x.QuestionId == a) != null) //question'ları false olanları getirsin. ve benim ürettiğim rastgele bir id nin durumu false ise getirsin.
-                //{
-                //    questions.Add(_questionDal.Get(x => x.QuestionId == a));
-                //}
-                //else
-                //{
-
-                //}
-                questions.Add(_questionDal.Get(x => x.QuestionId == questionid)); // normal hali.
+                int questionid = dizi2[i];               
+                questions.Add(_questionDal.Get(x => x.QuestionId == questionid)); 
             }
             return questions;
         }
-        private int[] GenerateRandomNumber(List<QuestionDetail> questionDetails) //çözme durumu false olanlar geliyor.
+        private int[] GenerateRandomNumber(List<QuestionDetail> questionDetails) 
         {
             bool durum = true;
-            //int questionmenstruationmax = questionDetails.Max(x => x.QuestionId);
-            //int questionmenstruationmin = questionDetails.Min(x => x.QuestionId);
-            int count = questionDetails.Count; //bize gelen doğru çözme durumu false olan soruların sayısını aldık
-            int[] dizi = new int[10]; //sayıların aynı olmaması için.
-            int[] dizi2 = new int[10]; //bizim durumu false olanların questionid'lerini ilgili diziye atmak için
-            for (int i = 0; i < 10; i++) //count olan yer normalde 10 dur.(confirmstate'e göre ayarladım.)
+            int count = questionDetails.Count; 
+            int[] dizi = new int[10]; 
+            int[] dizi2 = new int[10]; 
+            for (int i = 0; i < 10; i++) 
             {
-                int randomnumberindex = random.Next(0, count); //1 ile gelen verilerin sayısı arasında rastgele sayı ürettik.(bunu indis için yaptım.)
-                for (int j = 0; j < i; j++) //rastgele üretilen sayı dizinin şuanki indisine kadar kontrol ediyor.(bunu 0 için yaptım. çünkü sıfırda patlıyordu.)
+                int randomnumberindex = random.Next(0, count); 
+                for (int j = 0; j < i; j++) 
                 {
-                    if (dizi[j] == randomnumberindex) //aynı sayı üretmemesi için kontrol ediyor.(yada aynı indis vermemesi için questiondetail için.)
+                    if (dizi[j] == randomnumberindex) 
                     {
-                        //j--;
                         durum = false;
                         break;
-                        //continue;
                     }
                     else
                     {
                         durum = true;
                     }
                 }
-                if (durum == true) //eğer üretilen rastgele sayı (veya indis) dizinin içinde yoksa diziye at ve o indisin question id sini dizi2 ye ver.
+                if (durum == true) 
                 {
                     dizi[i] = randomnumberindex;
                     dizi2[i] = questionDetails[randomnumberindex].QuestionId;
                 }
-                else //eğer random üretilen sayı aynı sayı geldiyse bidaha üretmesi için i azaltıldı.
+                else 
                 {
                     i--;
                     continue;

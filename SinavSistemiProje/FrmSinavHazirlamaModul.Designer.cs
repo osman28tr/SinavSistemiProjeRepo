@@ -376,7 +376,6 @@ namespace SinavSistemiProje
             this.cmbUnit.Name = "cmbUnit";
             this.cmbUnit.Size = new System.Drawing.Size(172, 28);
             this.cmbUnit.TabIndex = 17;
-            this.cmbUnit.SelectedIndexChanged += new System.EventHandler(this.cmbUnit_SelectedIndexChanged);
             this.cmbUnit.SelectionChangeCommitted += new System.EventHandler(this.cmbUnit_SelectionChangeCommitted);
             // 
             // lblUnit
@@ -418,7 +417,6 @@ namespace SinavSistemiProje
             this.cmbLesson.Name = "cmbLesson";
             this.cmbLesson.Size = new System.Drawing.Size(172, 28);
             this.cmbLesson.TabIndex = 0;
-            this.cmbLesson.SelectedIndexChanged += new System.EventHandler(this.cmbLesson_SelectedIndexChanged);
             this.cmbLesson.SelectionChangeCommitted += new System.EventHandler(this.cmbLesson_SelectionChangeCommitted);
             // 
             // lblDers

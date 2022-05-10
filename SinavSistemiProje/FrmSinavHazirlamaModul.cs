@@ -28,11 +28,10 @@ namespace SinavSistemiProje
         SubjectManager subjectManager = new SubjectManager(new EfSubjectDal());
         WrongAnswerManager wrongAnswerManager = new WrongAnswerManager(new EfWrongAnswerDal());
         SigmaManager sigmaManager = new SigmaManager(new EfSigmaDal());
-        //CorrectAnswerManager correctAnswerManager = new CorrectAnswerManager(new EfCorrectAnswerDal());
         string DosyaYolu = "";
         string correctAnswer = "";
         string[] WrongAnswer = new string[3];
-        int lastQuestionId; //normalizasyon
+        int lastQuestionId;
         private void FrmSinavHazirlamaModul_Load(object sender, EventArgs e)
         {
             LoadLessons();
@@ -40,9 +39,6 @@ namespace SinavSistemiProje
             LoadSubjects(1);
             LoadStudents();
             FillSigma();
-            //cmbLesson.SelectedIndex = 1;
-            //cmbUnit.DataSource = unitManager.GetUnitsByLesson(a);
-            //cmbUnit.DisplayMember = "UnitName";
         }
         private void btnDosyaSec_Click(object sender, EventArgs e)
         {
@@ -63,7 +59,6 @@ namespace SinavSistemiProje
             string imagefile = Path.GetFileName(pcbQuestionİmage.ImageLocation);
             string imagepath = Path.Combine(Application.StartupPath + "\\images\\" + sayi + imagefile);
             string imagename = Path.Combine("\\images\\" + sayi + imagefile);
-            //File.Copy(pictureBox1.ImageLocation, imagepath);
             if (imagefile == null)
                 imagename = null;
 
@@ -88,25 +83,10 @@ namespace SinavSistemiProje
                 if (imagename != null)
                     File.Copy(pcbQuestionİmage.ImageLocation, imagepath);
                 QuestionDetailAdd();
-                //CorrectAnswerAdd();//normalizasyon
-                WrongAnswerAdd();//normalizasyon
+                WrongAnswerAdd();
                 MessageBox.Show("Hazırladığınız soru admine başarıyla gönderildi!");
                 ToolsClear();
             }
-            //questionManager.Add(new Question
-            //{
-            //    QuestionName = rctxQuestionName.Text,
-            //    PicturePath = imagename,
-            //    //QuestionCorrectAnswer = CorrectAnswer,
-            //    //QuestionWrongAnswer1 = WrongAnswer[0],
-            //    //QuestionWrongAnswer2 = WrongAnswer[1],
-            //    //QuestionWrongAnswer3 = WrongAnswer[2],
-            //    SubjectId = (int)cmbSubject.SelectedValue,
-            //});
-            //QuestionDetailAdd();
-            //CorrectAnswerAdd();//normalizasyon
-            //WrongAnswerAdd();//normalizasyon
-            //MessageBox.Show("Hazırladığınız soru admine başarıyla gönderildi!");
         }
         private void ToolsClear()
         {
@@ -122,8 +102,7 @@ namespace SinavSistemiProje
             rdbD.Checked = false;
         }
         private void QuestionDetailAdd()
-        {
-            //id = questionManager.GetAll().LastOrDefault().QuestionId;            
+        {      
             lastQuestionId = questionManager.GetLastQuestionId();
             if (chbxHerkes.Checked == true)
             {
@@ -137,43 +116,8 @@ namespace SinavSistemiProje
             else
                 questionDetailManager.Add(new QuestionDetail { QuestionId = lastQuestionId, StudentId = (int)cmbStudents.SelectedValue, SigmaCount = 0, QuestionState = false, AnsweredState = false });
         }
-        private void CorrectAnswerAdd()
-        {
-            //correctAnswerManager.Add(new CorrectAnswer
-            //{
-            //    CorrectAnswerName = CorrectAnswer,
-            //    QuestionId = id
-            //});
-
-
-
-            //var failstatestring = correctAnswerManager.Add(new CorrectAnswer
-            //{
-            //    CorrectAnswerName = CorrectAnswer,
-            //    QuestionId = id
-            //});
-            //if (failstatestring != null)
-            //{
-            //    correctAnswerFailState = true;
-            //    foreach (var item in failstatestring)
-            //    {
-            //        MessageBox.Show(item.ToString());
-            //    }
-            //    failstatestring.Clear();
-            //}
-            //else
-            //    correctAnswerFailState = false;
-        }
         private void WrongAnswerAdd()
         {
-            //for (int i = 0; i < 3; i++)
-            //{
-            //    wrongAnswerManager.Add(new WrongAnswer
-            //    {
-            //        WrongAnswerName = WrongAnswer[i],
-            //        QuestionId = id
-            //    });
-            //}
             for (int i = 0; i < 3; i++)
             {
                 wrongAnswerManager.Add(new WrongAnswer
@@ -232,48 +176,11 @@ namespace SinavSistemiProje
             cmbSubject.DisplayMember = "SubjectName";
             cmbSubject.ValueMember = "SubjectId";
         }
-        private void cmbLesson_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //try
-            //{
-            //    //string a = cmbLesson.SelectedValue.ToString();
-            //    int a = (int)(cmbLesson.SelectedValue);
-            //    cmbUnit.DataSource = unitManager.GetUnitsByLesson(a);
-            //    cmbUnit.DisplayMember = "UnitName";
-            //    cmbUnit.ValueMember = "UnitId";
-            //}
-            //catch (Exception)
-            //{
-            //    throw;
-            //}
-
-        }
         private void LoadStudents()
         {
             cmbStudents.DataSource = studentManager.GetAll();
             cmbStudents.DisplayMember = "StudentName";
             cmbStudents.ValueMember = "StudentId";
-        }
-        private void SubjectsByUnit(int id)
-        {
-            cmbSubject.DataSource = subjectManager.GetSubjectsByUnit(id);
-            cmbSubject.DisplayMember = "SubjectName";
-            cmbSubject.ValueMember = "SubjectId";
-        }
-        private void cmbUnit_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //try
-            //{
-            //    //string a = cmbLesson.SelectedValue.ToString();
-            //    int a = (int)(cmbUnit.SelectedValue);
-            //    cmbSubject.DataSource = subjectManager.GetSubjectsByUnit(a);
-            //    cmbSubject.DisplayMember = "SubjectName";
-            //    cmbSubject.ValueMember = "SubjectId";
-            //}
-            //catch (Exception)
-            //{
-            //    throw;
-            //}
         }
         private void FillSigma()
         {
@@ -291,7 +198,6 @@ namespace SinavSistemiProje
         {
             try
             {
-                //string a = cmbLesson.SelectedValue.ToString();
                 int chosenLesson = (int)(cmbLesson.SelectedValue);
                 cmbUnit.DataSource = unitManager.GetUnitsByLesson(chosenLesson);
                 cmbUnit.DisplayMember = "UnitName";
@@ -308,7 +214,6 @@ namespace SinavSistemiProje
         {
             try
             {
-                //string a = cmbLesson.SelectedValue.ToString();
                 int chosenUnit = (int)(cmbUnit.SelectedValue);
                 cmbSubject.DataSource = subjectManager.GetSubjectsByUnit(chosenUnit);
                 cmbSubject.DisplayMember = "SubjectName";
