@@ -22,7 +22,7 @@ namespace SinavSistemiProje
         TeacherManager teacherManager = new TeacherManager(new EfTeacherDal());
         private void btnÖğretmenKayitOl_Click(object sender, EventArgs e)
         {
-            var failstatestring = teacherManager.Add(new Teacher
+            var failstatestring = teacherManager.Add(new Teacher //ders sorumlusunun eklenmesi
             {
                 TeacherName = txtTeacherName.Text,
                 TeacherSurname = txtTeacherSurname.Text,
@@ -30,7 +30,7 @@ namespace SinavSistemiProje
                 TeacherPassword = txtTeacherPassword.Text,
                 TeacherTel = txtTeacherTel.Text
             });
-            if (failstatestring != null)
+            if (failstatestring != null) //validasyon kontrolünde bir hata oluştuysa o hataların gösterilmesi
             {
                 foreach (var item in failstatestring)
                 {
@@ -38,7 +38,7 @@ namespace SinavSistemiProje
                 }
                 failstatestring.Clear();
             }
-            else
+            else //validasyon hatası yoksa ekleme işleminin başarılı bir şekilde gerçekleştiğine dair mesajın gösterilmesi
                 MessageBox.Show("Kayit Başarıyla Tamamlandı");
         }
 
@@ -56,7 +56,7 @@ namespace SinavSistemiProje
             }
         }
 
-        private void txtTeacherTel_TextChanged(object sender, EventArgs e)
+        private void txtTeacherTel_TextChanged(object sender, EventArgs e) //ders sorumlusuna ait telefon numarası girilirken harf girişinin engellenmesi
         {
             if (System.Text.RegularExpressions.Regex.IsMatch(txtTeacherTel.Text, "[^0-9]"))
             {

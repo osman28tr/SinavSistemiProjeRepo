@@ -34,6 +34,7 @@ namespace SinavSistemiProje
         int lastQuestionId;
         private void FrmSinavHazirlamaModul_Load(object sender, EventArgs e)
         {
+            //form ilk yüklendiğinde ilgili comboboxlara verilerin eklenmesi
             LoadLessons();
             LoadUnits(1);
             LoadSubjects(1);
@@ -55,14 +56,14 @@ namespace SinavSistemiProje
             CheckedState();
             Random rastgele = new Random();
             int sayi = rastgele.Next(10, 1000000);
-
+            //soru resminin images klasörüne eklenmesi eklenmesi
             string imagefile = Path.GetFileName(pcbQuestionİmage.ImageLocation);
             string imagepath = Path.Combine(Application.StartupPath + "\\images\\" + sayi + imagefile);
             string imagename = Path.Combine("\\images\\" + sayi + imagefile);
             if (imagefile == null)
                 imagename = null;
-
-            var failstatestring = questionManager.Add(new Question
+            //sorunun veritabanına eklenmesi
+            var failstatestring = questionManager.Add(new Question 
             {
                 QuestionName = rctxQuestionName.Text,
                 SubjectId = (int)cmbSubject.SelectedValue,
@@ -70,7 +71,7 @@ namespace SinavSistemiProje
                 PicturePath = imagename,
                 CorrectAnswer = correctAnswer
             });
-            if (failstatestring != null)
+            if (failstatestring != null) //eğer validasyon hatası alındıysa o hataların gösterilmesi
             {
                 foreach (var item in failstatestring)
                 {
@@ -78,7 +79,7 @@ namespace SinavSistemiProje
                 }
                 failstatestring.Clear();
             }
-            else
+            else //alınmadıysa ilgili soruya ait detail ve wrongAnswer'ın eklenmesi
             {
                 if (imagename != null)
                     File.Copy(pcbQuestionİmage.ImageLocation, imagepath);
@@ -88,7 +89,7 @@ namespace SinavSistemiProje
                 ToolsClear();
             }
         }
-        private void ToolsClear()
+        private void ToolsClear() //soru eklendikten sonra toolboxların temizlenmesi
         {
             rctxQuestionName.Clear();
             pcbQuestionİmage.Image = null;
@@ -101,7 +102,7 @@ namespace SinavSistemiProje
             rdbC.Checked = false;
             rdbD.Checked = false;
         }
-        private void QuestionDetailAdd()
+        private void QuestionDetailAdd() //ilgili soruya ait detail'in eklenmesi
         {      
             lastQuestionId = questionManager.GetLastQuestionId();
             if (chbxHerkes.Checked == true)
@@ -116,7 +117,7 @@ namespace SinavSistemiProje
             else
                 questionDetailManager.Add(new QuestionDetail { QuestionId = lastQuestionId, StudentId = (int)cmbStudents.SelectedValue, SigmaCount = 0, QuestionState = false, AnsweredState = false });
         }
-        private void WrongAnswerAdd()
+        private void WrongAnswerAdd() //ilgili soruya ait yanlış cevapların eklenmesi
         {
             for (int i = 0; i < 3; i++)
             {
@@ -127,7 +128,7 @@ namespace SinavSistemiProje
                 });
             }
         }
-        private void CheckedState()
+        private void CheckedState() //soruya ait doğru-yanlış cevap kontrolünün yapılması
         {
             if (rdbA.Checked == true)
             {
@@ -194,7 +195,7 @@ namespace SinavSistemiProje
                 cmbSigma6.Items.Add(i);
             }
         }
-        private void cmbLesson_SelectionChangeCommitted(object sender, EventArgs e)
+        private void cmbLesson_SelectionChangeCommitted(object sender, EventArgs e) //ilgili ders seçildikten sonra derse ait ünitelerin ilgili combobox'a eklenmesi
         {
             try
             {
@@ -210,7 +211,7 @@ namespace SinavSistemiProje
             }
         }
 
-        private void cmbUnit_SelectionChangeCommitted(object sender, EventArgs e)
+        private void cmbUnit_SelectionChangeCommitted(object sender, EventArgs e) //ilgili ünite seçildikten sonra üniteye ait konuların ilgili combobox'a eklenmesi
         {
             try
             {
@@ -231,7 +232,7 @@ namespace SinavSistemiProje
             frmAnaSayfa.Show();
             this.Hide();
         }
-        private void btnUygula_Click(object sender, EventArgs e)
+        private void btnUygula_Click(object sender, EventArgs e) //sorulara ait sigmanın ayarlanması
         {
             if (sigmaManager.GetAll().Count > 0)
             {

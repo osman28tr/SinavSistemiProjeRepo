@@ -68,7 +68,7 @@ namespace SinavSistemiProje
                 cmbSigma6.Items.Add(i);
             }
         }
-        private void GetSuccessStatus()
+        private void GetSuccessStatus() //öğrenciye ait sınav verilerinin gösterilmesi
         {
             int count = subjectManager.SubjectCount();
             double countSuccess = 0, countNotSuccess = 0, countEmpty = 0;
@@ -134,7 +134,7 @@ namespace SinavSistemiProje
             e.Graphics.DrawString(write, writeFamily, pencil, 10, 20);
         }
 
-        private void btnUygula_Click(object sender, EventArgs e)
+        private void btnUygula_Click(object sender, EventArgs e) //6 sigma yaklaşımının ayarlanması
         {
             if (sigmaManager.GetAll().Count > 0)
             {

@@ -56,7 +56,7 @@ namespace SinavSistemiProje
                 }
             }           
         }
-        private void UpdateQuestion() 
+        private void UpdateQuestion() //ilgili sorunun onaylanması
         {
             var row = DgwSorular.CurrentRow;
             var questionId = row.Cells[0].Value.ToString();
@@ -87,7 +87,7 @@ namespace SinavSistemiProje
             GetQuestions();
         }
 
-        private void btnUygula_Click(object sender, EventArgs e)
+        private void btnUygula_Click(object sender, EventArgs e) //6 sigma yaklaşımının ayarlanması
         {
             if (sigmaManager.GetAll().Count > 0)
             {

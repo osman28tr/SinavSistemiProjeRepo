@@ -27,7 +27,7 @@ namespace Business.Concrete
             _questionDetailDal.Delete(questionDetail);
         }
 
-        public int FalseAnswerCount(int ogrid)
+        public int FalseAnswerCount(int ogrid) //ilgili öğrenciye ait yanlış çözülen soruların sayısını veriyor.
         {
             return _questionDetailDal.GetAll(x => x.StudentId == ogrid && x.QuestionState == false && x.AnsweredState == true).Count;
         }
@@ -49,7 +49,7 @@ namespace Business.Concrete
             return _questionDetailDal.Get(x => x.QuestionId == questionId && x.StudentId == studentId).QuestionDetailId;
         }
 
-        public List<QuestionDetail> GetQuestionsAnsweredByDate(int studentid, Sigma sigma)
+        public List<QuestionDetail> GetQuestionsAnsweredByDate(int studentid, Sigma sigma) //6 sigma yaklaşımının uygulanması
         {
             var questions = _questionDetailDal.GetAll(x => x.QuestionState == true && x.StudentId == studentid).ToList();
             var questionsDate = questions.Select(x => x.AnsweredDate).ToList();
@@ -66,7 +66,7 @@ namespace Business.Concrete
             return questiondetailList;
         }
 
-        public List<QuestionDetail> GetQuestionsByFalse(int studentid)
+        public List<QuestionDetail> GetQuestionsByFalse(int studentid) //ilgili öğrenciye ait yanlış bilinen soruların getirilmesi
         {
             return _questionDetailDal.GetAll(x => x.QuestionState == false && x.StudentId == studentid);
         }
@@ -76,7 +76,7 @@ namespace Business.Concrete
             return _questionDetailDal.GetAll(x => x.QuestionState == false && x.StudentId == studentid && x.AnsweredState == true);
         }
 
-        public int StudentEmptyQuestionBySubject(int questionId, int studentId)
+        public int StudentEmptyQuestionBySubject(int questionId, int studentId) //ilgili öğrenciye ait çözülmeyen bir sorunun getirilmesi
         {
             if (_questionDetailDal.Get(x => x.QuestionId == questionId && x.StudentId == studentId && x.AnsweredState == false) != null)
             {
@@ -86,7 +86,7 @@ namespace Business.Concrete
                 return 0;
         }
 
-        public int StudentNotSuccessQuestionBySubject(int questionId, int studentId)
+        public int StudentNotSuccessQuestionBySubject(int questionId, int studentId) //ilgili öğrenciye ait yanlış çözülen sorunun getirilmesi
         {
             if (_questionDetailDal.Get(x => x.QuestionId == questionId && x.StudentId == studentId && x.QuestionState == false && x.AnsweredState == true) != null)
             {
@@ -106,7 +106,7 @@ namespace Business.Concrete
                 return 0;
         }
 
-        public int TrueAnswerCount(int ogrid)
+        public int TrueAnswerCount(int ogrid) //ilgili öğrenciye ait doğru bilinen soruların sayısının getirilmesi
         {
             return _questionDetailDal.GetAll(x => x.StudentId == ogrid && x.QuestionState == true && x.AnsweredState == true).Count;
         }

@@ -39,7 +39,7 @@ namespace Business.Concrete
                 return null;
             }
         }
-        public IList<ValidationFailure> Dogrula(Question question)
+        public IList<ValidationFailure> Dogrula(Question question) //soru ekleme modülünde ilgili validasyonların yapılması
         {
             var result = questionValidator.Validate(question);
             IList<ValidationFailure> failures = result.Errors;
@@ -68,9 +68,9 @@ namespace Business.Concrete
             return _questionDal.GetAll();
         }
 
-        public List<Question> GetQuestionsByNotAnswered(List<QuestionDetail> questionDetails)
+        public List<Question> GetQuestionsByNotAnswered(List<QuestionDetail> questionDetails) //çözülmemiş ve çözme durumu false olanlar üzerinden student id ye göre rastgele sorular üretiliyor.
         {
-            int[] dizi2 = GenerateRandomNumber(questionDetails); 
+            int[] dizi2 = GenerateRandomNumber(questionDetails); //rastgele question id ler üretildi.
             List<Question> questions = new List<Question>();
             for (int i = 0; i < 10; i++) 
             {
@@ -131,12 +131,12 @@ namespace Business.Concrete
             return questions;
         }
 
-        public int GetLastQuestionId()
+        public int GetLastQuestionId() //son eklenilen sorunun id sini veriyor.
         {
             return _questionDal.GetAll().LastOrDefault().QuestionId;
         }
 
-        public List<Question> GetConfirmByQuestions()
+        public List<Question> GetConfirmByQuestions() //admin tarafından onaylanan sorular getiriliyor.
         {
             return _questionDal.GetAll(x => x.ConfirmState == true);
         }
@@ -166,7 +166,7 @@ namespace Business.Concrete
                 return GetConfirmByQuestions();
         }
 
-        public int QuestionBySubject(int subjectId)
+        public int QuestionBySubject(int subjectId) //ilgili konuya ait soruların sayısını veriyor.
         {
             return _questionDal.GetAll(x => x.SubjectId == subjectId).Count;
         }

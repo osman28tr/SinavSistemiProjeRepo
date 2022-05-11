@@ -20,8 +20,8 @@ namespace SinavSistemiProje
             InitializeComponent();
         }
         public static int ogrid = 0;
-        int saniye = 0, dakika = 0, soru = 1, soruüret = 0;
-        bool durum = false; 
+        int saniye = 0, dakika = 0, soru = 1/*label'a soruyu yazdırmak icin*/, soruüret = 0;/*db den gelen sorularda kacıncı soruda kaldıgını ögrenmek icin*/
+        bool durum = false;/*öğrencinin soruyu bilip bilemediği*/
         List<Question> sorulistesi = new List<Question>();
         QuestionManager questionManager = new QuestionManager(new EfQuestionDal());
         QuestionDetailManager questionDetailManager = new QuestionDetailManager(new EfQuestionDetailDal());
@@ -35,13 +35,13 @@ namespace SinavSistemiProje
             btnBitir.Visible = false;
             StartTimer();
            
-            GenerateQuestions();
-            if (GetByQuestionAnswered() == null)      
+            GenerateQuestions(); //öğrencinin bilemediği veya çözmediği soruların karışık bir şekilde 10 tane gelmesi
+            if (GetByQuestionAnswered() == null) //öğrenciye ait dogru soru sayısının kontrolü
                 dogrusorusayisi = 0;
             else
                 dogrusorusayisi = GetByQuestionAnswered().Count;
             sorusayisi = 10 + dogrusorusayisi;
-            FillTheElements(); 
+            FillTheElements();  //soruların ilgili toolbox'lara doldurulması
         }
         private void btnİlerle_Click(object sender, EventArgs e)
         {
@@ -60,25 +60,25 @@ namespace SinavSistemiProje
                     }
                 }
             }
-            else if (soru == 11)
+            else if (soru == 11) //ilk 10 soruyu çözdükten sonra 6 sigma yaklaşımına göre ilgili soruların getirilmesi
             {
                 QuestionsBySigma6();
             }
             FillTheElements();
         }
-        private void QuestionsBySigma6()
+        private void QuestionsBySigma6() //6 sigma yaklaşımına göre ilgili soruların getirilmesi
         {
             sorulistesi.Clear();
             soruüret = 0;
             sorulistesi = GetByQuestionAnswered();
         }
-        private bool IsTheQuestionAnsweredCorrectly() 
+        private bool IsTheQuestionAnsweredCorrectly() //öğrencinin ilgili soruyu doğru bilip bilemediğinin kontrolünün yapılması
         {
             if (rdbA.Checked == true)
                 return true;
             return false;
         }
-        private void QuestionDetailUpdate() 
+        private void QuestionDetailUpdate() //öğrencinin bir sonraki soruya geçerken çözdüğü soru ile ilgili detail'in güncellenmesi
         {
             bool sorudurum = IsTheQuestionAnsweredCorrectly();
 
@@ -114,7 +114,7 @@ namespace SinavSistemiProje
                 });
             }
         }
-        private List<Question> GenerateQuestions() 
+        private List<Question> GenerateQuestions() //ilk başta öğrencinin önüne 10 tane yanlış bildiği veya hiç çözmediği soruların getirilmesi
         {
             var questionsfalse = questionDetailManager.GetQuestionsByFalse(ogrid);
             sorulistesi = questionManager.GetQuestionsByNotAnswered(questionsfalse);
