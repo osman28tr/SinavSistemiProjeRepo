@@ -1,7 +1,7 @@
 ﻿
 namespace SinavSistemiProje
 {
-    partial class FrmOgrenciSinavModul2
+    partial class FrmOgrenciSinavModulEksikKapa
     {
         /// <summary>
         /// Required designer variable.

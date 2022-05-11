@@ -107,9 +107,9 @@ namespace SinavSistemiProje
             DialogResult result1 = MessageBox.Show("Hazır mısınız?", " ", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result1 == DialogResult.Yes)
             {
-                FrmOgrenciSinavModul2 frmOgrenciSinavModul2 = new FrmOgrenciSinavModul2();
-                frmOgrenciSinavModul2.ogrid = ogrid;
-                frmOgrenciSinavModul2.Show();
+                FrmOgrenciSinavModulEksikKapa frmOgrenciSinavModulEksikKapa = new FrmOgrenciSinavModulEksikKapa();
+                frmOgrenciSinavModulEksikKapa.ogrid = ogrid;
+                frmOgrenciSinavModulEksikKapa.Show();
                 this.Hide();
             }
         }

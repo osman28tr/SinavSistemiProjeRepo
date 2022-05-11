@@ -13,9 +13,9 @@ using System.Windows.Forms;
 
 namespace SinavSistemiProje
 {
-    public partial class FrmOgrenciSinavModul2 : Form
+    public partial class FrmOgrenciSinavModulEksikKapa : Form
     {
-        public FrmOgrenciSinavModul2()
+        public FrmOgrenciSinavModulEksikKapa()
         {
             InitializeComponent();
         }
