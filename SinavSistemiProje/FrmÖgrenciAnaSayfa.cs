@@ -36,7 +36,7 @@ namespace SinavSistemiProje
             txtStudentPassword.Text = student.StudentPassword;
             txtStudentMail.Text = student.StudentMail;
         }
-        private void GetStudentName()
+        private void GetStudentName() //ilgili öğrencinin adının yazdırılması
         {
             lblOgrenciIsim.Text = "Merhaba " + studentManager.Get(ogrid).StudentName + " Hosgeldin";
         }
@@ -47,7 +47,7 @@ namespace SinavSistemiProje
             MessageBox.Show("Bilgileriniz basarili bir sekilde güncellendi");
         }
 
-        private void chbxSifre_CheckedChanged(object sender, EventArgs e)
+        private void chbxSifre_CheckedChanged(object sender, EventArgs e) //şifre gizleme,gösterme
         {
             if (chbxSifre.Checked == true)
             {
