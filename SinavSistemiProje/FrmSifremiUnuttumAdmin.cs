@@ -21,7 +21,7 @@ namespace SinavSistemiProje
         AdminManager adminManager = new AdminManager(new EfAdminDal());
         private void btnSifremiGöster_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(adminManager.SifremiGöster(txtAdminMail.Text, txtAdminName.Text));
+            MessageBox.Show(adminManager.SifremiGöster(txtAdminMail.Text, txtAdminName.Text)); //ilgili admine ait şifrenin verilmesi
         }
     }
 }

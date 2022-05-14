@@ -24,10 +24,10 @@ namespace SinavSistemiProje
 
         private void FrmÖgrenciAnaSayfa_Load(object sender, EventArgs e)
         {
-            GetStudentName();
+            GetStudentName(); //ilgili öğrencinin isminin gösterilmesi
             FillTheTool();
         }
-        private void FillTheTool()
+        private void FillTheTool() //öğrencinin ilgili verilerinin doldurulması
         {
             var student = studentManager.Get(ogrid);
             txtStudentName.Text = student.StudentName;
@@ -39,23 +39,6 @@ namespace SinavSistemiProje
         private void GetStudentName()
         {
             lblOgrenciIsim.Text = "Merhaba " + studentManager.Get(ogrid).StudentName + " Hosgeldin";
-        }
-        private void button1_Click(object sender, EventArgs e)
-        {
-            DialogResult result1 = MessageBox.Show("Hazır mısınız?", " ", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result1 == DialogResult.Yes)
-            {
-                FrmÖgrenciSinavModul frmÖgrenciSinavModul = new FrmÖgrenciSinavModul();
-                frmÖgrenciSinavModul.Show();
-                this.Hide();
-            }
-        }
-
-        private void sınavDurumumToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FrmÖgrenciSinavDurum frmÖgrenciSinavDurum = new FrmÖgrenciSinavDurum();
-            frmÖgrenciSinavDurum.Show();
-            this.Hide();
         }
 
         private void btnÖğrenciGüncelle_Click(object sender, EventArgs e)
@@ -76,6 +59,13 @@ namespace SinavSistemiProje
                 txtStudentPassword.UseSystemPasswordChar = true;
                 chbxSifre.Text = "Göster";
             }
+        }
+
+        private void sınavDurumumToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmÖgrenciSinavDurum frmÖgrenciSinavDurum = new FrmÖgrenciSinavDurum();
+            frmÖgrenciSinavDurum.Show();
+            this.Hide();
         }
     }
 }

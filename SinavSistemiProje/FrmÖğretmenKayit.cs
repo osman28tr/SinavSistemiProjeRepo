@@ -22,7 +22,7 @@ namespace SinavSistemiProje
         TeacherManager teacherManager = new TeacherManager(new EfTeacherDal());
         private void btnÖğretmenKayitOl_Click(object sender, EventArgs e)
         {
-            var failstatestring = teacherManager.Add(new Teacher //ders sorumlusunun eklenmesi
+            var failStateString = teacherManager.Add(new Teacher //ders sorumlusunun eklenmesi
             {
                 TeacherName = txtTeacherName.Text,
                 TeacherSurname = txtTeacherSurname.Text,
@@ -30,19 +30,19 @@ namespace SinavSistemiProje
                 TeacherPassword = txtTeacherPassword.Text,
                 TeacherTel = txtTeacherTel.Text
             });
-            if (failstatestring != null) //validasyon kontrolünde bir hata oluştuysa o hataların gösterilmesi
+            if (failStateString != null) //validasyon kontrolünde bir hata oluştuysa o hataların gösterilmesi
             {
-                foreach (var item in failstatestring)
+                foreach (var item in failStateString)
                 {
                     MessageBox.Show(item.ToString());
                 }
-                failstatestring.Clear();
+                failStateString.Clear();
             }
             else //validasyon hatası yoksa ekleme işleminin başarılı bir şekilde gerçekleştiğine dair mesajın gösterilmesi
                 MessageBox.Show("Kayit Başarıyla Tamamlandı");
         }
 
-        private void chbxSifre_CheckedChanged(object sender, EventArgs e)
+        private void chbxSifre_CheckedChanged(object sender, EventArgs e) //şifre gizleme,gösterme
         {
             if (chbxSifre.Checked == true)
             {

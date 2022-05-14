@@ -74,12 +74,12 @@ namespace Business.Concrete
             List<Question> questions = new List<Question>();
             for (int i = 0; i < 10; i++) 
             {
-                int questionid = dizi2[i];               
-                questions.Add(_questionDal.Get(x => x.QuestionId == questionid)); 
+                int questionId = dizi2[i];               
+                questions.Add(_questionDal.Get(x => x.QuestionId == questionId)); 
             }
             return questions;
         }
-        private int[] GenerateRandomNumber(List<QuestionDetail> questionDetails) 
+        private int[] GenerateRandomNumber(List<QuestionDetail> questionDetails)  //rastgele question id ler üretildi.
         {
             bool durum = true;
             int count = questionDetails.Count; 
@@ -87,10 +87,10 @@ namespace Business.Concrete
             int[] dizi2 = new int[10]; 
             for (int i = 0; i < 10; i++) 
             {
-                int randomnumberindex = random.Next(0, count); 
+                int randomNumberIndex = random.Next(0, count); 
                 for (int j = 0; j < i; j++) 
                 {
-                    if (dizi[j] == randomnumberindex) 
+                    if (dizi[j] == randomNumberIndex) 
                     {
                         durum = false;
                         break;
@@ -102,8 +102,8 @@ namespace Business.Concrete
                 }
                 if (durum == true) 
                 {
-                    dizi[i] = randomnumberindex;
-                    dizi2[i] = questionDetails[randomnumberindex].QuestionId;
+                    dizi[i] = randomNumberIndex;
+                    dizi2[i] = questionDetails[randomNumberIndex].QuestionId;
                 }
                 else 
                 {
@@ -118,14 +118,14 @@ namespace Business.Concrete
             _questionDal.Update(question);
         }
 
-        public List<Question> GetQuestionsByAnswered(List<QuestionDetail> questionDetails)
+        public List<Question> GetQuestionsByAnswered(List<QuestionDetail> questionDetails) //doğru çözülmüş soruların 6 sigmaya göre getirilmesi
         {
-            int valuecount = questionDetails.Count;
-            var questiondetail = questionDetails.Select(x => x.QuestionId).ToList();
+            int valueCount = questionDetails.Count;
+            var questionDetail = questionDetails.Select(x => x.QuestionId).ToList();
             List<Question> questions = new List<Question>();
-            for (int i = 0; i < valuecount; i++)
+            for (int i = 0; i < valueCount; i++)
             {
-                int questionid = questiondetail[i];
+                int questionid = questionDetail[i];
                 questions.Add(_questionDal.Get(x => x.QuestionId == questionid));
             }
             return questions;
@@ -146,7 +146,7 @@ namespace Business.Concrete
             return _questionDal.GetAll(x => x.ConfirmState == false);
         }
 
-        public List<Question> GetQuestionsByQuestionName(string questionName, int questionConfirmState)
+        public List<Question> GetQuestionsByQuestionName(string questionName, int questionConfirmState) //onaylanan,onaylanmayan veya tüm soruların getirilmesi işlemi
         {
             if (questionConfirmState == 0)
                 return _questionDal.GetAll(x => x.QuestionName.ToLower().Contains(questionName.ToLower()));
@@ -156,7 +156,7 @@ namespace Business.Concrete
                 return _questionDal.GetAll(x => x.QuestionName.ToLower().Contains(questionName.ToLower()) && x.ConfirmState == true);
         }
 
-        public List<Question> GetQuestionsByState(int state)
+        public List<Question> GetQuestionsByState(int state) //onaylanan,onaylanmayan veya tüm soruların getirilmesi
         {
             if (state == 1)
                 return GetNotConfirmByQuestions();

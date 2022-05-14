@@ -16,10 +16,6 @@ namespace SinavSistemiProje
 {
     public partial class FrmSinavHazirlamaModul : Form
     {
-        public FrmSinavHazirlamaModul()
-        {
-            InitializeComponent();
-        }
         QuestionManager questionManager = new QuestionManager(new EfQuestionDal());
         StudentManager studentManager = new StudentManager(new EfStudentDal());
         QuestionDetailManager questionDetailManager = new QuestionDetailManager(new EfQuestionDetailDal());
@@ -28,10 +24,15 @@ namespace SinavSistemiProje
         SubjectManager subjectManager = new SubjectManager(new EfSubjectDal());
         WrongAnswerManager wrongAnswerManager = new WrongAnswerManager(new EfWrongAnswerDal());
         SigmaManager sigmaManager = new SigmaManager(new EfSigmaDal());
-        string DosyaYolu = "";
+        string dosyaYolu = "";
         string correctAnswer = "";
-        string[] WrongAnswer = new string[3];
+        string[] wrongAnswer = new string[3];
         int lastQuestionId;
+
+        public FrmSinavHazirlamaModul()
+        {
+            InitializeComponent();
+        }      
         private void FrmSinavHazirlamaModul_Load(object sender, EventArgs e)
         {
             //form ilk yüklendiğinde ilgili comboboxlara verilerin eklenmesi
@@ -47,8 +48,8 @@ namespace SinavSistemiProje
             dosya.Filter = "Resim Dosyasi |*.jpg;*.png|Tüm Dosyalar|*.*";
             dosya.Title = "Sinav Hazırlama Modülü Dosya Seçimi";
             dosya.ShowDialog();
-            DosyaYolu = dosya.FileName;
-            pcbQuestionİmage.ImageLocation = DosyaYolu;
+            dosyaYolu = dosya.FileName;
+            pcbQuestionİmage.ImageLocation = dosyaYolu;
         }
 
         private void btnEkle_Click(object sender, EventArgs e)
@@ -57,32 +58,32 @@ namespace SinavSistemiProje
             Random rastgele = new Random();
             int sayi = rastgele.Next(10, 1000000);
             //soru resminin images klasörüne eklenmesi eklenmesi
-            string imagefile = Path.GetFileName(pcbQuestionİmage.ImageLocation);
-            string imagepath = Path.Combine(Application.StartupPath + "\\images\\" + sayi + imagefile);
-            string imagename = Path.Combine("\\images\\" + sayi + imagefile);
-            if (imagefile == null)
-                imagename = null;
+            string imageFile = Path.GetFileName(pcbQuestionİmage.ImageLocation);
+            string imagePath = Path.Combine(Application.StartupPath + "\\images\\" + sayi + imageFile);
+            string imageName = Path.Combine("\\images\\" + sayi + imageFile);
+            if (imageFile == null)
+                imageName = null;
             //sorunun veritabanına eklenmesi
-            var failstatestring = questionManager.Add(new Question 
+            var failStateString = questionManager.Add(new Question 
             {
                 QuestionName = rctxQuestionName.Text,
                 SubjectId = (int)cmbSubject.SelectedValue,
                 CreatedDate = DateTime.Now,
-                PicturePath = imagename,
+                PicturePath = imageName,
                 CorrectAnswer = correctAnswer
             });
-            if (failstatestring != null) //eğer validasyon hatası alındıysa o hataların gösterilmesi
+            if (failStateString != null) //eğer validasyon hatası alındıysa o hataların gösterilmesi
             {
-                foreach (var item in failstatestring)
+                foreach (var item in failStateString)
                 {
                     MessageBox.Show(item.ToString());
                 }
-                failstatestring.Clear();
+                failStateString.Clear();
             }
             else //alınmadıysa ilgili soruya ait detail ve wrongAnswer'ın eklenmesi
             {
-                if (imagename != null)
-                    File.Copy(pcbQuestionİmage.ImageLocation, imagepath);
+                if (imageName != null)
+                    File.Copy(pcbQuestionİmage.ImageLocation, imagePath);
                 QuestionDetailAdd();
                 WrongAnswerAdd();
                 MessageBox.Show("Hazırladığınız soru admine başarıyla gönderildi!");
@@ -105,7 +106,7 @@ namespace SinavSistemiProje
         private void QuestionDetailAdd() //ilgili soruya ait detail'in eklenmesi
         {      
             lastQuestionId = questionManager.GetLastQuestionId();
-            if (chbxHerkes.Checked == true)
+            if (chbxHerkes.Checked == true) //bütün öğrenciler için eklenmesi
             {
                 int studentCount = studentManager.GetAll().Count;
                 List<Student> students = studentManager.GetAll();
@@ -114,7 +115,7 @@ namespace SinavSistemiProje
                     questionDetailManager.Add(new QuestionDetail { QuestionId = lastQuestionId, StudentId = students[i].StudentId, SigmaCount = 0, QuestionState = false, AnsweredState = false });
                 }
             }
-            else
+            else //sadece ilgil öğrenciye özel eklenmesi
                 questionDetailManager.Add(new QuestionDetail { QuestionId = lastQuestionId, StudentId = (int)cmbStudents.SelectedValue, SigmaCount = 0, QuestionState = false, AnsweredState = false });
         }
         private void WrongAnswerAdd() //ilgili soruya ait yanlış cevapların eklenmesi
@@ -123,7 +124,7 @@ namespace SinavSistemiProje
             {
                 wrongAnswerManager.Add(new WrongAnswer
                 {
-                    WrongAnswerName = WrongAnswer[i],
+                    WrongAnswerName = wrongAnswer[i],
                     QuestionId = lastQuestionId
                 });
             }
@@ -133,30 +134,30 @@ namespace SinavSistemiProje
             if (rdbA.Checked == true)
             {
                 correctAnswer = txtSecenekA.Text;
-                WrongAnswer[0] = txtSecenekB.Text;
-                WrongAnswer[1] = txtSecenekC.Text;
-                WrongAnswer[2] = txtSecenekD.Text;
+                wrongAnswer[0] = txtSecenekB.Text;
+                wrongAnswer[1] = txtSecenekC.Text;
+                wrongAnswer[2] = txtSecenekD.Text;
             }
             else if (rdbB.Checked == true)
             {
                 correctAnswer = txtSecenekB.Text;
-                WrongAnswer[0] = txtSecenekA.Text;
-                WrongAnswer[1] = txtSecenekC.Text;
-                WrongAnswer[2] = txtSecenekD.Text;
+                wrongAnswer[0] = txtSecenekA.Text;
+                wrongAnswer[1] = txtSecenekC.Text;
+                wrongAnswer[2] = txtSecenekD.Text;
             }
             else if (rdbC.Checked == true)
             {
                 correctAnswer = txtSecenekC.Text;
-                WrongAnswer[0] = txtSecenekA.Text;
-                WrongAnswer[1] = txtSecenekB.Text;
-                WrongAnswer[2] = txtSecenekD.Text;
+                wrongAnswer[0] = txtSecenekA.Text;
+                wrongAnswer[1] = txtSecenekB.Text;
+                wrongAnswer[2] = txtSecenekD.Text;
             }
             else
             {
                 correctAnswer = txtSecenekD.Text;
-                WrongAnswer[0] = txtSecenekA.Text;
-                WrongAnswer[1] = txtSecenekC.Text;
-                WrongAnswer[2] = txtSecenekB.Text;
+                wrongAnswer[0] = txtSecenekA.Text;
+                wrongAnswer[1] = txtSecenekC.Text;
+                wrongAnswer[2] = txtSecenekB.Text;
             }
         }
         private void LoadLessons()
@@ -234,7 +235,7 @@ namespace SinavSistemiProje
         }
         private void btnUygula_Click(object sender, EventArgs e) //sorulara ait sigmanın ayarlanması
         {
-            if (sigmaManager.GetAll().Count > 0)
+            if (sigmaManager.GetAll().Count > 0) //sigma tablosunda kayıt varsa güncellenir,yoksa eklenir.
             {
                 sigmaManager.Update(new Sigma
                 {

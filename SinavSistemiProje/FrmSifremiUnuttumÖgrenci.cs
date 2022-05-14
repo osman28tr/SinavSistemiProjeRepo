@@ -21,7 +21,7 @@ namespace SinavSistemiProje
         StudentManager studentManager = new StudentManager(new EfStudentDal());
         private void btnSifremiGöster_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(studentManager.SifremiGöster(txtStudentMail.Text, txtStudentName.Text));
+            MessageBox.Show(studentManager.SifremiGöster(txtStudentMail.Text, txtStudentName.Text)); //ilgili öğrenciye ait şifrenin verilmesi
         }
     }
 }

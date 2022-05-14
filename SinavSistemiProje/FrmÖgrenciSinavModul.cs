@@ -20,14 +20,14 @@ namespace SinavSistemiProje
             InitializeComponent();
         }
         public static int ogrid = 0;
-        int saniye = 0, dakika = 0, soru = 1/*label'a soruyu yazdırmak icin*/, soruüret = 0;/*db den gelen sorularda kacıncı soruda kaldıgını ögrenmek icin*/
+        int saniye = 0, dakika = 0, soru = 1/*label'a soruyu yazdırmak icin*/, soruUret = 0;/*db den gelen sorularda kacıncı soruda kaldıgını ögrenmek icin*/
         bool durum = false;/*öğrencinin soruyu bilip bilemediği*/
-        List<Question> sorulistesi = new List<Question>();
+        List<Question> soruListesi = new List<Question>();
         QuestionManager questionManager = new QuestionManager(new EfQuestionDal());
         QuestionDetailManager questionDetailManager = new QuestionDetailManager(new EfQuestionDetailDal());
         WrongAnswerManager wrongAnswerManager = new WrongAnswerManager(new EfWrongAnswerDal());
         SigmaManager sigmaManager = new SigmaManager(new EfSigmaDal());
-        int sorusayisi, dogrusorusayisi;
+        int soruSayisi, dogruSoruSayisi;
         private void FrmÖgrenciSinavModul_Load(object sender, EventArgs e)
         {
             MessageBox.Show("Sınav Kuralları: Soru başına 1 dk süreniz olacak. Başarılar Dileriz...");
@@ -37,10 +37,10 @@ namespace SinavSistemiProje
            
             GenerateQuestions(); //öğrencinin bilemediği veya çözmediği soruların karışık bir şekilde 10 tane gelmesi
             if (GetByQuestionAnswered() == null) //öğrenciye ait dogru soru sayısının kontrolü
-                dogrusorusayisi = 0;
+                dogruSoruSayisi = 0;
             else
-                dogrusorusayisi = GetByQuestionAnswered().Count;
-            sorusayisi = 10 + dogrusorusayisi;
+                dogruSoruSayisi = GetByQuestionAnswered().Count;
+            soruSayisi = 10 + dogruSoruSayisi;
             FillTheElements();  //soruların ilgili toolbox'lara doldurulması
         }
         private void btnİlerle_Click(object sender, EventArgs e)
@@ -48,13 +48,13 @@ namespace SinavSistemiProje
             soru++;
             lblSoru.Text = soru.ToString();
             QuestionDetailUpdate();           
-            if (soru == sorusayisi) 
+            if (soru == soruSayisi) 
             {
                 if (durum == false) 
                 {
                     btnBitir.Visible = true;
                     btnİlerle.Enabled = false;
-                    if (dogrusorusayisi == 1) 
+                    if (dogruSoruSayisi == 1) 
                     {
                         QuestionsBySigma6();
                     }
@@ -68,9 +68,9 @@ namespace SinavSistemiProje
         }
         private void QuestionsBySigma6() //6 sigma yaklaşımına göre ilgili soruların getirilmesi
         {
-            sorulistesi.Clear();
-            soruüret = 0;
-            sorulistesi = GetByQuestionAnswered();
+            soruListesi.Clear();
+            soruUret = 0;
+            soruListesi = GetByQuestionAnswered();
         }
         private bool IsTheQuestionAnsweredCorrectly() //öğrencinin ilgili soruyu doğru bilip bilemediğinin kontrolünün yapılması
         {
@@ -80,23 +80,23 @@ namespace SinavSistemiProje
         }
         private void QuestionDetailUpdate() //öğrencinin bir sonraki soruya geçerken çözdüğü soru ile ilgili detail'in güncellenmesi
         {
-            bool sorudurum = IsTheQuestionAnsweredCorrectly();
+            bool soruDurum = IsTheQuestionAnsweredCorrectly();
 
-            int questiondetailid = questionDetailManager.GetQuestionDetailId(sorulistesi[soruüret - 1].QuestionId, ogrid);
-            bool questiondetailstate = questionDetailManager.Get(questiondetailid).QuestionState;
-            var questiondetaildate = questionDetailManager.Get(questiondetailid).AnsweredDate;
-            int sigmacount = questionDetailManager.Get(questiondetailid).SigmaCount;
+            int questionDetailId = questionDetailManager.GetQuestionDetailId(soruListesi[soruUret - 1].QuestionId, ogrid);
+            bool questionDetailState = questionDetailManager.Get(questionDetailId).QuestionState;
+            var questionDetailDate = questionDetailManager.Get(questionDetailId).AnsweredDate;
+            int sigmaCount = questionDetailManager.Get(questionDetailId).SigmaCount;
 
-            if (questiondetailstate == true && sorudurum == true)
+            if (questionDetailState == true && soruDurum == true)
             {
                 questionDetailManager.Update(new QuestionDetail
                 {
-                    QuestionDetailId = questiondetailid,
-                    QuestionId = sorulistesi[soruüret - 1].QuestionId,
+                    QuestionDetailId = questionDetailId,
+                    QuestionId = soruListesi[soruUret - 1].QuestionId,
                     StudentId = ogrid,
-                    QuestionState = sorudurum,
-                    AnsweredDate = questiondetaildate,
-                    SigmaCount = sigmacount + 1,
+                    QuestionState = soruDurum,
+                    AnsweredDate = questionDetailDate,
+                    SigmaCount = sigmaCount + 1,
                     AnsweredState = true
                 });
             }
@@ -104,10 +104,10 @@ namespace SinavSistemiProje
             {
                 questionDetailManager.Update(new QuestionDetail
                 {
-                    QuestionDetailId = questiondetailid,
-                    QuestionId = sorulistesi[soruüret - 1].QuestionId,
+                    QuestionDetailId = questionDetailId,
+                    QuestionId = soruListesi[soruUret - 1].QuestionId,
                     StudentId = ogrid,
-                    QuestionState = sorudurum,
+                    QuestionState = soruDurum,
                     AnsweredDate = DateTime.Now,
                     SigmaCount = 0,
                     AnsweredState = true
@@ -116,9 +116,9 @@ namespace SinavSistemiProje
         }
         private List<Question> GenerateQuestions() //ilk başta öğrencinin önüne 10 tane yanlış bildiği veya hiç çözmediği soruların getirilmesi
         {
-            var questionsfalse = questionDetailManager.GetQuestionsByFalse(ogrid);
-            sorulistesi = questionManager.GetQuestionsByNotAnswered(questionsfalse);
-            return sorulistesi;
+            var questionsFalse = questionDetailManager.GetQuestionsByFalse(ogrid);
+            soruListesi = questionManager.GetQuestionsByNotAnswered(questionsFalse);
+            return soruListesi;
         }
         private List<Question> GetByQuestionAnswered()
         {
@@ -130,13 +130,13 @@ namespace SinavSistemiProje
         }
         private void FillTheElements() 
         {
-            rctxQuestionName.Text = sorulistesi[soruüret].QuestionName;
-            pcbxQuestionImage.ImageLocation = Application.StartupPath + sorulistesi[soruüret].PicturePath;
-            txtSecenekA.Text = sorulistesi[soruüret].CorrectAnswer;
-            txtSecenekB.Text = wrongAnswerManager.GetAll(sorulistesi[soruüret].QuestionId)[0].WrongAnswerName; 
-            txtSecenekC.Text = wrongAnswerManager.GetAll(sorulistesi[soruüret].QuestionId)[1].WrongAnswerName;
-            txtSecenekD.Text = wrongAnswerManager.GetAll(sorulistesi[soruüret].QuestionId)[2].WrongAnswerName;
-            soruüret++;
+            rctxQuestionName.Text = soruListesi[soruUret].QuestionName;
+            pcbxQuestionImage.ImageLocation = Application.StartupPath + soruListesi[soruUret].PicturePath;
+            txtSecenekA.Text = soruListesi[soruUret].CorrectAnswer;
+            txtSecenekB.Text = wrongAnswerManager.GetAll(soruListesi[soruUret].QuestionId)[0].WrongAnswerName; 
+            txtSecenekC.Text = wrongAnswerManager.GetAll(soruListesi[soruUret].QuestionId)[1].WrongAnswerName;
+            txtSecenekD.Text = wrongAnswerManager.GetAll(soruListesi[soruUret].QuestionId)[2].WrongAnswerName;
+            soruUret++;
         }
 
         private void btnBitir_Click(object sender, EventArgs e)
@@ -186,7 +186,7 @@ namespace SinavSistemiProje
         }
         private void ShowAnswers()
         {
-            MessageBox.Show("Cevap Kağıdınız: 1-" + sorusayisi + " arası A şıkkıdır");
+            MessageBox.Show("Cevap Kağıdınız: 1-" + soruSayisi + " arası A şıkkıdır");
         }
     }
 }

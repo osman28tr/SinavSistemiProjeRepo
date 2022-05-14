@@ -23,8 +23,8 @@ namespace SinavSistemiProje
         SigmaManager sigmaManager = new SigmaManager(new EfSigmaDal());
         private void FrmAdminConfirmQuestion_Load(object sender, EventArgs e)
         {
-            GetQuestions();
-            FillSigma();
+            GetQuestions(); //soruların datagridview'e doldurulması
+            FillSigma(); //sigma ayarlanması için ilgili combobox'a verilerin doldurulması
         }
         private void GetQuestions()
         {
@@ -42,7 +42,7 @@ namespace SinavSistemiProje
                 cmbSigma6.Items.Add(i);
             }
         }
-        private void DgwSorular_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void DgwSorular_CellDoubleClick(object sender, DataGridViewCellEventArgs e) //datagridview'de ilgili soruya çift tıklanınca eğer soru onaylı değilse onaylanma işlemi yapılır.
         {
             var row = DgwSorular.CurrentRow;
             if ((bool)row.Cells[4].Value != true)
@@ -50,17 +50,17 @@ namespace SinavSistemiProje
                 DialogResult result2 = MessageBox.Show("Soruyu onaylamak istediğinize emin misiniz?", " ", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result2 == DialogResult.Yes)
                 {
-                    UpdateQuestion();
+                    UpdateQuestion(); //onaylama işleminin yapılması
                     MessageBox.Show("Soru başarıyla onaylandı");
-                    GetQuestions();
+                    GetQuestions(); //tekrardan soruların datagridview'e güncellenmiş şekilde yüklenmesi
                 }
             }           
         }
         private void UpdateQuestion() //ilgili sorunun onaylanması
         {
             var row = DgwSorular.CurrentRow;
-            var questionId = row.Cells[0].Value.ToString();
-            questionManager.Update(new Question
+            var questionId = row.Cells[0].Value.ToString(); //soruya ait id'sinin alınması
+            questionManager.Update(new Question //ve id'ye göre güncellenmesi
             {
                 QuestionId = Convert.ToInt32(questionId),
                 SubjectId = Convert.ToInt32(row.Cells[1].Value.ToString()),
@@ -72,24 +72,24 @@ namespace SinavSistemiProje
             });
         }
 
-        private void rbConfirm_CheckedChanged(object sender, EventArgs e)
+        private void rbConfirm_CheckedChanged(object sender, EventArgs e) //onaylanan soruların gösterilmesi
         {
             DgwSorular.DataSource = questionManager.GetConfirmByQuestions();
         }
 
-        private void rbNotConfirm_CheckedChanged(object sender, EventArgs e)
+        private void rbNotConfirm_CheckedChanged(object sender, EventArgs e) //onaylanmayan soruların gösterilmesi
         {
             DgwSorular.DataSource = questionManager.GetNotConfirmByQuestions();
         }
 
-        private void rbAll_CheckedChanged(object sender, EventArgs e)
+        private void rbAll_CheckedChanged(object sender, EventArgs e)//tüm soruların gösterilmesi
         {
             GetQuestions();
         }
 
         private void btnUygula_Click(object sender, EventArgs e) //6 sigma yaklaşımının ayarlanması
         {
-            if (sigmaManager.GetAll().Count > 0)
+            if (sigmaManager.GetAll().Count > 0) //sigma tabosunda kayıt varmı diye bakılır. varsa güncellenir yoksa eklenir.
             {
                 sigmaManager.Update(new Sigma
                 {

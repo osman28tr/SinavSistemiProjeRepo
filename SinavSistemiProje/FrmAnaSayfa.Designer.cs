@@ -33,7 +33,7 @@ namespace SinavSistemiProje
             this.btnOgretmen = new System.Windows.Forms.Button();
             this.btnOgrenci = new System.Windows.Forms.Button();
             this.BtnAdmin = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblKullaniciGiris = new System.Windows.Forms.Label();
             this.grbxKullaniciTur.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -86,16 +86,16 @@ namespace SinavSistemiProje
             this.BtnAdmin.UseVisualStyleBackColor = true;
             this.BtnAdmin.Click += new System.EventHandler(this.BtnAdmin_Click);
             // 
-            // label1
+            // lblKullaniciGiris
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe Print", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(277, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(266, 54);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "HOŞ GELDİNİZ ";
+            this.lblKullaniciGiris.AutoSize = true;
+            this.lblKullaniciGiris.Font = new System.Drawing.Font("Segoe Print", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblKullaniciGiris.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lblKullaniciGiris.Location = new System.Drawing.Point(277, 9);
+            this.lblKullaniciGiris.Name = "lblKullaniciGiris";
+            this.lblKullaniciGiris.Size = new System.Drawing.Size(266, 54);
+            this.lblKullaniciGiris.TabIndex = 1;
+            this.lblKullaniciGiris.Text = "HOŞ GELDİNİZ ";
             // 
             // FrmAnaSayfa
             // 
@@ -103,7 +103,7 @@ namespace SinavSistemiProje
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(756, 451);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblKullaniciGiris);
             this.Controls.Add(this.grbxKullaniciTur);
             this.Name = "FrmAnaSayfa";
             this.Text = "AnaSayfa";
@@ -119,7 +119,7 @@ namespace SinavSistemiProje
         private System.Windows.Forms.Button btnOgretmen;
         private System.Windows.Forms.Button btnOgrenci;
         private System.Windows.Forms.Button BtnAdmin;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblKullaniciGiris;
     }
 }
 

@@ -19,20 +19,20 @@ namespace SinavSistemiProje
             InitializeComponent();
         }
         AdminManager adminManager = new AdminManager(new EfAdminDal());
-        private void btnKayitOl_Click(object sender, EventArgs e)
+        private void btnKayitOl_Click(object sender, EventArgs e) //kayıt işlemi için ilgili forma yönlendirilmesi
         {
             FrmAdminKayit frmAdminKayit = new FrmAdminKayit();
             frmAdminKayit.Show();
             this.Hide();
         }
 
-        private void btnSifremiUnuttum_Click(object sender, EventArgs e)
+        private void btnSifremiUnuttum_Click(object sender, EventArgs e) //şifremi unuttum işlemi için ilgili forma yönlendirilmesi
         {
             FrmSifremiUnuttumAdmin frmSifremiUnuttumAdmin = new FrmSifremiUnuttumAdmin();
             frmSifremiUnuttumAdmin.Show();
         }
 
-        private void btnGiris_Click(object sender, EventArgs e)
+        private void btnGiris_Click(object sender, EventArgs e) //giriş için ilgili kontrollerin yapılması
         {
             if (adminManager.GirisYap(txtMail.Text, txtSifre.Text) == null)
             {
@@ -46,7 +46,7 @@ namespace SinavSistemiProje
                 this.Hide();
             }
         }
-        private void chbxSifre_CheckedChanged(object sender, EventArgs e)
+        private void chbxSifre_CheckedChanged(object sender, EventArgs e) //şifre gizleme,gösterme
         {
             if (chbxSifre.Checked == true)
             {

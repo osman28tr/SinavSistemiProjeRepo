@@ -19,9 +19,9 @@ namespace SinavSistemiProje
             InitializeComponent();
         }
         TeacherManager teacherManager = new TeacherManager(new EfTeacherDal());
-        private void btnSifremiGöster_Click(object sender, EventArgs e)
+        private void btnSifremiGöster_Click(object sender, EventArgs e) 
         {
-            MessageBox.Show(teacherManager.SifremiGöster(txtTeacherMail.Text, txtTeacherName.Text));
+            MessageBox.Show(teacherManager.SifremiGöster(txtTeacherMail.Text, txtTeacherName.Text)); //ilgili sınav sorumlusuna ait şifrenin verilmesi
         }
     }
 }

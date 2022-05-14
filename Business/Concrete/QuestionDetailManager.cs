@@ -53,17 +53,17 @@ namespace Business.Concrete
         {
             var questions = _questionDetailDal.GetAll(x => x.QuestionState == true && x.StudentId == studentid).ToList();
             var questionsDate = questions.Select(x => x.AnsweredDate).ToList();
-            int questionvalues = questionsDate.Count();
-            List<QuestionDetail> questiondetailList = new List<QuestionDetail>();
-            for (int i = 0; i < questionvalues; i++)
+            int questionValues = questionsDate.Count();
+            List<QuestionDetail> questionDetailList = new List<QuestionDetail>();
+            for (int i = 0; i < questionValues; i++)
             {
                 TimeSpan timeSpan = DateTime.Now - questionsDate[i];
                 if (timeSpan.Days == sigma.Sigma1 || timeSpan.Days == sigma.Sigma2 || timeSpan.Days == sigma.Sigma3 || timeSpan.Days == sigma.Sigma4 || timeSpan.Days == sigma.Sigma5 || timeSpan.Days == sigma.Sigma6)
                 {
-                    questiondetailList.Add(questions[i]);
+                    questionDetailList.Add(questions[i]);
                 }
             }
-            return questiondetailList;
+            return questionDetailList;
         }
 
         public List<QuestionDetail> GetQuestionsByFalse(int studentid) //ilgili öğrenciye ait yanlış bilinen soruların getirilmesi

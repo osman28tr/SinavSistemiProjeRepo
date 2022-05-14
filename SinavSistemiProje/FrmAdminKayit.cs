@@ -20,28 +20,28 @@ namespace SinavSistemiProje
             InitializeComponent();
         }
         AdminManager adminManager = new AdminManager(new EfAdminDal());
-        private void btnAdminKayitOl_Click(object sender, EventArgs e)
+        private void btnAdminKayitOl_Click(object sender, EventArgs e) //adminin kayıt olması
         {
-            var failstatestring = adminManager.Add(new Admin
+            var failStateString = adminManager.Add(new Admin //validason hatasına bakılır.
             {
                 AdminName = txtAdminName.Text,
                 AdminSurname = txtAdminSurname.Text,
                 AdminMail = txtAdminMail.Text,
                 AdminPassword = txtAdminPassword.Text
             });
-            if (failstatestring != null)
+            if (failStateString != null) //validasyon hatası varsa gösterilir.
             {
-                foreach (var item in failstatestring)
+                foreach (var item in failStateString)
                 {
                     MessageBox.Show(item.ToString());
                 }
-                failstatestring.Clear();
+                failStateString.Clear();
             }
-            else
+            else //yoksa kayıt edilir, tamamlanma mesajı gösterilir.
                 MessageBox.Show("Kayit Başarıyla Tamamlandı");
         }
 
-        private void chbxSifre_CheckedChanged(object sender, EventArgs e)
+        private void chbxSifre_CheckedChanged(object sender, EventArgs e) //sifre gizlenmesi,gösterilmesi
         {
             if (chbxSifre.Checked == true)
             {
@@ -54,7 +54,7 @@ namespace SinavSistemiProje
                 chbxSifre.Text = "Göster";
             }
         }
-        private void BtnAnasayfa_Click(object sender, EventArgs e)
+        private void BtnAnasayfa_Click(object sender, EventArgs e) //anasayfaya yönlendirilmesi
         {
             FrmAdmin frmAdmin = new FrmAdmin();
             frmAdmin.Show();

@@ -26,7 +26,7 @@ namespace SinavSistemiProje
         StudentManager studentManager = new StudentManager(new EfStudentDal());
         SubjectManager subjectManager = new SubjectManager(new EfSubjectDal());
         SigmaManager sigmaManager = new SigmaManager(new EfSigmaDal());
-        PrintDialog Prd = new PrintDialog();
+        PrintDialog prd = new PrintDialog();
         private void BtnSinavaGir_Click(object sender, EventArgs e)
         {
             DialogResult result1 = MessageBox.Show("Hazır mısınız?", " ", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -47,14 +47,14 @@ namespace SinavSistemiProje
 
         private void FrmÖgrenciSinavDurum_Load(object sender, EventArgs e)
         {
-            int truecount = questionDetailManager.TrueAnswerCount(ogrid);
-            int falsecount = questionDetailManager.FalseAnswerCount(ogrid);
-            chart1.Series["SinavDurumu"].Points.AddXY("Dogru Cevap " + truecount, truecount);
-            chart1.Series["SinavDurumu"].Points.AddXY("Yanlis Cevap " + falsecount, falsecount);
+            int trueCount = questionDetailManager.TrueAnswerCount(ogrid); //öğrencinin doğru bildiği soru sayısı
+            int falseCount = questionDetailManager.FalseAnswerCount(ogrid); //öğrencini yanlış bildiği soru sayısı
+            chart1.Series["SinavDurumu"].Points.AddXY("Dogru Cevap " + trueCount, trueCount);
+            chart1.Series["SinavDurumu"].Points.AddXY("Yanlis Cevap " + falseCount, falseCount);
             lblStudent.Text = studentManager.Get(ogrid).StudentName;
 
-            FillSigma();
-            GetSuccessStatus();
+            FillSigma(); //sigma seçimi ile ilgili verilerin ilgili combobox'a doldurulması
+            GetSuccessStatus(); //öğrenciye ait sınav verilerinin gösterilmesi
         }
         private void FillSigma()
         {
@@ -70,27 +70,27 @@ namespace SinavSistemiProje
         }
         private void GetSuccessStatus() //öğrenciye ait sınav verilerinin gösterilmesi
         {
-            int count = subjectManager.SubjectCount();
-            double countSuccess = 0, countNotSuccess = 0, countEmpty = 0;
-            double successState;
-            for (int i = 1; i <= count; i++)
+            int count = subjectManager.SubjectCount(); 
+            double countSuccess = 0, countNotSuccess = 0, countEmpty = 0; //öğreninin ilgili konudan doğru,yanlış ve henüz çözmediği soru sayısı
+            double successState; //öğreninin ilgili konudan başarılı olma yüzdesi
+            for (int i = 1; i <= count; i++) //sınavda sorulan konu sayısına kadar gitsin
             {
-                double questionBySubjectCount = questionManager.QuestionBySubject(i);
+                double questionBySubjectCount = questionManager.QuestionBySubject(i); //ilgili konudan sorulan soru sayısını veriyor.
                 string subjectName = subjectManager.GetSubjectById(i).SubjectName;
-                List<Question> questions = questionManager.GetAll().Where(x => x.SubjectId == i).ToList();
-                for (int j = 0; j < questionBySubjectCount; j++)
+                List<Question> questions = questionManager.GetAll().Where(x => x.SubjectId == i).ToList(); //ilgili konudan sorulan soruların listesini veriyor.
+                for (int j = 0; j < questionBySubjectCount; j++) //ilgili konu ile ilgili soruları gezip, verileri dolduruyor.
                 {
                     int questionId = questions[j].QuestionId;
                     countSuccess = countSuccess + questionDetailManager.StudentSuccessQuestionBySubject(questionId, ogrid);
                     countNotSuccess = countNotSuccess + questionDetailManager.StudentNotSuccessQuestionBySubject(questionId, ogrid);
                     countEmpty = countEmpty + questionDetailManager.StudentEmptyQuestionBySubject(questionId, ogrid);
                 }
-                if ((questionBySubjectCount - countEmpty) != 0 && countSuccess != 0)
+                if ((questionBySubjectCount - countEmpty) != 0 && countSuccess != 0) //en az bir soruyu çözdüğü ve en az bir doğru cevabı olduysa
                     successState = (countSuccess / (questionBySubjectCount - countEmpty)) * 100;
-                else
+                else //olmadıysa ilgili konudan başarı durumu yüzdesi 0 olsun.
                     successState = 0;
                 successState = Math.Round(successState);
-                if ((countSuccess + countNotSuccess + countEmpty) != questionBySubjectCount)
+                if ((countSuccess + countNotSuccess + countEmpty) != questionBySubjectCount) //henüz çözmediği soru varsa
                     questionBySubjectCount = countSuccess + countNotSuccess + countEmpty;
                 rctBasariDurumu.Text = rctBasariDurumu.Text + subjectName + " Konulu sorulardan " + " Size sorulan, " + questionBySubjectCount + " adet sorudan "
                 + countSuccess +
@@ -114,11 +114,11 @@ namespace SinavSistemiProje
             }
         }
 
-        private void btnCiktiAl_Click(object sender, EventArgs e)
+        private void btnCiktiAl_Click(object sender, EventArgs e) //öğrencinin sınav verileriyle ilgili çıktıyı alabilmesi
         {
             PrintDocument Paper = new PrintDocument();
             DialogResult writingProcess;
-            writingProcess = Prd.ShowDialog();
+            writingProcess = prd.ShowDialog();
             Paper.PrintPage += Paper_PrintPage;
             if (writingProcess == DialogResult.OK)
             {

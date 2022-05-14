@@ -19,13 +19,13 @@ namespace SinavSistemiProje
             InitializeComponent();
         }
         TeacherManager teacherManager = new TeacherManager(new EfTeacherDal());
-        private void btnSifremiUnuttum_Click(object sender, EventArgs e)
+        private void btnSifremiUnuttum_Click(object sender, EventArgs e) //şifremi unuttum formu için yönlendirme işlemi
         {
             FrmSifremiUnuttumÖgretmen frmSifremiUnuttumÖgretmen = new FrmSifremiUnuttumÖgretmen();
             frmSifremiUnuttumÖgretmen.Show();
         }
 
-        private void btnKayitOl_Click(object sender, EventArgs e)
+        private void btnKayitOl_Click(object sender, EventArgs e) //kayıt olma için ilgili forma yönlendirme işlemi
         {
             FrmÖğretmenKayit frmÖğretmenKayit = new FrmÖğretmenKayit();
             frmÖğretmenKayit.Show();
@@ -33,7 +33,7 @@ namespace SinavSistemiProje
 
         private void btnGiris_Click(object sender, EventArgs e)
         {
-            if (teacherManager.GirisYap(txtMail.Text, txtSifre.Text) == null)
+            if (teacherManager.GirisYap(txtMail.Text, txtSifre.Text) == null) //sınav sorumlusuna ait mail ve sifre kontrollerinin yapılması
             {
                 MessageBox.Show("Girdiğiniz Bilgiler Yanlış Lütfen Tekrar Deneyin");
             }
@@ -46,7 +46,7 @@ namespace SinavSistemiProje
             }           
         }
 
-        private void chbxSifre_CheckedChanged(object sender, EventArgs e)
+        private void chbxSifre_CheckedChanged(object sender, EventArgs e) //şifre gizlenmesi,gösterilmesi
         {
             if (chbxSifre.Checked == true)
             {
