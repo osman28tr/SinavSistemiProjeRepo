@@ -1,7 +1,3 @@
-<style>
-ul.a {list-style-type: upper-roman;}
-</style>
-
 <h1>Sınav Sistemi Proje</h1>
 <p align="justify"> Proje, öğrencinin kendisini test edip sınayabileceği bir sınav sistemi uygulamasıdır. Öğrenci, her dersden sınava girebilir. Bu proje sadece basit bir sınav sistemi uygulaması değildir. Geliştirilen bu uygulama, öğrenciyi analiz eder, doğru yaptığı konuları eksik kaldığı konuları tespit eder ve soruları bu doğrultuda öğrencinin karşısına getirir. Sistem, Öğrencinin kendisini daha rahat analiz edebilmesi için karşısına ise bir takım grafikler ve görsel araçlar çıkarır, buradan öğrenci eksik kaldığı kısımları daha rahat görebilir. Bu sınav sisteminde ayrıyeten öğretmen ve admin paneli de bulunmaktadır. Öğretmenler soru panelinde sorular hazırlarlar sürelerini ayarlarlar. Admin kısmında ise sistem yöneticisi öğrenci ve öğretmenlerin kayıt taleplerini onaylar ve bir takım işlemler gerçekleştirir. Ayrıntılara aşağıdan erişebilirsiniz.</p>
 
@@ -24,7 +20,7 @@ ul.a {list-style-type: upper-roman;}
     <li>10 adetlik testlerden oluşan bir Quiz için sınav süresi 10 dk olacak. Öğrenci en az günde 10 soru cevaplayacak. </li>
 </ul>
 <h3>2. Sınav(Quiz) Sorularının Belirlenme Algoritması</h3>
-<ul class = "a">
+<ul>
     <li>Bir soruyu hakkı ile bilmesi için altı kez üst üste doğru cevabı işaretlemesi lazım. Eğer 6 kez aynı soru için doğru cevabı vermez ise, süreç o soru için başa döner ve 6 kez aynı soru için doğru cevabı vermesi beklenir.(Öğrencinin o soruyu bilme durumunun tespit edilmesi)
     <li>Bilinen bir sorunun testte öğrenciye sorulması için kullanılacak zaman aralığı; 1 gün sonra, 1 hafta sonra,1 ay sonra,3 ay sonra,6 ay sonra ve 1 yıl sonra. Eğer 6 farklı zamanda da aynı soruyu doğru olarak bilmiş ise o zaman o soruyu soru havuzundan bilinen soru havuzuna taşınır.<br><br>
     <b>Örneğin;</b> 08.03.2022 (Çarşamba) günü(başlangıç tarihi).<br><br> İlk on soru 8,12,13,33,54,55,86,87, 19, 10 -> Bu sorulardan 8,12,86,87,19 numaralı soruları 08.03.2022 tarihinden doğru cevapladı.<br><br>
