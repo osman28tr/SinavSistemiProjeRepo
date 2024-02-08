@@ -30,6 +30,9 @@
 </ul>
 
 <h3>3. Kullanılan Teknolojiler ve Dil</h3> Windows Forms Application(.Net Framework), EntityFramework, N-Tier Architecture, FluentValidation, MSSQL - C#
+<br>
+<h3>4. Projede Kullanılan Mimarinin Genel Hatları</h3> 
+<img src="SinavSistemiProje/Images/SinavSistemiProjeMimari.PNG" height="400px" width="550px">
 <br><br>
 <b>Note:</b> Kullandığım Veritabanı Dosyası: SinavSistemi.bak<br><br>
 Geliştirdiğim proje ile ilgili içeriğe bu videodan ulaşabilirsiniz:
