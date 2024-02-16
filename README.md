@@ -34,7 +34,12 @@
 <h3>4. Projede Kullanılan Mimarinin Genel Hatları</h3> 
 <img src="SinavSistemiProje/Images/SinavSistemiProjeMimari2.PNG" height="400px" width="550px">
 <br><br>
-<b>Note:</b> Kullandığım Veritabanı Dosyası: SinavSistemi.bak<br><br>
+
+<h3>5. Kurulum: </h3>
+ - Projede DataAccessLayer -> App.config dosyasını açınız, connectionstrings tag'i ile belirtilen connectionstring özelliğinde yer alan veritabanı bağlantı dizesini kendi veritabanı bağlantı dizenize göre güncelleyiniz.<br>
+ - Ardından SinavSistemiProje projesine sağ tık yapıp "Set as Startup Project" deyiniz ve projeyi ayağa kaldırınız.
+<br><br>
+<b>Note:</b> Kullandığım Veritabanı Dosyası: SinavSistemi.bak (geliştirilen bu proje tamamen entity framework'ün code first yaklaşımı kullanılmamıştır, migration işlemleri yoktur, dolayısıyla repo'da yer alan veritabanı backup dosyasını MSSQL'e restore etmeniz gerekmektedir.)<br><br>
 Geliştirdiğim proje ile ilgili içeriğe bu videodan ulaşabilirsiniz:
 
 https://github.com/osman28tr/SinavSistemiProjeRepo/assets/83770616/b58612ea-ea55-45e2-a08e-9d66f4126645
